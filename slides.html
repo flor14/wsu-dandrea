@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="slides_files/libs/quarto-contrib/roughnotation-0.5.1/rough-notation.iife.js"></script>
+<script src="slides_files/libs/quarto-contrib/roughnotation-init-1.0.0/rough.js"></script><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.2.335">
+
+  <meta name="author" content="Florencia D’Andrea, Ph.D.">
+  <title>From research software engeneering to data science: how technology will impact the way we research?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="img/first-slide.png" data-background-opacity="0.5" data-background-size="contain" class="quarto-title-block center">
+  <h1 class="title">From research software engeneering to data science: how technology will impact the way we research?</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Florencia D’Andrea, Ph.D. 
+</div>
+        <p class="quarto-title-affiliation">
+            University of British Columbia, Canada
+          </p>
+    </div>
+</div>
+
+</section>
+<section class="slide level2">
+
+<div class="cell">
+
+</div>
+<p><strong>Link to the slides</strong>: <a href="www.flor14.github.io/wsu-dandrea/slides.html">www.flor14.github.io/wsu-dandrea/slides.html</a></p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</section>
+<section id="why-do-you-have-to-listen-the-next-50-minutes" class="slide level2">
+<h2>Why do you have to listen the next 50 minutes?</h2>
+<ul>
+<li class="fragment"><p>How reproducibility is connected with coding?</p></li>
+<li class="fragment"><p>Links to different material, organizations, communities, conferences, articles</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section>
+<section>
+<section id="do-researchers-develop-software" class="title-slide slide level1 center" data-background-color="#CDD7D6">
+<h1>Do researchers develop <span class="rn" data-rn-type="circle" data-rn-color="white">software</span>?</h1>
+
+</section>
+<section id="definition-research-software" class="slide level2">
+<h2>{Definition}: Research software</h2>
+<ul>
+<li class="fragment"><p>Research software can be anything <span class="rn" data-rn-type="highlight" data-rn-multiline="true">from a few lines of code written by yourself, to a professionally developed software package</span></p></li>
+<li class="fragment"><p>Software that is used to generate, process or analyse results that you intend to appear in a publication (either in a journal, conference paper, monograph, book or thesis).</p></li>
+</ul>
+<div class="footer">
+<p><a href="https://doi.org/10.5281/zenodo.608046">Hettrick <em>et al.</em> (2014)</a></p>
+</div>
+</section></section>
+<section id="do-researchers-develop-software-1" class="title-slide slide level1 center" data-background-color="#CDD7D6">
+<h1>Do researchers develop <span class="rn" data-rn-type="circle" data-rn-color="white">software</span>?</h1>
+<p><span class="rn" data-rn-type="highlight" data-rn-multiline="true">Yes, they do!</span></p>
+</section>
+
+<section>
+<section id="scientists-create-software-as-part-of-their-reasearch" class="title-slide slide level1 center">
+<h1>Scientists create software as part of their reasearch</h1>
+
+</section>
+<section class="slide level2">
+
+<h3 id="a-survey-of-the-state-of-the-practice-for-research-software-in-the-united-states">A survey of the state of the practice for research software in the United States</h3>
+<blockquote>
+<p>As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (…) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years (Foster, 2006).</p>
+</blockquote>
+<div class="footer">
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022)</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>picture “better software better research”</p>
+</div><div class="column" style="width:60%;">
+<p>What do we have to take into account to write better research software?</p>
+</div>
+</div>
+</section>
+<section id="reproducibility-crisis" class="slide level2">
+<h2>Reproducibility crisis</h2>
+</section>
+<section id="what-does-it-means-that-the-article-is-reproducible" class="slide level2">
+<h2>What does it means that the article is reproducible?</h2>
+
+<img data-src="img/reproducible-matrix.jpg" class="r-stretch"><div class="footer">
+<p>https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html</p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="img/reproducible-definition-grid.svg" class="r-stretch"><div class="footer">
+<p>https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="there-are-different-types-of-reproducibility">There are different types of <code>reproducibility</code></h3>
+<ul>
+<li class="fragment"><strong>Empirical</strong></li>
+<li class="fragment"><strong>Statistical</strong></li>
+<li class="fragment"><strong>Computational</strong>: When detailed information is provided about code, software, hardware and implementation details.</li>
+</ul>
+<div class="footer">
+<p>Victoria Stodden (2014) https://www.edge.org/response-detail/25340.</p>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="the-better-the-software-we-create-the-more-likely-it-is-to-reproduce-research-results-using-it." class="title-slide slide level1 center">
+<h1>The better the software we create, the more likely it is to reproduce research results using it.</h1>
+
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>````{.r} library(ggplot2)</p>
+</section></section>
+<section>
+<section id="code-example" class="title-slide slide level1 center">
+<h1>code example</h1>
+<p>```</p>
+</section>
+<section id="session-info" class="slide level2">
+<h2>Session info</h2>
+
+<img data-src="img/sessioninfo.png" width="600" class="r-stretch quarto-figure-center"></section>
+<section class="slide level2">
+
+<h4 id="how-the-computational-environment-is-captured-could-change-the-experience-of-reproducing-the-article">How the computational environment 💻 is captured could change the experience of reproducing the article</h4>
+</section>
+<section id="computational-environment" class="slide level2">
+<h2>Computational environment</h2>
+</section>
+<section id="section" class="slide level2">
+<h2>💻</h2>
+<p>Characteristics of a computer that can affect the behavior of the work done on it, such as:</p>
+<ul>
+<li class="fragment"><p>your <strong>operating system</strong></p></li>
+<li class="fragment"><p>what <strong>software</strong> do you have installed</p></li>
+<li class="fragment"><p>software <strong>package versions</strong> are installed</p></li>
+</ul>
+<div class="footer">
+<p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
+</div>
+</section>
+<section id="computational-environments" class="slide level2">
+<h2>Computational Environments</h2>
+<p>Important to capture them to avoid:</p>
+<ul>
+<li class="fragment"><p>Problems when sharing your code</p></li>
+<li class="fragment"><p>That you code breaks with time</p></li>
+</ul>
+
+<img data-src="img/ErrorManagement.jpg" width="600" class="r-stretch"><div class="footer">
+<p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a>]</p>
+</div>
+</section>
+<section id="version-control" class="slide level2">
+<h2>Version control</h2>
+<p>pending</p>
+</section>
+<section id="research-compendium" class="slide level2">
+<h2>Research Compendium</h2>
+
+<img data-src="img/compendio1.png" width="450" class="r-stretch quarto-figure-center"><p><a href="https://github.com/benmarwick/rrtools"><code>rrtools</code></a> provides instructions, templates and functions to make a basic compendium suitable for writing <strong>reproducible research with R </strong>.</p>
+<ul>
+<li class="fragment">Anna Krystalli’s <a href="https://annakrystalli.me/rrresearch/10_compendium.html"><code>rrtools</code> Tutorial</a></li>
+</ul>
+<div class="footer">
+<p><a href="https://doi.org/10.1080/00031305.2017.1375986">Marwick <em>et al.</em> (2018)</a>]</p>
+</div>
+</section></section>
+<section>
+<section id="increase-the-code-reproducibility-could-be-achieved-applying-specific-practices-and-tools" class="title-slide slide level1 center">
+<h1>Increase the code reproducibility could be achieved applying specific practices and tools</h1>
+
+</section>
+<section id="reproducibility-has-a-limit" class="slide level2">
+<h2>Reproducibility has a limit</h2>
+<h3 id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users">Did you ever consider that your next scientific article <strong>can have not only readers but also users</strong>?</h3>
+</section>
+<section id="version-control-1" class="slide level2">
+<h2>Version control</h2>
+<p>pending</p>
+</section>
+<section id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users-1" class="slide level2">
+<h2>Did you ever consider that your next scientific article <strong>can have not only readers but also users</strong>?</h2>
+<ul>
+<li class="fragment"><p><span class="rn" data-rn-type="crossed-off" data-rn-color="purple">Readers</span></p></li>
+<li class="fragment"><p><span class="rn" data-rn-type="circle" data-rn-color="green">Users</span></p></li>
+</ul>
+</section>
+<section id="what-happens-when-the-technology-fails" class="slide level2">
+<h2>What happens when the technology fails?</h2>
+
+<img data-src="img/links.png" width="600" class="r-stretch quarto-figure-center"></section>
+<section id="software-mantainance" class="slide level2">
+<h2>Software mantainance</h2>
+<ul>
+<li class="fragment">Should we provide more than one option?</li>
+<li class="fragment">Should our code have <strong>maintainers</strong>?</li>
+</ul>
+
+<img data-src="img/FixingLinks.jpg" width="600" class="r-stretch quarto-figure-center"><div class="footer">
+<p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a></p>
+</div>
+</section></section>
+<section>
+<section id="tools-as-git-and-github-not-only-allow-version-controlling-our-files-if-not-facilitates-software-mantainance-and-open-source-collaboration" class="title-slide slide level1 center">
+<h1>Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration</h1>
+
+</section>
+<section id="there-are-many-communities-that-can-help-to-improve-research-software" class="slide level2">
+<h2>There are many communities that can help to improve research software</h2>
+<ul>
+<li class="fragment">Reprohack</li>
+<li class="fragment">Codecheck</li>
+<li class="fragment">The Turing Way</li>
+<li class="fragment"><code>ROpenSci</code> / <code>pyOpenSci</code></li>
+<li class="fragment">The Carpentries</li>
+</ul>
+</section>
+<section id="reprohack" class="slide level2">
+<h2>Reprohack</h2>
+<h4 id="how-code-and-data-could-be-organised">How <strong>code</strong> and <strong>data</strong> could be organised?</h4>
+</section>
+<section id="hackathon" class="slide level2">
+<h2>Hackathon</h2>
+<h3 id="authors">Authors</h3>
+<p>Send their papers with <strong>publicly available associated code and data</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/circulo.png" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="participants">Participants</h3>
+<p>Attempt to <strong>reproduce published research</strong> of their choice from a list of proposed papers</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/selecciona.png" width="500"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>At the end, the participants give feedback to the authors</p>
+</section>
+<section id="an-example-of-a-submitted-paper" class="slide level2">
+<h2>An example of a <strong>submitted paper</strong></h2>
+<p>Thanks <a href="https://twitter.com/LuisDVerde">Luis Verde</a></p>
+
+<img data-src="img/submited.png" width="700" class="r-stretch quarto-figure-center"></section>
+<section id="as-researchers-we-know-how-a-manuscript-is-organized" class="slide level2">
+<h2>As researchers, we know how a <strong>manuscript</strong> is organized</h2>
+
+<img data-src="img/paper_luis.png" width="700" class="r-stretch"></section>
+<section id="what-i-find-useful-to-reproduce-the-article-results" class="slide level2">
+<h2>What I find useful to reproduce the article results?</h2>
+<p>A clear and detailed description in the <code>README</code> of the files/links necessary to run and where they are</p>
+
+<img data-src="img/estructura.png" width="800" class="r-stretch"><p><a href="https://github.com/benmarwick/rrtools">README template <code>rrtools</code> package</a></p>
+</section>
+<section id="research-compendium-1" class="slide level2">
+<h2>Research Compendium</h2>
+<ol type="1">
+<li class="fragment"><p><strong>Organize files</strong> according to a prevailing convention.</p></li>
+<li class="fragment"><p>Provide <strong>separation between data, methods and results</strong> expressing unambiguously the relationship between the three.</p></li>
+<li class="fragment"><p>Specify the environment (+ <strong>reproducibility</strong>).</p></li>
+</ol>
+
+<img data-src="img/ResearchCompendium.jpg" width="400" class="r-stretch"><div class="footer">
+<p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
+</div>
+</section>
+<section id="how-data-and-code-is-shared" class="slide level2">
+<h2>How data and code is shared?</h2>
+
+<img data-src="img/submited2.png" width="700" class="r-stretch quarto-figure-center"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="reprohack-1" class="title-slide slide level1 center">
+<h1>Reprohack</h1>
+
+<img data-src="img/reprohack.png" width="200" class="r-stretch quarto-figure-center"><p><a href="https://twitter.com/ReproHack">Twitter</a></p>
+<p><a href="https://reprohack-autoinvite.herokuapp.com/">Slack</a></p>
+<p><a href="reprohack.team@gmail.com">Email</a></p>
+</section>
+<section id="code-check" class="slide level2">
+<h2>Code Check</h2>
+<h4 id="reproducibility-is-consider-a-proof-of-research-quality">Reproducibility is consider a proof of <strong>Research Quality</strong></h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/codecheck.png" width="400"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/codecheck2.png" width="700"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://codecheck.org.uk/">Codecheck</a></p>
+</div>
+</section>
+<section id="the-turing-way" class="slide level2">
+<h2>The Turing Way</h2>
+</section>
+<section id="ropensci-pyopensci" class="slide level2">
+<h2>ROpenSci / pyOpenSci</h2>
+</section>
+<section id="software-carpentry" class="slide level2">
+<h2>Software Carpentry</h2>
+<div class="footer">
+<p><a href="https://carpentries.org">The Carpentries</a></p>
+</div>
+</section></section>
+<section>
+<section id="there-are-many-communities-that-can-help-researchers-to-improve-software-developing-skills" class="title-slide slide level1 center">
+<h1>There are many communities that can help researchers to improve software developing skills</h1>
+
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="us-research-software-sustainability-institute" class="title-slide slide level1 center">
+<h1>US Research Software Sustainability Institute</h1>
+<div class="footer">
+<p><a href="https://urssi.us/">US Research Software Sustainability Institute</a></p>
+</div>
+</section>
+<section id="open-source-software" class="slide level2">
+<h2>Open source software</h2>
+<p>However, both institutions that support research (e.g., universities and national laboratories) and grant-making bodies that fund research (e.g., federal agencies and philanthropic organizations) often fail to recognize the central importance of software development and maintenance in conducting novel research (Goble, 2014)</p>
+</section>
+<section id="what-is-a-research-software-engineer" class="slide level2">
+<h2>What is a Research software engineer?</h2>
+
+<img data-src="img/rse-us.png" class="r-stretch"><div class="footer">
+<p>https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-and-service-in-three-dimensions-of-research-software-engineering/</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="how-does-the-existing-ecosystem-based-largely-on-the-historical-practices-related-to-contributions-to-journal-and-conference-papers-and-monographs-measure-store-and-disseminate-information-about-contributions-to-software">How does the existing ecosystem, based largely on the historical practices related to contributions to journal and conference papers and monographs, measure, store, and disseminate information about contributions to software?</h3>
+<p>• How does the existing ecosystem miss information about software contributions?</p>
+<p>In some disciplines, such as those where monographs are typical products, there may be no formal guidelines. Author ordering is another challenge. The ordering of author names typically has some meaning, though the meaning varies between disciplines. S22</p>
+<div class="footer">
+
+</div>
+</section>
+<section id="aknowledging-contribution-in-academic-authors" class="slide level2">
+<h2>Aknowledging contribution in academic authors</h2>
+<p><img data-src="img/acknowledge-authors.png"> :::footer <a href="https://the-turing-way.netlify.app/communication/aa.html">The turing way</a> / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807. :::</p>
+</section>
+<section id="aknowledging-contribution-in-academic-authors-1" class="slide level2">
+<h2>Aknowledging contribution in academic authors</h2>
+<ul>
+<li class="fragment">It can change with the discipline</li>
+<li class="fragment">Plan an authorship strategy early on in a project</li>
+</ul>
+<p>Encourage a culture of ethical and equitable authorship</p>
+</section>
+<section id="publishing-different-article-types" class="slide level2">
+<h2>Publishing different article types</h2>
+<p>Data, dashboards for communication, software… are all valuable research products</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Data Papers</p></li>
+<li class="fragment"><p>Methods Papers</p></li>
+<li class="fragment"><p>Micropublishing</p></li>
+<li class="fragment"><p>Software Papers</p></li>
+<li class="fragment"><p>Registered Reports</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/publishing-diff-articles.png"></p>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://the-turing-way.netlify.app/communication/aa.html">The turing way</a> / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.</p>
+</div>
+</section>
+<section id="career-paths" class="slide level2">
+<h2>Career paths</h2>
+<p>Software in general has not been well-cited (Howison &amp; Bullard, 2016), in part because the scholarly culture has not treated software as something that should be cited, or in some cases, even mentioned. S22</p>
+</section>
+<section id="rse-survey-2022-credit" class="slide level2">
+<h2>RSE Survey 2022: Credit</h2>
+<ul>
+<li class="fragment">The most common approaches are either to <em>cite a paper about the software</em> or to <em>mention the software by name</em></li>
+<li class="fragment">Unfortunately, this practice leads to fewer trackable citations of the software, making it more difficult to judge its impact.</li>
+</ul>
+</section>
+<section id="how-authors-credit-software-used-in-their-research." class="slide level2">
+<h2><img data-src="img/rse_credit.jpg" alt="How authors credit software used in their research."></h2>
+</section>
+<section id="journal-of-open-source-software" class="slide level2">
+<h2>Journal of Open Source Software</h2>
+<p>pending</p>
+</section>
+<section id="recognizing-the-value-of-software-a-software-citation-guide" class="slide level2">
+<h2>Recognizing the value of software: a software citation guide</h2>
+<div class="footer">
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7805487/">Katz <em>et al.</em> (2020) Recognizing the value of software: a software citation guide</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="img/rse-groups.png" class="r-stretch"><div class="footer">
+<p>https://arxiv.org/abs/1903.00732</p>
+</div>
+</section>
+<section id="a-survey-of-the-state-of-the-practice-for-research-software-in-the-united-states-1" class="slide level2">
+<h2>A survey of the state of the practice for research software in the United States</h2>
+<div class="footer">
+<p>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/</p>
+</div>
+</section>
+<section id="why-is-there-no-career-for-software-developers-in-academia" class="slide level2">
+<h2>Why is there no career for software developers in academia?</h2>
+<ul>
+<li class="fragment"><p>In 2012, the Software Sustainability Institute (SSI) organized the Collaborations Workshop (http://software.ac.uk/cw12) that addressed this question.</p></li>
+<li class="fragment"><p>The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the <strong>Society of Research Software Engineering</strong></p></li>
+</ul>
+<p></p><div id="tweet-68531"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-68531").innerHTML = tweet["html"];</script><p></p>
+</section>
+<section class="slide level2">
+
+<h3 id="research-software-engineer-association">Research software engineer association</h3>
+<p>Conference in CHICAGO 2023</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2><img data-src="img/rse_us_logo.png"></h2>
+<h3 id="rse-survey-2022-sources-of-funding">RSE survey 2022: Sources of funding</h3>
+<p><img data-src="img/rse_funding_us.jpg"></p>
+</section></section>
+<section id="the-role-of-research-software-engineer-has-been-created-in-2012-recognize-the-effort-of-software-developers-in-academia" class="title-slide slide level1 center">
+<h1>The role of research software engineer has been created in 2012 recognize the effort of software developers in academia</h1>
+
+</section>
+
+<section id="some-universities-have-created-rse-groups-to-support-reseach-in-their-institutions" class="title-slide slide level1 center">
+<h1>Some universities have created RSE groups to support reseach in their institutions</h1>
+
+</section>
+
+<section>
+<section id="the-us-rse-association-links-all-the-research-software-engineers-in-the-us" class="title-slide slide level1 center">
+<h1>The US-RSE association links all the research software engineers in the US</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="cell" data-layout-align="center">
+
+</div>
+<p>pending</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="data-science" class="title-slide slide level1 center">
+<h1>Data Science</h1>
+<ul>
+<li class="fragment">Statistics</li>
+<li class="fragment">Machine learning</li>
+<li class="fragment">Software development / reproducibility</li>
+<li class="fragment">Data visualization</li>
+<li class="fragment">Databases and cloud computing</li>
+</ul>
+</section>
+<section id="some-comments-about-dashboards" class="slide level2">
+<h2>Some comments about dashboards</h2>
+</section>
+<section id="some-comments-about-databases" class="slide level2">
+<h2>Some comments about databases</h2>
+<ul>
+<li class="fragment">Databases can have versions, the same as the software</li>
+<li class="fragment">Databases can have their own DOI and be cited in isolation</li>
+</ul>
+</section></section>
+<section id="are-rse-the-version-of-data-science-for-academia" class="title-slide slide level1 center">
+<h1>Are RSE the version of data science for academia?</h1>
+
+</section>
+
+<section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+
+</section>
+<section class="slide level2">
+
+<h3 id="the-scientific-community-should-learn-about-reproducible-practices">The scientific community should learn about <strong>reproducible practices</strong></h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><p>Track a complete history of your research and <strong>ensure the continuity of your work</strong></p></li>
+<li class="fragment"><p>Facilitate <strong>collaboration</strong> and review</p></li>
+<li class="fragment"><p>Publish <strong>validated research</strong></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/researchtools.jpg" width="700"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a> | <a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a>]</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="the-scientific-community-should-learn-about-reproducible-practices-1">The scientific community should learn about <strong>reproducible practices</strong></h3>
+<ul>
+<li class="fragment"><p>Write your papers <strong>efficiently</strong></p></li>
+<li class="fragment"><p><strong>Get credit</strong> for your work fairly</p></li>
+</ul>
+
+<img data-src="img/researchtools.jpg" width="700" class="r-stretch quarto-figure-center"><div class="footer">
+<p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a> | <a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a>]</p>
+</div>
+</section>
+<section id="are-we-experiencing-a-cultural-change" class="slide level2">
+<h2>¿Are we experiencing a cultural <strong>change</strong>?</h2>
+<blockquote class="twitter-tweet" data-lang="ens">
+<p lang="en" dir="ltr">
+</p><p>The advert asks for: “A commitment to following the best [..] practices in science, such as [..] sharing of computer code and writing reproducible research reports, [..]sharing of data whenever feasible”</p>
+Have you come across job descriptions asking for such a commitment before?
+<p></p>
+— ReproHack(<span class="citation" data-cites="ReproHack">@ReproHack</span>) <a href="https://twitter.com/ReproHack/status/1296061566484385792?s=20">19 August 2020</a>
+</blockquote>
+</section>
+<section id="are-we-experiencing-a-cultural-change-1" class="slide level2">
+<h2>¿Are we experiencing a cultural <strong>change</strong>?</h2>
+
+<img data-src="img/CultureShift.jpg" width="700" class="r-stretch quarto-figure-center"><div class="footer">
+<p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>From here there are all references. Decide what to keep.</p>
+</section>
+<section id="ana-krystalli---user-2020" class="slide level2">
+<h2>Ana Krystalli - UseR! 2020</h2>
+<p><a href="https://www.youtube.com/watch?v=KHMW8fV2NXo">Video</a></p>
+
+<img data-src="img/anna.png" width="600" class="r-stretch quarto-figure-center"></section>
+<section class="slide level2">
+
+<div class="footer">
+<p><a href="https://www.nature.com/articles/d41586-023-00528-w">AI writing tools could hand scientists the ‘gift of time’ (2023)</a></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="footer">
+<p><a href="https://www.nature.com/nature-index/news-blog/artificial-intelligence-writing-tools-promise-faster-manuscripts-for-researchers">AI writing tools promise faster manuscripts for researchers (2021)</a></p>
+</div>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li class="fragment"><p>Cornell University - <a href="https://data.research.cornell.edu/content/readme">Guide to writing “readme” style metadata</a></p></li>
+<li class="fragment"><p>Hettrick, S., Antonioletti, M., Carr, L., Chue Hong, N., Crouch, S., De Roure, D., … Sufi, S. (2014). UK Research Software Survey 2014 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.14809</p></li>
+<li class="fragment"><p>Jupyter Project, Bussonnier, M., Forde, J., Freeman, J., Granger, B., Head, T., … &amp; Willing, C. (2018, July). <a href="https://pdfs.semanticscholar.org/c043/bef741a9616d1144e0205ac21ceae881485d.pdf?_ga=2.134990321.1289472605.1614439362-796733345.1614439362">Binder 2.0-Reproducible, interactive, sharable environments for science at scale</a>. In Proceedings of the 17th python in science conference (Vol. 113, p.&nbsp;120).</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment"><p>Marwick, B., Boettiger, C., &amp; Mullen, L. (2018). <a href="https://doi.org/10.1080/00031305.2017.1375986">Packaging data analytical work reproducibly using R (and friends). The American Statistician 72(1), 80-88.</a></p></li>
+<li class="fragment"><p>Prana, G.A.A., Treude, C., Thung, F. et al.&nbsp;(2019) <a href="https://link.springer.com/article/10.1007/s10664-018-9660-3#citeas">Categorizing the Content of GitHub README Files.</a> Empir Software Eng 24, 1296–1327 https://doi.org/10.1007/s10664-018-9660-3</p></li>
+<li class="fragment"><p>The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, … Kirstie Whitaker. (2019, March 25). <a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986</a></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="other-videos---talks---books---blogs">Other Videos - Talks - Books - Blogs</h4>
+<ul>
+<li class="fragment"><p><a href="https://mine-cetinkaya-rundel.github.io/improve-repro-workflow-reproducibilitea-2020/slides/improve-repro-workflow-reproducibilitea-2020.pdf">Improve your workflow for reproducible science - Mine Çetinkaya-Rundel</a></p></li>
+<li class="fragment"><p><a href="https://rstudio.com/resources/rstudioconf-2019/a-guide-to-modern-reproducible-data-science-with-r-karthik-ram/">How To Make Your Data Analysis Notebooks More Reproducible - Kartik Rham</a></p></li>
+<li class="fragment"><p><a href="https://environments.rstudio.com/">Reproducible Environments - RStudio</a></p></li>
+<li class="fragment"><p><a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">renv: Project Environments with R - RStudio blog</a></p></li>
+<li class="fragment"><p><a href="https://ropensci.github.io/reproducibility-guide/">ROpenSci - Reproducibility in Science A Guide to enhancing reproducibility in scientific results and writing</a></p></li>
+<li class="fragment"><p><a href="https://annakrystalli.me/talks/r-in-repro-research.html#1">Putting the R into Reproducible Research - Anna Krystalli</a> ]</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="illustrations">Illustrations</h4>
+<ul>
+<li class="fragment">The Turing Way Community, &amp; Scriberia. (2020, March 3). Illustrations from the Turing Way book dashes. Zenodo. http://doi.org/10.5281/zenodo.3695300</li>
+</ul>
+</section>
+<section id="thank-you" class="slide level2">
+<h2>Thank you!</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="dr.-florencia-dandrea">Dr.&nbsp;Florencia D’Andrea</h4>
+<p><strong>Postdoct - Master of Data Science Program - UBC</strong></p>
+<p><a href="http://twitter.com/cantoflor_87"><span class="citation" data-cites="cantoflor_87">@cantoflor_87</span></a><br> <a href="https://florenciadandrea.com">florenciadandrea.com</a></p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="https://res.cloudinary.com/flor/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max/v1614343937/flor_pic_ceyztn.jpg" width="250"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment"><p><a href="https://www.youtube.com/watch?v=8ZSaAM8hhJ4">The Rise of the Research Software Engineer | Mike Croucher | JuliaCon 2018</a></p></li>
+<li class="fragment"><p><a href="https://github.com/USRSE/usrse.github.io/wiki/Why-a-Research-Software-Engineer-Role">Why a Research Software Engineer role?</a></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Goodbye</p>
+
+<img src="img/wsu-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'print',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+<script src="https://platform.twitter.com/widgets.js"></script>
+</body></html>
