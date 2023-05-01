@@ -28,9 +28,12 @@ library(kableExtra)
 
 
 
-**Link to the slides**: [www.flor14.github.io/wsu-dandrea/slides.html](www.flor14.github.io/wsu-dandrea/slides.html)
+**Slides**: [www.flor14.github.io/wsu-dandrea/slides.html](www.flor14.github.io/wsu-dandrea/slides.html)
 
-
+  
+    
+      
+        
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 
@@ -57,10 +60,12 @@ library(kableExtra)
 
 ## {Definition}: Research software
 
+
+- Software that is used to generate, process or analyse results that you intend to appear in a publication 
+
 - Research software can be anything [from a few lines of code written by yourself, to a professionally developed software package]{.rn rn-type=highlight rn-multiline=true}
 
 
-- Software that is used to generate, process or analyse results that you intend to appear in a publication (either in a journal, conference paper, monograph, book or thesis).
 
 :::footer
 [Hettrick *et al.* (2014)](https://doi.org/10.5281/zenodo.608046)
@@ -72,40 +77,46 @@ library(kableExtra)
 
 
 
-# Scientists create software as part of their reasearch
+# Scientists create software as part of their reasearch {background-color="#67032F"}
 
 ---
 
-###  A survey of the state of the practice for research software in the United States
 
-> As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (...) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years (Foster, 2006).
+
+ "As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (...) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while [software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years ]{.rn rn-type=highlight rn-multiline=true} (Foster, 2006)."
 
 :::footer
-[Carver *et al.* (2022)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
+[Carver *et al.* (2022) A survey of the state of the practice for research software in the United States](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
 :::
 
 ---
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 
-picture "better software better research"
+![](img/bettersoftware.jpeg)
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="50%"}
 
-What do we have to take into account to write better research software?
+What are the potential consequences of developing bad quality software?
 
 :::
 
 ::::
 
+:::footer
+Image extracted from: https://www.software.ac.uk/about
+:::
+
 
 ---
 
 ## Reproducibility crisis
+
+Computational / software reproducibility is one aspect of it.
 
 ---
 
@@ -144,27 +155,88 @@ Victoria Stodden (2014) https://www.edge.org/response-detail/25340.
 
 ---
 
-## Example
+## Situation
+#### You want to share your code with a collabortor 
+In your computer this code is working well
 
-````{.r}
+```r
+library(readr)
+library(tidyr)
 library(ggplot2)
 
-# code example
+coffee_data <- read_csv("coffee_data.csv")
+
+coffee_data |> 
+  pivot_longer(cols=aroma:moisture,
+               names_to="coffee",
+               values_to="value") |> 
+  ggplot(aes(value, total_cup_points)) +
+  geom_smooth(method= "gam", span=0.3, color='purple') +
+  facet_wrap(~caracteristicas_cafe, scale="free_y")
 ```
+
 
 ---
 
-## Session info
+## But!
+### Your collaborator gets an error
 
-```{r sessioninfo, echo = FALSE, out.width=600, fig.align='center'}
-knitr::include_graphics("img/sessioninfo.png")
+```r
+Error in pivot_longer(., 
+cols = aroma:moisture,
+names_to = "caracteristicas_cafe",
+: could not find function "pivot_longer"
 ```
+
+> What could be going on?
 
 ---
 
+## Functions included in a new package version
+
+ `tidyr 0.8.3` does not include `pivot_longer()` and `pivot_wider()` functions added in `tidyr` version `1.0.0`
 
 
-#### How the computational environment 💻 is captured could change the experience of reproducing the article
+This means that code that is working in your computer now **may not work** anymore if you upgrade your packages!!!
+
+
+---
+
+## Challenge to scientists: does your ten-year-old code still run?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+![](img/failed-2.webp)
+
+:::
+
+::: {.column width="50%"}
+
+
+
+:::
+
+::::
+
+:::footer
+https://www.nature.com/articles/d41586-020-02462-7
+:::
+
+
+
+
+
+---
+
+## Degree of reproducibility
+
+
+
+
+
+
 
 
 
@@ -204,6 +276,12 @@ knitr::include_graphics("img/ErrorManagement.jpg")
 :::footer
 [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)]
 :::
+
+---
+
+
+
+#### How the computational environment 💻 is captured could change the experience of reproducing the article {background-color="#CDD7D6"}
 
 ---
 

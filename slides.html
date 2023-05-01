@@ -30,6 +30,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -348,7 +412,7 @@ Florencia D’Andrea, Ph.D.
 <div class="cell">
 
 </div>
-<p><strong>Link to the slides</strong>: <a href="www.flor14.github.io/wsu-dandrea/slides.html">www.flor14.github.io/wsu-dandrea/slides.html</a></p>
+<p><strong>Slides</strong>: <a href="www.flor14.github.io/wsu-dandrea/slides.html">www.flor14.github.io/wsu-dandrea/slides.html</a></p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </section>
 <section id="why-do-you-have-to-listen-the-next-50-minutes" class="slide level2">
@@ -369,8 +433,8 @@ Florencia D’Andrea, Ph.D.
 <section id="definition-research-software" class="slide level2">
 <h2>{Definition}: Research software</h2>
 <ul>
+<li class="fragment"><p>Software that is used to generate, process or analyse results that you intend to appear in a publication</p></li>
 <li class="fragment"><p>Research software can be anything <span class="rn" data-rn-type="highlight" data-rn-multiline="true">from a few lines of code written by yourself, to a professionally developed software package</span></p></li>
-<li class="fragment"><p>Software that is used to generate, process or analyse results that you intend to appear in a publication (either in a journal, conference paper, monograph, book or thesis).</p></li>
 </ul>
 <div class="footer">
 <p><a href="https://doi.org/10.5281/zenodo.608046">Hettrick <em>et al.</em> (2014)</a></p>
@@ -382,32 +446,33 @@ Florencia D’Andrea, Ph.D.
 </section>
 
 <section>
-<section id="scientists-create-software-as-part-of-their-reasearch" class="title-slide slide level1 center">
+<section id="scientists-create-software-as-part-of-their-reasearch" class="title-slide slide level1 center" data-background-color="#67032F">
 <h1>Scientists create software as part of their reasearch</h1>
 
 </section>
 <section class="slide level2">
 
-<h3 id="a-survey-of-the-state-of-the-practice-for-research-software-in-the-united-states">A survey of the state of the practice for research software in the United States</h3>
-<blockquote>
-<p>As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (…) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years (Foster, 2006).</p>
-</blockquote>
+<p>“As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (…) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while <span class="rn" data-rn-type="highlight" data-rn-multiline="true">software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years</span> (Foster, 2006).”</p>
 <div class="footer">
-<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022)</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022) A survey of the state of the practice for research software in the United States</a></p>
 </div>
 </section>
 <section class="slide level2">
 
 <div class="columns">
-<div class="column" style="width:40%;">
-<p>picture “better software better research”</p>
-</div><div class="column" style="width:60%;">
-<p>What do we have to take into account to write better research software?</p>
+<div class="column" style="width:50%;">
+<p><img data-src="img/bettersoftware.jpeg"></p>
+</div><div class="column" style="width:50%;">
+<p>What are the potential consequences of developing bad quality software?</p>
 </div>
+</div>
+<div class="footer">
+<p>Image extracted from: https://www.software.ac.uk/about</p>
 </div>
 </section>
 <section id="reproducibility-crisis" class="slide level2">
 <h2>Reproducibility crisis</h2>
+<p>Computational / software reproducibility is one aspect of it.</p>
 </section>
 <section id="what-does-it-means-that-the-article-is-reproducible" class="slide level2">
 <h2>What does it means that the article is reproducible?</h2>
@@ -443,22 +508,55 @@ Florencia D’Andrea, Ph.D.
 <h1>The better the software we create, the more likely it is to reproduce research results using it.</h1>
 
 </section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>````{.r} library(ggplot2)</p>
-</section></section>
-<section>
-<section id="code-example" class="title-slide slide level1 center">
-<h1>code example</h1>
-<p>```</p>
+<section id="situation" class="slide level2">
+<h2>Situation</h2>
+<h4 id="you-want-to-share-your-code-with-a-collabortor">You want to share your code with a collabortor</h4>
+<p>In your computer this code is working well</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>coffee_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"coffee_data.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>coffee_data <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span>aroma<span class="sc">:</span>moisture,</span>
+<span id="cb1-9"><a href="#cb1-9"></a>               <span class="at">names_to=</span><span class="st">"coffee"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>               <span class="at">values_to=</span><span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, total_cup_points)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span> <span class="st">"gam"</span>, <span class="at">span=</span><span class="fl">0.3</span>, <span class="at">color=</span><span class="st">'purple'</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>caracteristicas_cafe, <span class="at">scale=</span><span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="session-info" class="slide level2">
-<h2>Session info</h2>
+<section id="but" class="slide level2">
+<h2>But!</h2>
+<h3 id="your-collaborator-gets-an-error">Your collaborator gets an error</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>Error <span class="cf">in</span> <span class="fu">pivot_longer</span>(., </span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="at">cols =</span> aroma<span class="sc">:</span>moisture,</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="at">names_to =</span> <span class="st">"caracteristicas_cafe"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="sc">:</span> could not find <span class="cf">function</span> <span class="st">"pivot_longer"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote>
+<p>What could be going on?</p>
+</blockquote>
+</section>
+<section id="functions-included-in-a-new-package-version" class="slide level2">
+<h2>Functions included in a new package version</h2>
+<p><code>tidyr 0.8.3</code> does not include <code>pivot_longer()</code> and <code>pivot_wider()</code> functions added in <code>tidyr</code> version <code>1.0.0</code></p>
+<p>This means that code that is working in your computer now <strong>may not work</strong> anymore if you upgrade your packages!!!</p>
+</section>
+<section id="challenge-to-scientists-does-your-ten-year-old-code-still-run" class="slide level2">
+<h2>Challenge to scientists: does your ten-year-old code still run?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/failed-2.webp"></p>
+</div><div class="column" style="width:50%;">
 
-<img data-src="img/sessioninfo.png" width="600" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-<h4 id="how-the-computational-environment-is-captured-could-change-the-experience-of-reproducing-the-article">How the computational environment 💻 is captured could change the experience of reproducing the article</h4>
+</div>
+</div>
+<div class="footer">
+<p>https://www.nature.com/articles/d41586-020-02462-7</p>
+</div>
+</section>
+<section id="degree-of-reproducibility" class="slide level2">
+<h2>Degree of reproducibility</h2>
 </section>
 <section id="computational-environment" class="slide level2">
 <h2>Computational environment</h2>
@@ -486,6 +584,10 @@ Florencia D’Andrea, Ph.D.
 <img data-src="img/ErrorManagement.jpg" width="600" class="r-stretch"><div class="footer">
 <p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a>]</p>
 </div>
+</section>
+<section class="slide level2">
+
+<h4 data-background-color="#CDD7D6" id="how-the-computational-environment-is-captured-could-change-the-experience-of-reproducing-the-article">How the computational environment 💻 is captured could change the experience of reproducing the article</h4>
 </section>
 <section id="version-control" class="slide level2">
 <h2>Version control</h2>
@@ -738,10 +840,8 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment">The most common approaches are either to <em>cite a paper about the software</em> or to <em>mention the software by name</em></li>
 <li class="fragment">Unfortunately, this practice leads to fewer trackable citations of the software, making it more difficult to judge its impact.</li>
 </ul>
-</section>
-<section id="how-authors-credit-software-used-in-their-research." class="slide level2">
-<h2><img data-src="img/rse_credit.jpg" alt="How authors credit software used in their research."></h2>
-</section>
+
+<img data-src="img/rse_credit.jpg" class="r-stretch quarto-figure-center"><p class="caption">How authors credit software used in their research.</p></section>
 <section id="journal-of-open-source-software" class="slide level2">
 <h2>Journal of Open Source Software</h2>
 <p>pending</p>
@@ -759,7 +859,7 @@ Florencia D’Andrea, Ph.D.
 <p>https://arxiv.org/abs/1903.00732</p>
 </div>
 </section>
-<section id="a-survey-of-the-state-of-the-practice-for-research-software-in-the-united-states-1" class="slide level2">
+<section id="a-survey-of-the-state-of-the-practice-for-research-software-in-the-united-states" class="slide level2">
 <h2>A survey of the state of the practice for research software in the United States</h2>
 <div class="footer">
 <p>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/</p>
@@ -771,18 +871,19 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment"><p>In 2012, the Software Sustainability Institute (SSI) organized the Collaborations Workshop (http://software.ac.uk/cw12) that addressed this question.</p></li>
 <li class="fragment"><p>The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the <strong>Society of Research Software Engineering</strong></p></li>
 </ul>
-<p></p><div id="tweet-68531"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-68531").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-75718"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-75718").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section class="slide level2">
 
 <h3 id="research-software-engineer-association">Research software engineer association</h3>
 <p>Conference in CHICAGO 2023</p>
-</section>
-<section id="section-1" class="slide level2">
-<h2><img data-src="img/rse_us_logo.png"></h2>
+
+<img data-src="img/rse_us_logo.png" class="r-stretch"></section>
+<section class="slide level2">
+
 <h3 id="rse-survey-2022-sources-of-funding">RSE survey 2022: Sources of funding</h3>
-<p><img data-src="img/rse_funding_us.jpg"></p>
-</section></section>
+
+<img data-src="img/rse_funding_us.jpg" class="r-stretch"></section></section>
 <section id="the-role-of-research-software-engineer-has-been-created-in-2012-recognize-the-effort-of-software-developers-in-academia" class="title-slide slide level1 center">
 <h1>The role of research software engineer has been created in 2012 recognize the effort of software developers in academia</h1>
 
