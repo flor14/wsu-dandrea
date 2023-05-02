@@ -42,14 +42,17 @@ $presentation-heading-color: #DF928E !default;
 }
 
 .sectionhead {
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
-  color: $presentation-heading-color;
+  color: #FFF;
   font-family: $presentation-heading-font;
-  background-color: $body-bg;
+  background-color: #67032F;
   margin: 1px;
   padding: 2px 2px 2px 2px;
   width: 300px;
   border-left: 10px solid;
 }
 
+.reveal .footer {
+  font-size: 0.65em !important;
+}

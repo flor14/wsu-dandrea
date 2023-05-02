@@ -448,7 +448,9 @@ Florencia D’Andrea, Ph.D.
 <section>
 <section id="scientists-create-software-as-part-of-their-reasearch" class="title-slide slide level1 center" data-background-color="#67032F">
 <h1>Scientists create software as part of their reasearch</h1>
-
+<div class="sectionhead">
+<p>1 <span style="opacity:0.25">2 3 4 5</span></p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -457,8 +459,8 @@ Florencia D’Andrea, Ph.D.
 <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022) A survey of the state of the practice for research software in the United States</a></p>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="the-quality-of-software-can-affect-research" class="slide level2">
+<h2>The quality of software can affect research</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="img/bettersoftware.jpeg"></p>
@@ -472,7 +474,16 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section id="reproducibility-crisis" class="slide level2">
 <h2>Reproducibility crisis</h2>
-<p>Computational / software reproducibility is one aspect of it.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/rep-crisis.png"></p>
+</div><div class="column" style="width:50%;">
+<p><em>Code unavailable is one of the reasons why researchers can’t reproduce their articles</em></p>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.nature.com/articles/533452a">Baker, M (2016) 1,500 scientists lift the lid on reproducibility - Nature</a></p>
+</div>
 </section>
 <section id="what-does-it-means-that-the-article-is-reproducible" class="slide level2">
 <h2>What does it means that the article is reproducible?</h2>
@@ -490,11 +501,11 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section class="slide level2">
 
-<h3 id="there-are-different-types-of-reproducibility">There are different types of <code>reproducibility</code></h3>
+<h3 id="reproducibility-types"><code>Reproducibility</code> types</h3>
 <ul>
 <li class="fragment"><strong>Empirical</strong></li>
 <li class="fragment"><strong>Statistical</strong></li>
-<li class="fragment"><strong>Computational</strong>: When detailed information is provided about code, software, hardware and implementation details.</li>
+<li class="fragment"><span class="rn" data-rn-type="highlight" data-rn-multiline="true"><strong>Computational</strong>: When detailed information is provided about code, software, hardware and implementation details.</span></li>
 </ul>
 <div class="footer">
 <p>Victoria Stodden (2014) https://www.edge.org/response-detail/25340.</p>
@@ -504,13 +515,21 @@ Florencia D’Andrea, Ph.D.
 
 </section></section>
 <section>
-<section id="the-better-the-software-we-create-the-more-likely-it-is-to-reproduce-research-results-using-it." class="title-slide slide level1 center">
-<h1>The better the software we create, the more likely it is to reproduce research results using it.</h1>
+<section id="the-better-the-software-we-create-the-more-likely-it-is-to-reproduce-research-results-using-it" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1>The better the software we create, the more likely it is to reproduce research results using it</h1>
 
 </section>
-<section id="situation" class="slide level2">
-<h2>Situation</h2>
-<h4 id="you-want-to-share-your-code-with-a-collabortor">You want to share your code with a collabortor</h4>
+<section id="situation-1" class="slide level2">
+<h2>Situation 1</h2>
+<iframe src="https://giphy.com/embed/61ZECYSs0O0DNDfKS1" width="480" height="270" frameborder="0" class="giphy-embed" allowfullscreen="">
+</iframe>
+<p>
+<a href="https://giphy.com/gifs/Massivesci-bored-working-typing-61ZECYSs0O0DNDfKS1">via GIPHY</a>
+</p>
+</section>
+<section class="slide level2">
+
+<h4 id="you-want-to-share-your-code-with-a-collaborator">You want to share your code with a collaborator</h4>
 <p>In your computer this code is working well</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyr)</span>
@@ -524,54 +543,23 @@ Florencia D’Andrea, Ph.D.
 <span id="cb1-10"><a href="#cb1-10"></a>               <span class="at">values_to=</span><span class="st">"value"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb1-11"><a href="#cb1-11"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, total_cup_points)) <span class="sc">+</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span> <span class="st">"gam"</span>, <span class="at">span=</span><span class="fl">0.3</span>, <span class="at">color=</span><span class="st">'purple'</span>) <span class="sc">+</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>caracteristicas_cafe, <span class="at">scale=</span><span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>types_coffe, <span class="at">scale=</span><span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="but" class="slide level2">
 <h2>But!</h2>
 <h3 id="your-collaborator-gets-an-error">Your collaborator gets an error</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>Error <span class="cf">in</span> <span class="fu">pivot_longer</span>(., </span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="at">cols =</span> aroma<span class="sc">:</span>moisture,</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="at">names_to =</span> <span class="st">"caracteristicas_cafe"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="at">names_to =</span> <span class="st">"types_coffe"</span>,</span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="sc">:</span> could not find <span class="cf">function</span> <span class="st">"pivot_longer"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote>
-<p>What could be going on?</p>
-</blockquote>
+<p>🤔 <strong>What could be going on?</strong></p>
 </section>
 <section id="functions-included-in-a-new-package-version" class="slide level2">
 <h2>Functions included in a new package version</h2>
+<blockquote>
 <p><code>tidyr 0.8.3</code> does not include <code>pivot_longer()</code> and <code>pivot_wider()</code> functions added in <code>tidyr</code> version <code>1.0.0</code></p>
-<p>This means that code that is working in your computer now <strong>may not work</strong> anymore if you upgrade your packages!!!</p>
-</section>
-<section id="challenge-to-scientists-does-your-ten-year-old-code-still-run" class="slide level2">
-<h2>Challenge to scientists: does your ten-year-old code still run?</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="img/failed-2.webp"></p>
-</div><div class="column" style="width:50%;">
-
-</div>
-</div>
-<div class="footer">
-<p>https://www.nature.com/articles/d41586-020-02462-7</p>
-</div>
-</section>
-<section id="degree-of-reproducibility" class="slide level2">
-<h2>Degree of reproducibility</h2>
-</section>
-<section id="computational-environment" class="slide level2">
-<h2>Computational environment</h2>
-</section>
-<section id="section" class="slide level2">
-<h2>💻</h2>
-<p>Characteristics of a computer that can affect the behavior of the work done on it, such as:</p>
-<ul>
-<li class="fragment"><p>your <strong>operating system</strong></p></li>
-<li class="fragment"><p>what <strong>software</strong> do you have installed</p></li>
-<li class="fragment"><p>software <strong>package versions</strong> are installed</p></li>
-</ul>
-<div class="footer">
-<p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
-</div>
+</blockquote>
+<p><span class="rn" data-rn-type="box" data-rn-color="purple">This means that code that is working in your computer now <strong>may not work</strong> anymore if you upgrade your packages!!!</span></p>
 </section>
 <section id="computational-environments" class="slide level2">
 <h2>Computational Environments</h2>
@@ -585,49 +573,131 @@ Florencia D’Andrea, Ph.D.
 <p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a>]</p>
 </div>
 </section>
+<section id="challenge-to-scientists-does-your-ten-year-old-code-still-run" class="slide level2">
+<h2>Challenge to scientists: does your ten-year-old code still run?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/failed-2.webp"></p>
+</div><div class="column" style="width:50%;">
+<p><em>‘Missing documentation and obsolete environments force participants in the Ten Years Reproducibility Challenge to get creative.’</em></p>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.nature.com/articles/d41586-020-02462-7">Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? - Nature</a></p>
+</div>
+</section>
 <section class="slide level2">
 
 <h4 data-background-color="#CDD7D6" id="how-the-computational-environment-is-captured-could-change-the-experience-of-reproducing-the-article">How the computational environment 💻 is captured could change the experience of reproducing the article</h4>
 </section>
-<section id="version-control" class="slide level2">
-<h2>Version control</h2>
-<p>pending</p>
+<section id="computational-environment" class="slide level2">
+<h2>Computational environment</h2>
+<h4 id="section">💻</h4>
+<p>Characteristics of a computer that can affect the behavior of the work done on it, such as:</p>
+<ul>
+<li class="fragment"><p>your <strong>operating system</strong></p></li>
+<li class="fragment"><p>what <strong>software</strong> do you have installed</p></li>
+<li class="fragment"><p>software <strong>package versions</strong> are installed</p></li>
+</ul>
+<div class="footer">
+<p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
+</div>
 </section>
-<section id="research-compendium" class="slide level2">
-<h2>Research Compendium</h2>
+<section id="how-to-avoid-to-have-this-error" class="slide level2">
+<h2>How to avoid to have this error?</h2>
+<p>Minimum: Documentation</p>
+<p>sessionInfo()</p>
+</section>
+<section class="slide level2">
 
-<img data-src="img/compendio1.png" width="450" class="r-stretch quarto-figure-center"><p><a href="https://github.com/benmarwick/rrtools"><code>rrtools</code></a> provides instructions, templates and functions to make a basic compendium suitable for writing <strong>reproducible research with R </strong>.</p>
+<h4 id="tools-for-reproducibility">Tools for reproducibility</h4>
+<p>There are different tools to ensure the reproducibility of your project.</p>
+<ul>
+<li class="fragment">Docker</li>
+<li class="fragment">Package managers</li>
+</ul>
+</section>
+<section id="situation-2" class="slide level2">
+<h2>Situation 2</h2>
+<p>A new Ph.D.&nbsp;is starting in your lab. What is the best way to save the code he has created with other members of the group?</p>
+</section>
+<section id="version-control" class="slide level2">
+<h2>Version Control</h2>
+<p>Widely used tools for software development</p>
+<ul>
+<li class="fragment"><p>Git</p></li>
+<li class="fragment"><p>GitHub</p></li>
+</ul>
+</section>
+<section id="why-git-and-github-is-the-best-way-to-share-code" class="slide level2">
+<h2>Why Git and GitHub is the best way to share code?</h2>
+<ul>
+<li class="fragment"><p>We can specific names to each code version and go back to particular sections of the code</p></li>
+<li class="fragment"><p>We can contribute directly to their repository</p></li>
+<li class="fragment"><p>Track the autorship</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>You can decide to work in a private repository, but eventually the code could be share using GitHub when the article is published.</p>
+
+<img data-src="img/openresearch.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<h4 id="many-research-groups-have-their-github-organizations-online">Many research groups have their GitHub organizations online</h4>
+<p>Sharing all the code produce as part of their research</p>
+<p><img data-src="img/github-lab.png"> :::footer https://github.com/dib-lab :::</p>
+</section>
+<section id="situation-3" class="slide level2">
+<h2>Situation 3</h2>
+<p>The PhD wants to publish the first article. How to do it in a reproducible way?</p>
+<ul>
+<li class="fragment">Capture the computational enviroment</li>
+<li class="fragment">Version control Git - GitHub</li>
+</ul>
+</section>
+<section id="reproducible-code-for-your-article" class="slide level2">
+<h2>Reproducible code for your article</h2>
+<h4 id="research-compendium">Research Compendium</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/compendio1.png" width="450"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><a href="https://github.com/benmarwick/rrtools"><code>rrtools</code></a> provides instructions, templates and functions to make a basic compendium suitable for writing <strong>reproducible research with R </strong>.</p>
 <ul>
 <li class="fragment">Anna Krystalli’s <a href="https://annakrystalli.me/rrresearch/10_compendium.html"><code>rrtools</code> Tutorial</a></li>
 </ul>
-<div class="footer">
-<p><a href="https://doi.org/10.1080/00031305.2017.1375986">Marwick <em>et al.</em> (2018)</a>]</p>
-</div>
-</section></section>
-<section>
-<section id="increase-the-code-reproducibility-could-be-achieved-applying-specific-practices-and-tools" class="title-slide slide level1 center">
+</div><div class="footer">
+<p><a href="https://doi.org/10.1080/00031305.2017.1375986">Marwick <em>et al.</em> (2018)</a></p>
+</div><section id="increase-the-code-reproducibility-could-be-achieved-applying-specific-practices-and-tools" class="title-slide slide level1 center" data-background-color="#67032F">
 <h1>Increase the code reproducibility could be achieved applying specific practices and tools</h1>
-
+<hr>
 </section>
-<section id="reproducibility-has-a-limit" class="slide level2">
-<h2>Reproducibility has a limit</h2>
-<h3 id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users">Did you ever consider that your next scientific article <strong>can have not only readers but also users</strong>?</h3>
-</section>
-<section id="version-control-1" class="slide level2">
-<h2>Version control</h2>
-<p>pending</p>
-</section>
-<section id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users-1" class="slide level2">
+<section id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users" class="slide level2">
 <h2>Did you ever consider that your next scientific article <strong>can have not only readers but also users</strong>?</h2>
 <ul>
 <li class="fragment"><p><span class="rn" data-rn-type="crossed-off" data-rn-color="purple">Readers</span></p></li>
 <li class="fragment"><p><span class="rn" data-rn-type="circle" data-rn-color="green">Users</span></p></li>
 </ul>
+<hr>
+</section>
+<section id="reproducibility-has-a-limit" class="slide level2">
+<h2>Reproducibility has a limit</h2>
+<hr>
 </section>
 <section id="what-happens-when-the-technology-fails" class="slide level2">
 <h2>What happens when the technology fails?</h2>
 
-<img data-src="img/links.png" width="600" class="r-stretch quarto-figure-center"></section>
+<img data-src="img/links.png" width="600" class="r-stretch quarto-figure-center"><hr>
+</section>
 <section id="software-mantainance" class="slide level2">
 <h2>Software mantainance</h2>
 <ul>
@@ -638,11 +708,18 @@ Florencia D’Andrea, Ph.D.
 <img data-src="img/FixingLinks.jpg" width="600" class="r-stretch quarto-figure-center"><div class="footer">
 <p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a></p>
 </div>
-</section></section>
-<section>
-<section id="tools-as-git-and-github-not-only-allow-version-controlling-our-files-if-not-facilitates-software-mantainance-and-open-source-collaboration" class="title-slide slide level1 center">
-<h1>Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration</h1>
+<hr>
+</section>
+<section id="github" class="slide level2">
+<h2>GitHub</h2>
 
+<img data-src="img/successors.png" class="r-stretch"><div class="footer">
+<p>[GitHub Documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories}</p>
+</div>
+</section>
+<section id="tools-as-git-and-github-not-only-allow-version-controlling-our-files-if-not-facilitates-software-mantainance-and-open-source-collaboration" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1>Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration</h1>
+<hr>
 </section>
 <section id="there-are-many-communities-that-can-help-to-improve-research-software" class="slide level2">
 <h2>There are many communities that can help to improve research software</h2>
@@ -653,10 +730,12 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment"><code>ROpenSci</code> / <code>pyOpenSci</code></li>
 <li class="fragment">The Carpentries</li>
 </ul>
+<hr>
 </section>
 <section id="reprohack" class="slide level2">
 <h2>Reprohack</h2>
-<h4 id="how-code-and-data-could-be-organised">How <strong>code</strong> and <strong>data</strong> could be organised?</h4>
+<h4 id="reproducibility-hackathons">Reproducibility hackathons</h4>
+<hr>
 </section>
 <section id="hackathon" class="slide level2">
 <h2>Hackathon</h2>
@@ -683,21 +762,24 @@ Florencia D’Andrea, Ph.D.
 </div>
 </div>
 <p>At the end, the participants give feedback to the authors</p>
+<hr>
 </section>
 <section id="an-example-of-a-submitted-paper" class="slide level2">
 <h2>An example of a <strong>submitted paper</strong></h2>
-<p>Thanks <a href="https://twitter.com/LuisDVerde">Luis Verde</a></p>
 
-<img data-src="img/submited.png" width="700" class="r-stretch quarto-figure-center"></section>
+<img data-src="img/submited.png" width="700" class="r-stretch quarto-figure-center"><hr>
+</section>
 <section id="as-researchers-we-know-how-a-manuscript-is-organized" class="slide level2">
 <h2>As researchers, we know how a <strong>manuscript</strong> is organized</h2>
 
-<img data-src="img/paper_luis.png" width="700" class="r-stretch"></section>
+<img data-src="img/paper_luis.png" width="700" class="r-stretch"><hr>
+</section>
 <section id="what-i-find-useful-to-reproduce-the-article-results" class="slide level2">
 <h2>What I find useful to reproduce the article results?</h2>
 <p>A clear and detailed description in the <code>README</code> of the files/links necessary to run and where they are</p>
 
 <img data-src="img/estructura.png" width="800" class="r-stretch"><p><a href="https://github.com/benmarwick/rrtools">README template <code>rrtools</code> package</a></p>
+<hr>
 </section>
 <section id="research-compendium-1" class="slide level2">
 <h2>Research Compendium</h2>
@@ -710,21 +792,12 @@ Florencia D’Andrea, Ph.D.
 <img data-src="img/ResearchCompendium.jpg" width="400" class="r-stretch"><div class="footer">
 <p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
 </div>
+<hr>
 </section>
 <section id="how-data-and-code-is-shared" class="slide level2">
 <h2>How data and code is shared?</h2>
 
-<img data-src="img/submited2.png" width="700" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="reprohack-1" class="title-slide slide level1 center">
-<h1>Reprohack</h1>
-
-<img data-src="img/reprohack.png" width="200" class="r-stretch quarto-figure-center"><p><a href="https://twitter.com/ReproHack">Twitter</a></p>
-<p><a href="https://reprohack-autoinvite.herokuapp.com/">Slack</a></p>
-<p><a href="reprohack.team@gmail.com">Email</a></p>
+<img data-src="img/submited2.png" width="700" class="r-stretch quarto-figure-center"><hr>
 </section>
 <section id="code-check" class="slide level2">
 <h2>Code Check</h2>
@@ -750,57 +823,64 @@ Florencia D’Andrea, Ph.D.
 <div class="footer">
 <p><a href="https://codecheck.org.uk/">Codecheck</a></p>
 </div>
+<hr>
 </section>
 <section id="the-turing-way" class="slide level2">
 <h2>The Turing Way</h2>
+<hr>
 </section>
 <section id="ropensci-pyopensci" class="slide level2">
 <h2>ROpenSci / pyOpenSci</h2>
+<hr>
 </section>
 <section id="software-carpentry" class="slide level2">
 <h2>Software Carpentry</h2>
 <div class="footer">
 <p><a href="https://carpentries.org">The Carpentries</a></p>
 </div>
-</section></section>
-<section>
-<section id="there-are-many-communities-that-can-help-researchers-to-improve-software-developing-skills" class="title-slide slide level1 center">
-<h1>There are many communities that can help researchers to improve software developing skills</h1>
-
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
+<section id="there-are-many-communities-that-can-help-researchers-to-improve-software-developing" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1>There are many communities that can help researchers to improve software developing</h1>
+<hr>
+</section>
 <section id="us-research-software-sustainability-institute" class="title-slide slide level1 center">
 <h1>US Research Software Sustainability Institute</h1>
 <div class="footer">
 <p><a href="https://urssi.us/">US Research Software Sustainability Institute</a></p>
 </div>
+<hr>
 </section>
 <section id="open-source-software" class="slide level2">
 <h2>Open source software</h2>
 <p>However, both institutions that support research (e.g., universities and national laboratories) and grant-making bodies that fund research (e.g., federal agencies and philanthropic organizations) often fail to recognize the central importance of software development and maintenance in conducting novel research (Goble, 2014)</p>
+<hr>
 </section>
 <section id="what-is-a-research-software-engineer" class="slide level2">
 <h2>What is a Research software engineer?</h2>
-
-<img data-src="img/rse-us.png" class="r-stretch"><div class="footer">
+<p><img data-src="img/rse-us.png"></p>
+<div class="footer">
 <p>https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-and-service-in-three-dimensions-of-research-software-engineering/</p>
 </div>
-</section>
-<section class="slide level2">
-
+<hr>
+<p><img data-src="img/rse-skills.jpg"></p>
+<div class="footer">
+<p><a href="https://www.turing.ac.uk/research/research-engineering/meet-the-team">The Alan Turing Institute - Meet the team</a></p>
+</div>
+<hr>
 <h3 id="how-does-the-existing-ecosystem-based-largely-on-the-historical-practices-related-to-contributions-to-journal-and-conference-papers-and-monographs-measure-store-and-disseminate-information-about-contributions-to-software">How does the existing ecosystem, based largely on the historical practices related to contributions to journal and conference papers and monographs, measure, store, and disseminate information about contributions to software?</h3>
 <p>• How does the existing ecosystem miss information about software contributions?</p>
 <p>In some disciplines, such as those where monographs are typical products, there may be no formal guidelines. Author ordering is another challenge. The ordering of author names typically has some meaning, though the meaning varies between disciplines. S22</p>
 <div class="footer">
 
 </div>
+<hr>
 </section>
 <section id="aknowledging-contribution-in-academic-authors" class="slide level2">
 <h2>Aknowledging contribution in academic authors</h2>
-<p><img data-src="img/acknowledge-authors.png"> :::footer <a href="https://the-turing-way.netlify.app/communication/aa.html">The turing way</a> / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807. :::</p>
+<p><img data-src="img/acknowledge-authors.png"> :::footer <a href="https://the-turing-way.netlify.app/communication/aa.html">The turing way</a> / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.</p>
+</section>
+
+</div>
 </section>
 <section id="aknowledging-contribution-in-academic-authors-1" class="slide level2">
 <h2>Aknowledging contribution in academic authors</h2>
@@ -871,14 +951,14 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment"><p>In 2012, the Software Sustainability Institute (SSI) organized the Collaborations Workshop (http://software.ac.uk/cw12) that addressed this question.</p></li>
 <li class="fragment"><p>The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the <strong>Society of Research Software Engineering</strong></p></li>
 </ul>
-<p></p><div id="tweet-75718"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-75718").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-76790"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-76790").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section class="slide level2">
 
-<h3 id="research-software-engineer-association">Research software engineer association</h3>
-<p>Conference in CHICAGO 2023</p>
-
-<img data-src="img/rse_us_logo.png" class="r-stretch"></section>
+<h3 id="us-research-software-engineer-association">US Research software engineer association</h3>
+<p><strong>First conference</strong> October 16-18th, 2023, Chicago, IL</p>
+<p><img data-src="img/rse_us_logo.png"> :::footer https://us-rse.org/usrse23/ :::</p>
+</section>
 <section class="slide level2">
 
 <h3 id="rse-survey-2022-sources-of-funding">RSE survey 2022: Sources of funding</h3>
@@ -1074,9 +1154,13 @@ Have you come across job descriptions asking for such a commitment before?
 <li class="fragment"><p><a href="https://github.com/USRSE/usrse.github.io/wiki/Why-a-Research-Software-Engineer-Role">Why a Research Software Engineer role?</a></p></li>
 </ul>
 </section>
+<section id="references-1" class="slide level2">
+<h2>References</h2>
+<p>Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016). https://doi.org/10.1038/533452a</p>
+</section>
 <section class="slide level2">
 
-<p>Goodbye</p>
+<p>Thank you</p>
 
 <img src="img/wsu-logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 

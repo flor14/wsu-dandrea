@@ -79,6 +79,10 @@ library(kableExtra)
 
 # Scientists create software as part of their reasearch {background-color="#67032F"}
 
+::: {.sectionhead}
+1 [2 3 4 5]{style="opacity:0.25"}
+:::
+
 ---
 
 
@@ -90,6 +94,8 @@ library(kableExtra)
 :::
 
 ---
+
+## The quality of software can affect research
 
 :::: {.columns}
 
@@ -116,7 +122,26 @@ Image extracted from: https://www.software.ac.uk/about
 
 ## Reproducibility crisis
 
-Computational / software reproducibility is one aspect of it.
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](img/rep-crisis.png)
+
+:::
+
+
+::: {.column width="50%"}
+
+*Code unavailable is one of the reasons why researchers can't reproduce their articles*
+
+:::
+::::
+
+:::footer
+[Baker, M (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/articles/533452a)
+:::
+
 
 ---
 
@@ -137,26 +162,37 @@ https://the-turing-way.netlify.app/reproducible-research/overview/overview-defin
 https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html
 :::
 
+
+
 ---
 
-### There are different types of `reproducibility`
+### `Reproducibility` types
 
 - **Empirical** 
 - **Statistical** 
-- **Computational**: When detailed information is provided about code, software, hardware and implementation details.
+- [**Computational**: When detailed information is provided about code, software, hardware and implementation details.]{.rn rn-type=highlight rn-multiline=true}
 
 
 :::footer
 Victoria Stodden (2014) https://www.edge.org/response-detail/25340.
 :::
----
-
-# The better the software we create, the more likely it is to reproduce research results using it.
 
 ---
 
-## Situation
-#### You want to share your code with a collabortor 
+# The better the software we create, the more likely it is to reproduce research results using it {background-color="#67032F"}
+
+---
+
+## Situation 1
+
+<iframe src="https://giphy.com/embed/61ZECYSs0O0DNDfKS1" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Massivesci-bored-working-typing-61ZECYSs0O0DNDfKS1">via GIPHY</a></p>
+
+
+
+---
+
+
+#### You want to share your code with a collaborator 
 In your computer this code is working well
 
 ```r
@@ -172,7 +208,7 @@ coffee_data |>
                values_to="value") |> 
   ggplot(aes(value, total_cup_points)) +
   geom_smooth(method= "gam", span=0.3, color='purple') +
-  facet_wrap(~caracteristicas_cafe, scale="free_y")
+  facet_wrap(~types_coffe, scale="free_y")
 ```
 
 
@@ -181,83 +217,28 @@ coffee_data |>
 ## But!
 ### Your collaborator gets an error
 
+
+
 ```r
 Error in pivot_longer(., 
 cols = aroma:moisture,
-names_to = "caracteristicas_cafe",
+names_to = "types_coffe",
 : could not find function "pivot_longer"
 ```
 
-> What could be going on?
+
+
+
+🤔 **What could be going on?**
 
 ---
 
 ## Functions included in a new package version
 
- `tidyr 0.8.3` does not include `pivot_longer()` and `pivot_wider()` functions added in `tidyr` version `1.0.0`
+> `tidyr 0.8.3` does not include `pivot_longer()` and `pivot_wider()` functions added in `tidyr` version `1.0.0`
 
 
-This means that code that is working in your computer now **may not work** anymore if you upgrade your packages!!!
-
-
----
-
-## Challenge to scientists: does your ten-year-old code still run?
-
-:::: {.columns}
-
-::: {.column width="60%"}
-
-![](img/failed-2.webp)
-
-:::
-
-::: {.column width="50%"}
-
-
-
-:::
-
-::::
-
-:::footer
-https://www.nature.com/articles/d41586-020-02462-7
-:::
-
-
-
-
-
----
-
-## Degree of reproducibility
-
-
-
-
-
-
-
-
-
----
-
-
-## Computational environment
-
-## 💻
-
-Characteristics of a computer that can affect the behavior of the work done on it, such as:
-
-* your **operating system**
-
-* what **software** do you have installed
-
-* software **package versions** are installed
-
-:::footer
-[The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/)
-:::
+[This means that code that is working in your computer now **may not work** anymore if you upgrade your packages!!! ]{.rn rn-type=box rn-color=purple}
 
 ---
 
@@ -279,51 +260,150 @@ knitr::include_graphics("img/ErrorManagement.jpg")
 
 ---
 
+## Challenge to scientists: does your ten-year-old code still run?
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](img/failed-2.webp)
+
+:::
+
+::: {.column width="50%"}
+
+*'Missing documentation and obsolete environments force participants in the Ten Years Reproducibility Challenge to get creative.'*
+
+:::
+
+::::
+
+:::footer
+[Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? - Nature](https://www.nature.com/articles/d41586-020-02462-7)
+:::
+
+
+
+---
 
 #### How the computational environment 💻 is captured could change the experience of reproducing the article {background-color="#CDD7D6"}
 
 ---
 
-## Version control
+## Computational environment
 
-pending
+#### 💻
+
+Characteristics of a computer that can affect the behavior of the work done on it, such as:
+
+* your **operating system**
+
+* what **software** do you have installed
+
+* software **package versions** are installed
+
+:::footer
+[The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/)
+:::
 
 ---
 
-## Research Compendium 
+## How to avoid to have this error?
+ 
+Minimum: Documentation
+
+sessionInfo()
+
+---
+
+#### Tools for reproducibility
+
+There are different tools to ensure the reproducibility of your project.
+
+- Docker
+- Package managers
+
+---
+
+## Situation 2
 
 
+A new Ph.D. is starting in your lab. What is the best way to save the code he has created with other members of the group?
+
+
+---
+
+## Version Control
+Widely used tools for software development
+
+- Git
+
+- GitHub
+
+---
+
+## Why Git and GitHub is the best way to share code?
+
+- We can specific names to each code version and go back to particular sections of the code
+
+- We can contribute directly to their repository
+
+- Track the autorship
+
+
+---
+
+You can decide to work in a private repository, but eventually the code could be share using GitHub when the article is published.
+
+![](img/openresearch.jpg)
+
+---
+
+#### Many research groups have their GitHub organizations online
+Sharing all the code produce as part of their research
+
+![](img/github-lab.png)
+:::footer
+https://github.com/dib-lab
+:::
+
+---
+
+## Situation 3
+
+The PhD wants to publish the first article. How to do it in a reproducible way?
+
+
+- Capture the computational enviroment 
+- Version control Git - GitHub
+
+---
+
+## Reproducible code for your article
+#### Research Compendium 
+
+:::: {.columns}
+
+::: {.column width="50%"}
 ```{r rc4, echo = FALSE, out.width=450, fig.align='center'}
 knitr::include_graphics("img/compendio1.png")
 ```
+:::
 
+
+::: {.column width="50%"}
 
 [`rrtools`](https://github.com/benmarwick/rrtools) provides instructions, templates and functions to make a basic compendium suitable for writing **reproducible research with R **.
 
 * Anna Krystalli's [`rrtools` Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html) 
 
-
-:::footer
-[Marwick *et al.* (2018)](https://doi.org/10.1080/00031305.2017.1375986)]
 :::
 
+::: footer
+[Marwick *et al.* (2018)](https://doi.org/10.1080/00031305.2017.1375986)
+:::
 
-
-# Increase the code reproducibility could be achieved applying specific practices and tools
-
----
-
-## Reproducibility has a limit
-### Did you ever consider that your next scientific article **can have not only readers but also users**?
-
-
-
----
-
-## Version control
-
-pending
+# Increase the code reproducibility could be achieved applying specific practices and tools {background-color="#67032F"}
 
 ---
 
@@ -332,6 +412,24 @@ pending
 - [Readers]{.rn rn-type=crossed-off rn-color=purple}
 
 - [Users]{.rn rn-type=circle rn-color=green}
+
+
+
+
+
+
+
+
+---
+
+## Reproducibility has a limit
+
+
+
+
+
+
+
 
 ---
 
@@ -357,8 +455,18 @@ knitr::include_graphics("img/FixingLinks.jpg")
 [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
 :::
 
+---
 
-# Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration
+## GitHub
+
+![](img/successors.png)
+
+:::footer
+[GitHub Documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories}
+:::
+
+# Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration {background-color="#67032F"}
+
 
 ---
 
@@ -374,7 +482,8 @@ knitr::include_graphics("img/FixingLinks.jpg")
 ---
 
 ## Reprohack 
-#### How **code** and **data** could be organised?
+#### Reproducibility hackathons
+
 
 ---
 
@@ -404,8 +513,6 @@ At the end, the participants give feedback to the authors
 ---
 
 ## An example of a **submitted paper**  
-
-Thanks [Luis Verde](https://twitter.com/LuisDVerde)
 
 ```{r sub_form3, echo = FALSE, out.width=700, fig.align = "center"}
 knitr::include_graphics("img/submited.png")
@@ -445,7 +552,6 @@ knitr::include_graphics("img/estructura.png")
 ## Research Compendium
 
 
-
 1. **Organize files** according to a prevailing convention.
 
 2. Provide **separation between data, methods and results** expressing unambiguously the relationship between the three.
@@ -473,19 +579,6 @@ knitr::include_graphics("img/submited2.png")
 ```
 
 
----
-
-# Reprohack
-
-```{r rh3, echo = FALSE, out.width=200, fig.align='center'}
-knitr::include_graphics("img/reprohack.png")
-```
-
-[Twitter](https://twitter.com/ReproHack)
-
-[Slack](https://reprohack-autoinvite.herokuapp.com/)
-
-[Email](reprohack.team@gmail.com)
 
 
 
@@ -531,7 +624,8 @@ knitr::include_graphics("img/codecheck2.png")
 
 
 
-# There are many communities that can help researchers to improve software developing skills
+# There are many communities that can help researchers to improve software developing  {background-color="#67032F"}
+
 
 
 
@@ -570,7 +664,13 @@ https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-a
 :::
 
 
+---
 
+![](img/rse-skills.jpg)
+
+:::footer
+[The Alan Turing Institute -  Meet the team](https://www.turing.ac.uk/research/research-engineering/meet-the-team)
+:::
 ---
 
 ### How does the existing ecosystem, based largely on the historical practices related to contributions to journal and conference papers and monographs, measure, store, and disseminate information about contributions to software?
@@ -699,11 +799,15 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/
 
 ---
 
-### Research software engineer association
-
-Conference in CHICAGO 2023
+### US Research software engineer association
+**First conference**
+October 16-18th, 2023, Chicago, IL
 
 ![](img/rse_us_logo.png)
+:::footer
+https://us-rse.org/usrse23/
+:::
+
 ---
 
 ### RSE survey 2022: Sources of funding
@@ -950,4 +1054,12 @@ knitr::include_graphics("https://res.cloudinary.com/flor/image/upload/w_1000,c_f
 
 ---
 
-Goodbye
+## References
+
+Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016). https://doi.org/10.1038/533452a
+
+
+
+---
+
+Thank you
