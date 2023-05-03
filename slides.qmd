@@ -28,13 +28,10 @@ library(kableExtra)
 
 
 
-**Slides**: [www.flor14.github.io/wsu-dandrea/slides.html](www.flor14.github.io/wsu-dandrea/slides.html)
 
   
     
-      
-        
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
 
 
 
@@ -44,10 +41,25 @@ library(kableExtra)
 ## Why do you have to listen the next 50 minutes?
 
 
-
 - How reproducibility is connected with coding?
 
 - Links to different material, organizations, communities, conferences, articles
+
+
+
+---
+
+
+**Slides:** [www.flor14.github.io/wsu-dandrea/slides.html](www.flor14.github.io/wsu-dandrea/slides.html)
+
+:::footer
+I am a link!
+:::
+
+
+---
+        
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 ---
 
@@ -312,7 +324,7 @@ Characteristics of a computer that can affect the behavior of the work done on i
  
 Minimum: Documentation
 
-sessionInfo()
+`sessionInfo()`
 
 ---
 
@@ -353,9 +365,10 @@ Widely used tools for software development
 
 ---
 
-You can decide to work in a private repository, but eventually the code could be share using GitHub when the article is published.
+
 
 ![](img/openresearch.jpg)
+You can decide to work in a private repository, but eventually the code could be share using GitHub when the article is published.
 
 ---
 
@@ -373,35 +386,100 @@ https://github.com/dib-lab
 
 The PhD wants to publish the first article. How to do it in a reproducible way?
 
-
 - Capture the computational enviroment 
 - Version control Git - GitHub
 
 ---
 
-## Reproducible code for your article
-#### Research Compendium 
+## Research Compendium
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-```{r rc4, echo = FALSE, out.width=450, fig.align='center'}
-knitr::include_graphics("img/compendio1.png")
-```
-:::
 
+1. **Organize files** according to a prevailing convention.
+
+2. Provide **separation between data, methods and results** expressing unambiguously the relationship between the three.
+
+3. Specify the environment 
+(+ **reproducibility**).
+
+:::
 
 ::: {.column width="50%"}
 
-[`rrtools`](https://github.com/benmarwick/rrtools) provides instructions, templates and functions to make a basic compendium suitable for writing **reproducible research with R **.
-
-* Anna Krystalli's [`rrtools` Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html) 
+```{r rc3, echo = FALSE, out.width = 400}
+knitr::include_graphics("img/ResearchCompendium.jpg")
+```
 
 :::
+::::
 
-::: footer
-[Marwick *et al.* (2018)](https://doi.org/10.1080/00031305.2017.1375986)
+:::footer
+[The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/)
 :::
+
+---
+
+## What I find useful to reproduce the article results? 
+
+A clear and detailed description in the `README` of the files/links necessary to run and where they are
+
+
+```{r ej1, echo = FALSE, out.width=800}
+knitr::include_graphics("img/estructura.png")
+```
+
+[README template `rrtools` package](https://github.com/benmarwick/rrtools)
+
+---
+
+- Documentation
+- Computational Environments
+- Version Control
+
+---
+
+## Other practices to create good software
+
+- Testing
+- Continuous integration / development (ci - cd)
+
+
+#### Other practices
+- Communication with GitHub issues and project boards
+- Code review
+- Basic computational practices: filenames
+- Automation / use of pipelines
+
+
+---
+
+<!-- ## Reproducible code for your article -->
+<!-- #### Research Compendium  -->
+
+<!-- :::: {.columns} -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ```{r rc4, echo = FALSE, out.width=450, fig.align='center'} -->
+<!-- knitr::include_graphics("img/compendio1.png") -->
+<!-- ``` -->
+<!-- ::: -->
+
+
+<!-- ::: {.column width="50%"} -->
+
+<!-- [`rrtools`](https://github.com/benmarwick/rrtools) provides instructions, templates and functions to make a basic compendium suitable for writing **reproducible research with R **. -->
+
+<!--  Anna Krystalli's [`rrtools` Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html)  -->
+
+<!-- ::: -->
+
+<!-- ::: footer -->
+<!-- https://doi.org/10.1080/00031305.2017.1375986 -->
+<!-- ::: -->
+
+
 
 # Increase the code reproducibility could be achieved applying specific practices and tools {background-color="#67032F"}
 
@@ -409,36 +487,100 @@ knitr::include_graphics("img/compendio1.png")
 
 ## Did you ever consider that your next scientific article **can have not only readers but also users**?
 
+
+:::{.style fig.align = 'center'}
 - [Readers]{.rn rn-type=crossed-off rn-color=purple}
 
 - [Users]{.rn rn-type=circle rn-color=green}
-
-
-
-
-
-
-
+:::
 
 ---
 
-## Reproducibility has a limit
-
-
-
-
-
-
-
-
----
-
-## What happens when the technology fails?
+## High reproducibility doesn't mean that things couldn't fail 
+#### What happens when the technology fails?
 
 
 ```{r notfound, echo = FALSE, out.width=600, fig.align='center'}
 knitr::include_graphics("img/links.png")
 ```
+
+---
+
+## Some factors affecting **Reproducibility**
+1. The tools that ensure the reproducibility (Docker, Conda) could change with time
+2. The software/hardware we use change with time
+3. Should your software need to be maintained? Dependencies can change with
+4. The time you have available to invest in the reproducibility of your project
+
+
+---
+
+## 1 - How the tools that ensure the reproducibility (Docker, Conda) change with time
+
+**Example 1** - [Inactive Image Retention Policy (Nov 1, 2020)](https://github.com/docker/roadmap/issues/152): DockerHub removing Docker images in free accounts after 6 months of inactivity 
+
+---
+
+## 1 - How the tools that ensure the reproducibility (Docker, Conda) change with time
+
+**Example 1** - [Inactive Image Retention Policy (Nov 1, 2020)](https://github.com/docker/roadmap/issues/152)
+
+**Solutions?**
+
+- Using images from popular repositories (rocker - jupyter - debian - ubuntu)
+
+- Adding instructions in the README about how to build the image from the Dockerfile
+
+
+---
+
+## 2 - The software/hardware we use change with time
+
+**Example 2** - Mac M1 - Apple silicon chip (hardware) (Oct 2021)
+
+. . . 
+
+**Solutions?**
+
+- Create your Docker images in both architectures
+
+---
+
+## 2 - The software/hardware we use change with time
+
+**Example 3** - One of the dependencies is not available in the official repositories / is deprecated (software)
+
+
+**Solutions?**
+
+It depends on the next list item...
+
+---
+
+## 3 - How is your project? Is software that would need to be maintained?
+
+**Example 3** - One of the dependencies is not available in the official repositories / is deprecated (software)
+
+
+**Solutions?**
+
+- Continuous integration for software that you would like to keep updated 
+
+- Always document versions and packages used, so the user can try to find the package from a different source
+
+- ?
+
+---
+
+## 4. The time you have available to invest in the reproducibility of your project
+
+- At least always include the output of `devtools::sessionInfo()` in R of `session_info.show()` in Python.
+
+
+There could be other valid solutions to all these problems!!!
+
+
+# Choose the appropriate level or reproducibility workflows/tooling based on project complexity and desired shareability
 
 ---
 
@@ -481,7 +623,7 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 ---
 
-## Reprohack 
+## 1. Reprohack 
 #### Reproducibility hackathons
 
 
@@ -489,95 +631,31 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 ## Hackathon
 
+:::: {.columns}
 
-### Authors 
+:::{.column width="50%"}
+**Authors** 
 
 
 Send their papers with **publicly available associated code and data**
 
-```{r circulo2, echo = FALSE, out.width=300, fig.align = "center"}
-knitr::include_graphics("img/circulo.png")
-```
 
-### Participants
+##### Participants
 
 Attempt to **reproduce published research** of their choice from a list of proposed papers
-
-```{r sub_form, echo = FALSE, out.width=500, fig.align = "center"}
-knitr::include_graphics("img/selecciona.png")
-```
 
 
 At the end, the participants give feedback to the authors 
 
----
 
-## An example of a **submitted paper**  
-
-```{r sub_form3, echo = FALSE, out.width=700, fig.align = "center"}
-knitr::include_graphics("img/submited.png")
-```
-
-
----
-
-## As researchers, we know how a **manuscript** is organized
-
-```{r paper, echo = FALSE, out.width=700}
-knitr::include_graphics("img/paper_luis.png")
-```
-
-
-
-
----
-
-
-
-
-## What I find useful to reproduce the article results? 
-
-A clear and detailed description in the `README` of the files/links necessary to run and where they are
-
-
-
-```{r ej1, echo = FALSE, out.width=800}
-knitr::include_graphics("img/estructura.png")
-```
-
-[README template `rrtools` package](https://github.com/benmarwick/rrtools)
-
----
-
-## Research Compendium
-
-
-1. **Organize files** according to a prevailing convention.
-
-2. Provide **separation between data, methods and results** expressing unambiguously the relationship between the three.
-
-3. Specify the environment 
-(+ **reproducibility**).
-
-
-
-```{r rc3, echo = FALSE, out.width=400}
-knitr::include_graphics("img/ResearchCompendium.jpg")
-```
-
-:::footer
-[The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/)
 :::
 
-
----
-
-## How data and code is shared?
-
-```{r sub_form2, echo = FALSE, out.width=700,fig.align = "center"}
-knitr::include_graphics("img/submited2.png")
+:::{.column width="50%"}
+```{r circulo2, echo = FALSE, out.width=300, fig.align = "center"}
+knitr::include_graphics("img/circulo.png")
 ```
-
+:::
+::::
 
 
 
@@ -588,16 +666,22 @@ knitr::include_graphics("img/submited2.png")
 ## Code Check
 #### Reproducibility is consider a proof of **Research Quality**
 
+:::: {.columns}
 
+:::{.column width="50%"}
 ```{r cd, echo=FALSE, out.width=400, fig.align='center'}
 knitr::include_graphics("img/codecheck.png")
 ```
+:::
 
-
- 
+:::{.column width="50%"}
 ```{r cd2, echo=FALSE, out.width=700, fig.align='center'}
 knitr::include_graphics("img/codecheck2.png")
 ```
+:::
+::::
+ 
+
 
 :::footer
 [Codecheck](https://codecheck.org.uk/)
@@ -607,14 +691,71 @@ knitr::include_graphics("img/codecheck2.png")
 
 ## The Turing Way
 
+::::{.columns}
+
+:::{.column width="50%"}
+**Book**
+
+[The Turing Way Handbook (2022)](https://the-turing-way.netlify.app/index.html)
+
+:::
+
+:::{.column width="50%"}
+
+![](img/turing.png)
+:::
+::::
+
+
 ---
 
 ## ROpenSci / pyOpenSci
+
+::::{.columns}
+
+:::{.column width="70%"}
+**Scientific package review process**
+  
++ standarization of practices
+  
++ visibility. 
+
+- [pyopensci](https://www.pyopensci.org/about-peer-review/)
+- [ropensci](https://ropensci.org/software-review/)
+  - [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/preface.html)
+
+:::
+
+:::{.column width="30%"}
+
+::: {layout-nrow=2}
+![](img/ropensci.svg)
+![](img/pyopensci.png)
+:::
+:::
+::::
+
 
 ---
 
 
 ## Software Carpentry
+
+::::{.columns}
+
+:::{.column width="50%"}
+
+![](img/thecarpentries.png)
+:::
+
+:::{.column width="50%"}
+
+**Lessons and infrastructure to teach them**
+
+[The Carpentry lessons](https://software-carpentry.org/) in Unix, python, R and more
+:::
+
+::::
 
 
 ::: footer
@@ -626,20 +767,34 @@ knitr::include_graphics("img/codecheck2.png")
 
 # There are many communities that can help researchers to improve software developing  {background-color="#67032F"}
 
+---
 
+## Why is there no career for software developers in academia?
 
+- In 2012, the Software Sustainability Institute (SSI) organized the [Collaborations Workshop](http://software.ac.uk/cw12) that addressed this question.
 
+- The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the **Society of Research Software Engineering**
 
+---
 
-
-
-
-
-
+{{< tweet ResearchSoftEng 1506314767652163589 >}}
 
 ---
 
 # US Research Software Sustainability Institute
+
+
+::::{.columns}
+
+:::{.column width="50%"}
+
+*URSSI's mission is to improve the recognition , development, and use , of software for a more sustainable research enterprise.*
+
+:::
+:::{.column width="50%"}
+![](img/USRSE.png)
+:::
+::::
 
 ::: footer
 [US Research Software Sustainability Institute](https://urssi.us/)
@@ -647,13 +802,57 @@ knitr::include_graphics("img/codecheck2.png")
 
 ---
 
+### US Research software engineer association
 
-## Open source software
 
-However, both institutions that support research (e.g., universities and national laboratories) and grant-making bodies that fund research (e.g., federal agencies and philanthropic organizations) often fail to recognize the central importance of software development and maintenance in conducting novel research (Goble, 2014)
+::::{.columns}
+
+:::{.column width="50%"}
+community-driven effort that brings together people who write and contribute to research software within the US. We aim to build a connective, supportive, and diverse community of individuals from universities, laboratories, knowledge institutes, companies, and other enterprises
+:::
+
+:::{.column width="50%"}
+![](img/circular_rse_logo.png)
+:::
+::::
+
+:::footer
+[US RSE](https://us-rse.org/)
+:::
 
 ---
 
+### US Research software engineer association
+
+::::{.columns}
+
+:::{.column width="50%"}
+**First conference**
+October 16-18th, 2023, Chicago, IL
+:::
+
+:::{.column width="50%"}
+![](img/rse_us_logo.png)
+:::
+::::
+
+:::footer
+https://us-rse.org/usrse23/
+:::
+
+
+
+# The role of research software engineer has been created in 2012 recognize the effort of software developers in academia {background-color="#67032F"}
+
+---
+
+## What is a Research software engineer?
+
+Research Software Engineers use expertise in programming to advance research. This includes researchers who spend a significant amount of time programming, full-time software engineers writing code to solve research problems, and those somewhere in-between.
+
+
+
+---
 
 ## What is a Research software engineer?
 
@@ -666,39 +865,141 @@ https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-a
 
 ---
 
+##### What is the highest level of education you have attained? (one choice list)
+
+![](img/level-ed.png)
+:::footer
+
+[RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
+
+:::
+
+---
+
+##### How did you learn the skills you need to become an Research Software Engineer / Research Software Developer? (free text)
+
+![](img/learning-skills.png)
+
+:::footer
+
+[RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
+
+:::
+
+---
+
+
+{{< tweet IanCosden 1640791001487888391 >}}
+
+
+
+---
+
+#### In which discipline is your highest academic qualification? (one choice list)
+
+![](img/field-ed.png)
+:::footer
+
+[RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
+
+:::
+
+---
+
+
+![](img/field-work.png)
+:::footer
+
+[RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
+
+:::
+
+---
+
+#### What training programs are you involved with? (free text)
+
+![](img/training.png)
+:::footer
+
+[RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
+
+:::
+
+---
+
 ![](img/rse-skills.jpg)
 
 :::footer
 [The Alan Turing Institute -  Meet the team](https://www.turing.ac.uk/research/research-engineering/meet-the-team)
 :::
+
+
+
+# Some universities have created RSE groups to support reseach in their institutions{background-color="#67032F"}
+
 ---
 
-### How does the existing ecosystem, based largely on the historical practices related to contributions to journal and conference papers and monographs, measure, store, and disseminate information about contributions to software?
+### How does the existing ecosystem miss information about software contributions?
 
- • How does the existing ecosystem miss information about software contributions?
+::::{.columns}
 
-In some disciplines, such as those where monographs are typical products, there may be no formal guidelines. Author ordering is another challenge. The ordering of author names typically has some meaning, though the meaning varies between disciplines.  S22
+:::{.column width="50%"}
+
+Software in general has not been well-cited (Howison & Bullard, 2016), in part because the scholarly culture has not treated software as something that should be cited, or in some cases, even mentioned. S22
+
+:::
+
+:::{.column width="50%"}
+
+ ![](img/recognition.png)
+:::
+::::
 
 ::: footer
 
-
+  S22
 :::
 
 ---
 
+## Assessing software contribution
 
-## Aknowledging contribution in academic authors
+- Aknowledging contribution 
+- Publishing software
+
+---
 
 ![](img/acknowledge-authors.png)
 :::footer
 [The turing way](https://the-turing-way.netlify.app/communication/aa.html) / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.
 :::
 
+---
 
+## RSE Survey 2022: Credit
+
+- The most common approaches are either to *cite a paper about the software* or to *mention the software by name*
+- Unfortunately, this practice leads to fewer trackable citations of the software, making it more difficult to judge its impact.
+
+![How authors credit software used in their research.](img/rse_credit.jpg)
+
+
+:::footer
+
+:::
 
 ---
 
-## Aknowledging contribution in academic authors
+![](img/aknowledgement_us.png)
+:::footer
+
+[RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
+
+:::
+
+---
+
+## Aknowledging contribution 
 
 - It can change with the discipline
 - Plan an authorship strategy early on in a project
@@ -707,9 +1008,19 @@ Encourage a culture of ethical and equitable authorship
 
 ---
 
-## Publishing different article types
-Data, dashboards for communication, software... are all valuable research products
+## Recognizing the value of software: a software citation guide
 
+
+::: footer
+[Katz *et al.* (2020) Recognizing the value of software: a software citation guide](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7805487/)
+:::
+
+
+---
+
+## Publishing different article types
+
+Data, dashboards for communication, software... are all valuable research products
 
 :::: {.columns}
 
@@ -739,34 +1050,11 @@ Data, dashboards for communication, software... are all valuable research produc
 
 ---
 
-## Career paths
-
-Software in general has not been well-cited (Howison & Bullard, 2016), in part because the scholarly culture has not treated software as something that should be cited, or in some cases, even mentioned. S22
-
----
-
-## RSE Survey 2022: Credit
-
-- The most common approaches are either to *cite a paper about the software* or to *mention the software by name*
-- Unfortunately, this practice leads to fewer trackable citations of the software, making it more difficult to judge its impact.
-
-![How authors credit software used in their research.](img/rse_credit.jpg)
----
-
-
 ## Journal of Open Source Software
 
-pending
+![](img/joss.jpg)
 
 
----
-
-## Recognizing the value of software: a software citation guide
-
-
-::: footer
-[Katz *et al.* (2020) Recognizing the value of software: a software citation guide](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7805487/)
-:::
 
 ---
 
@@ -786,27 +1074,9 @@ https://arxiv.org/abs/1903.00732
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/
 :::
 
----
-
-## Why is there no career for software developers in academia?
-
-- In 2012, the Software Sustainability Institute (SSI) organized the Collaborations Workshop (http://software.ac.uk/cw12) that addressed this question.
-
-- The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the **Society of Research Software Engineering**
 
 
-{{< tweet ResearchSoftEng 1506314767652163589 >}}
 
----
-
-### US Research software engineer association
-**First conference**
-October 16-18th, 2023, Chicago, IL
-
-![](img/rse_us_logo.png)
-:::footer
-https://us-rse.org/usrse23/
-:::
 
 ---
 
@@ -815,25 +1085,13 @@ https://us-rse.org/usrse23/
 ![](img/rse_funding_us.jpg)
 
 
-# The role of research software engineer has been created in 2012 recognize the effort of software developers in academia
-
-# Some universities have created RSE groups to support reseach in their institutions
-
-# The US-RSE association links all the research software engineers in the US
 
 
 
-
----
-
+# The US-RSE association communicate all the research software engineers in the US
 
 
 
-```{r mds, echo = FALSE, out.width=700, fig.align = "center"}
-# knitr::include_graphics("img/mds.png")
-```
-
-pending
 
 
 ---
