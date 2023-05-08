@@ -401,7 +401,7 @@
 Florencia D’Andrea, Ph.D. 
 </div>
         <p class="quarto-title-affiliation">
-            University of British Columbia, Canada
+            Master of Data Science program, University of British Columbia
           </p>
     </div>
 </div>
@@ -413,13 +413,6 @@ Florencia D’Andrea, Ph.D.
 
 </div>
 </section>
-<section id="why-do-you-have-to-listen-the-next-50-minutes" class="slide level2">
-<h2>Why do you have to listen the next 50 minutes?</h2>
-<ul>
-<li class="fragment"><p>How reproducibility is connected with coding?</p></li>
-<li class="fragment"><p>Links to different material, organizations, communities, conferences, articles</p></li>
-</ul>
-</section>
 <section class="slide level2">
 
 <p><strong>Slides:</strong> <a href="www.flor14.github.io/wsu-dandrea/slides.html">www.flor14.github.io/wsu-dandrea/slides.html</a></p>
@@ -429,10 +422,18 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section class="slide level2">
 
+<p><strong>Spoiler alert</strong>: This talk is about my own career path</p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </section>
 <section class="slide level2">
 
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/researchers1.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/researchers2.png"></p>
+</div>
+</div>
 </section>
 <section>
 <section id="do-researchers-develop-software" class="title-slide slide level1 center" data-background-color="#CDD7D6">
@@ -449,31 +450,36 @@ Florencia D’Andrea, Ph.D.
 <p><a href="https://doi.org/10.5281/zenodo.608046">Hettrick <em>et al.</em> (2014)</a></p>
 </div>
 </section></section>
+<section>
 <section id="do-researchers-develop-software-1" class="title-slide slide level1 center" data-background-color="#CDD7D6">
 <h1>Do researchers develop <span class="rn" data-rn-type="circle" data-rn-color="white">software</span>?</h1>
 <p><span class="rn" data-rn-type="highlight" data-rn-multiline="true">Yes, they do!</span></p>
 </section>
+<section class="slide level2">
 
-<section>
-<section id="scientists-create-software-as-part-of-their-reasearch" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>Scientists create software as part of their reasearch</h1>
-<div class="sectionhead">
-<p>1 <span style="opacity:0.25">2 3 4 5</span></p>
-</div>
+<h3 id="talk-roadmap">Talk roadmap 🗺️</h3>
+<p><strong>1.</strong> Researchers = Software Developers?<br>
+<strong>2.</strong> Why is important to write “good software” (for research)?<br>
+<strong>3.</strong> What kind of practices and/or tools we need to apply for creating better research software? <strong>4.</strong> We have not training in software development! Where to find resources to learn?</p>
 </section>
 <section class="slide level2">
 
-<p>“As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (…) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while <span class="rn" data-rn-type="highlight" data-rn-multiline="true">software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years</span> (Foster, 2006).”</p>
-<div class="footer">
-<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022) A survey of the state of the practice for research software in the United States</a></p>
-</div>
+<h3 id="talk-roadmap-1">Talk roadmap 🗺️</h3>
+<p><strong>5.</strong> Where can I find people interested in software research?<br>
+<strong>6.</strong> Researchers = Data Scientists?<br>
+<strong>7.</strong> What about the data? <strong>Final comments</strong></p>
+</section></section>
+<section>
+<section id="researchers-software-developers" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>1.</strong> Researchers = Software Developers?</h1>
+<p>Scientists create software as part of their research</p>
 </section>
 <section id="the-quality-of-software-can-affect-research" class="slide level2">
 <h2>The quality of software can affect research</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div id="vcenter" class="column" style="width:50%;">
 <p><img data-src="img/bettersoftware.jpeg"></p>
-</div><div class="column" style="width:50%;">
+</div><div id="vcenter" class="column" style="width:50%;">
 <p>What are the potential consequences of developing bad quality software?</p>
 </div>
 </div>
@@ -484,10 +490,10 @@ Florencia D’Andrea, Ph.D.
 <section id="reproducibility-crisis" class="slide level2">
 <h2>Reproducibility crisis</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div id="vcenter" class="column" style="width:50%;">
 <p><img data-src="img/rep-crisis.png"></p>
-</div><div class="column" style="width:50%;">
-<p><em>Code unavailable is one of the reasons why researchers can’t reproduce their articles</em></p>
+</div><div id="vcenter" class="column" style="width:50%;">
+<p>Code unavailable is <strong>one</strong> of the reasons why researchers can’t reproduce their articles</p>
 </div>
 </div>
 <div class="footer">
@@ -517,24 +523,36 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment"><span class="rn" data-rn-type="highlight" data-rn-multiline="true"><strong>Computational</strong>: When detailed information is provided about code, software, hardware and implementation details.</span></li>
 </ul>
 <div class="footer">
-<p>Victoria Stodden (2014) https://www.edge.org/response-detail/25340.</p>
+<p>Victoria Stodden (2014) <a href="https://www.edge.org/response-detail/25340">What scientific idea is ready for retirement? - www.edge.org</a></p>
 </div>
 </section>
 <section class="slide level2">
 
 </section></section>
 <section>
-<section id="the-better-the-software-we-create-the-more-likely-it-is-to-reproduce-research-results-using-it" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>The better the software we create, the more likely it is to reproduce research results using it</h1>
+<section id="why-is-important-to-write-good-software-for-research" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>2.</strong> Why is important to write good software (for research)?</h1>
+<p>The better the software we create, the more likely it is to reproduce research results using it</p>
+<div class="sectionhead">
+<p>1 <span style="opacity:0.25">2 3 4 5</span></p>
+</div>
+</section>
+<section class="slide level2">
 
+<p>“As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (…) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while <span class="rn" data-rn-type="highlight" data-rn-multiline="true">software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years</span> (Foster, 2006).”</p>
+<div class="footer">
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022) A survey of the state of the practice for research software in the United States</a></p>
+</div>
 </section>
 <section id="situation-1" class="slide level2">
 <h2>Situation 1</h2>
-<iframe src="https://giphy.com/embed/61ZECYSs0O0DNDfKS1" width="480" height="270" frameborder="0" class="giphy-embed" allowfullscreen="">
-</iframe>
-<p>
-<a href="https://giphy.com/gifs/Massivesci-bored-working-typing-61ZECYSs0O0DNDfKS1">via GIPHY</a>
-</p>
+<div class="columns">
+<div id="vcenter" class="column" style="width:40%;">
+<p>Anne wants to share R code to create some plot with a colleague</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/researcher3.png"></p>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
@@ -566,7 +584,7 @@ Florencia D’Andrea, Ph.D.
 <section id="functions-included-in-a-new-package-version" class="slide level2">
 <h2>Functions included in a new package version</h2>
 <blockquote>
-<p><code>tidyr 0.8.3</code> does not include <code>pivot_longer()</code> and <code>pivot_wider()</code> functions added in <code>tidyr</code> version <code>1.0.0</code></p>
+<p><code>tidyr</code> package version <code>0.8.3</code> does not include <code>pivot_longer()</code> and <code>pivot_wider()</code> These functions were added in <code>tidyr</code> version <code>1.0.0</code></p>
 </blockquote>
 <p><span class="rn" data-rn-type="box" data-rn-color="purple">This means that code that is working in your computer now <strong>may not work</strong> anymore if you upgrade your packages!!!</span></p>
 </section>
@@ -581,23 +599,7 @@ Florencia D’Andrea, Ph.D.
 <img data-src="img/ErrorManagement.jpg" width="600" class="r-stretch"><div class="footer">
 <p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a>]</p>
 </div>
-</section>
-<section id="challenge-to-scientists-does-your-ten-year-old-code-still-run" class="slide level2">
-<h2>Challenge to scientists: does your ten-year-old code still run?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="img/failed-2.webp"></p>
-</div><div class="column" style="width:50%;">
-<p><em>‘Missing documentation and obsolete environments force participants in the Ten Years Reproducibility Challenge to get creative.’</em></p>
-</div>
-</div>
-<div class="footer">
-<p><a href="https://www.nature.com/articles/d41586-020-02462-7">Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? - Nature</a></p>
-</div>
-</section>
-<section class="slide level2">
-
-<h4 data-background-color="#CDD7D6" id="how-the-computational-environment-is-captured-could-change-the-experience-of-reproducing-the-article">How the computational environment 💻 is captured could change the experience of reproducing the article</h4>
+<p>–</p>
 </section>
 <section id="computational-environment" class="slide level2">
 <h2>Computational environment</h2>
@@ -612,6 +614,33 @@ Florencia D’Andrea, Ph.D.
 <p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
 </div>
 </section>
+<section id="the-sleight-of-hand-trick-that-can-simplify-scientific-computing" class="slide level2">
+<h2>The sleight-of-hand trick that can simplify scientific computing</h2>
+<div class="columns">
+<div id="vcenter" class="column" style="width:50%;">
+<p>Computational environments and the tools to manage them can help researchers to deliver code that is reproducible, documented and shareable.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/enviroment-nature.webp"></p>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.nature.com/articles/d41586-023-01469-0">Perkel, J. (2023) The sleight-of-hand trick that can simplify scientific computing - Nature Article</a></p>
+</div>
+</section>
+<section id="challenge-to-scientists-does-your-ten-year-old-code-still-run" class="slide level2">
+<h2>Challenge to scientists: does your ten-year-old code still run?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/failed-2.webp"></p>
+</div><div class="column" style="width:50%;">
+<p>‘Missing documentation and obsolete environments force participants in the Ten Years Reproducibility Challenge to get creative.’</p>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.nature.com/articles/d41586-020-02462-7">Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? - Nature Article</a></p>
+</div>
+<p>–</p>
+</section>
 <section id="how-to-avoid-to-have-this-error" class="slide level2">
 <h2>How to avoid to have this error?</h2>
 <p>Minimum: Documentation</p>
@@ -624,11 +653,19 @@ Florencia D’Andrea, Ph.D.
 <ul>
 <li class="fragment">Docker</li>
 <li class="fragment">Package managers</li>
+<li class="fragment">Create your own package</li>
+<li class="fragment">Documenting the OS, packages and versions</li>
 </ul>
 </section>
 <section id="situation-2" class="slide level2">
 <h2>Situation 2</h2>
-<p>A new Ph.D.&nbsp;is starting in your lab. What is the best way to save the code he has created with other members of the group?</p>
+<div class="columns">
+<div id="vcenter" class="column" style="width:40%;">
+<p>Anne has been creating code that is used by other researchers in the lab. What is the best way to share the code with them?</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/researcher3.png"></p>
+</div>
+</div>
 </section>
 <section id="version-control" class="slide level2">
 <h2>Version Control</h2>
@@ -638,31 +675,42 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment"><p>GitHub</p></li>
 </ul>
 </section>
-<section id="why-git-and-github-is-the-best-way-to-share-code" class="slide level2">
-<h2>Why Git and GitHub is the best way to share code?</h2>
+<section id="why-git-github-is-the-best-way-to-share-code" class="slide level2">
+<h2>Why Git + GitHub is the best way to share code?</h2>
 <ul>
-<li class="fragment"><p>We can specific names to each code version and go back to particular sections of the code</p></li>
-<li class="fragment"><p>We can contribute directly to their repository</p></li>
-<li class="fragment"><p>Track the autorship</p></li>
+<li class="fragment"><p>We can specific names to each code version and go back to particular moment of the code</p></li>
+<li class="fragment"><p>Foster collaboration</p></li>
+<li class="fragment"><p>Makes easier code review</p></li>
+<li class="fragment"><p>Makes easier code mantainance</p></li>
+</ul>
+</section>
+<section id="why-git-github-is-the-best-way-to-share-code-1" class="slide level2">
+<h2>Why Git + GitHub is the best way to share code?</h2>
+<ul>
+<li class="fragment"><p>Allows tracking the authorship</p></li>
+<li class="fragment"><p>You can turn your project public</p></li>
+<li class="fragment"><p>You can have a backup online of your data</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p><img data-src="img/openresearch.jpg"> You can decide to work in a private repository, but eventually the code could be share using GitHub when the article is published.</p>
-</section>
+
+<img data-src="img/openresearch.jpg" class="r-stretch"></section>
 <section class="slide level2">
 
 <h4 id="many-research-groups-have-their-github-organizations-online">Many research groups have their GitHub organizations online</h4>
-<p>Sharing all the code produce as part of their research</p>
 <p><img data-src="img/github-lab.png"> :::footer https://github.com/dib-lab :::</p>
+</section>
+<section id="github" class="slide level2">
+<h2>GitHub</h2>
+
+<img data-src="img/successors.png" class="r-stretch"><div class="footer">
+<p><a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories">GitHub Documentation</a></p>
+</div>
 </section>
 <section id="situation-3" class="slide level2">
 <h2>Situation 3</h2>
 <p>The PhD wants to publish the first article. How to do it in a reproducible way?</p>
-<ul>
-<li class="fragment">Capture the computational enviroment</li>
-<li class="fragment">Version control Git - GitHub</li>
-</ul>
 </section>
 <section id="research-compendium" class="slide level2">
 <h2>Research Compendium</h2>
@@ -685,63 +733,16 @@ Florencia D’Andrea, Ph.D.
 <p><a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (2019)</a></p>
 </div>
 </section>
-<section id="what-i-find-useful-to-reproduce-the-article-results" class="slide level2">
-<h2>What I find useful to reproduce the article results?</h2>
-<p>A clear and detailed description in the <code>README</code> of the files/links necessary to run and where they are</p>
-
-<img data-src="img/estructura.png" width="800" class="r-stretch"><p><a href="https://github.com/benmarwick/rrtools">README template <code>rrtools</code> package</a></p>
-</section>
-<section class="slide level2">
-
-<ul>
-<li class="fragment">Documentation</li>
-<li class="fragment">Computational Environments</li>
-<li class="fragment">Version Control</li>
-</ul>
-</section>
-<section id="other-practices-to-create-good-software" class="slide level2">
-<h2>Other practices to create good software</h2>
+<section id="other-practices" class="slide level2">
+<h2>Other practices</h2>
 <ul>
 <li class="fragment">Testing</li>
 <li class="fragment">Continuous integration / development (ci - cd)</li>
-</ul>
-<h4 id="other-practices">Other practices</h4>
-<ul>
+<li class="fragment">Develop a package</li>
 <li class="fragment">Communication with GitHub issues and project boards</li>
 <li class="fragment">Code review</li>
 <li class="fragment">Basic computational practices: filenames</li>
 <li class="fragment">Automation / use of pipelines</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<!-- ## Reproducible code for your article -->
-<!-- #### Research Compendium  -->
-<!-- :::: {.columns} -->
-<!-- ::: {.column width="50%"} -->
-<!-- ```{r rc4, echo = FALSE, out.width=450, fig.align='center'} -->
-<!-- knitr::include_graphics("img/compendio1.png") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ::: {.column width="50%"} -->
-
-<!-- [`rrtools`](https://github.com/benmarwick/rrtools) provides instructions, templates and functions to make a basic compendium suitable for writing **reproducible research with R **. -->
-<!--  Anna Krystalli's [`rrtools` Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html)  -->
-<!-- ::: -->
-<!-- ::: footer -->
-<!-- https://doi.org/10.1080/00031305.2017.1375986 -->
-<!-- ::: -->
-</section></section>
-<section>
-<section id="increase-the-code-reproducibility-could-be-achieved-applying-specific-practices-and-tools" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>Increase the code reproducibility could be achieved applying specific practices and tools</h1>
-
-</section>
-<section id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users" class="slide level2">
-<h2>Did you ever consider that your next scientific article <strong>can have not only readers but also users</strong>?</h2>
-<p>:::{.style fig.align = ‘center’} - <span class="rn" data-rn-type="crossed-off" data-rn-color="purple">Readers</span></p>
-<ul>
-<li class="fragment"><span class="rn" data-rn-type="circle" data-rn-color="green">Users</span> :::</li>
 </ul>
 </section>
 <section id="high-reproducibility-doesnt-mean-that-things-couldnt-fail" class="slide level2">
@@ -751,63 +752,19 @@ Florencia D’Andrea, Ph.D.
 <img data-src="img/links.png" width="600" class="r-stretch quarto-figure-center"></section>
 <section id="some-factors-affecting-reproducibility" class="slide level2">
 <h2>Some factors affecting <strong>Reproducibility</strong></h2>
-<ol type="1">
+<ul>
 <li class="fragment">The tools that ensure the reproducibility (Docker, Conda) could change with time</li>
 <li class="fragment">The software/hardware we use change with time</li>
-<li class="fragment">Should your software need to be maintained? Dependencies can change with</li>
 <li class="fragment">The time you have available to invest in the reproducibility of your project</li>
-</ol>
+</ul>
 </section>
 <section id="how-the-tools-that-ensure-the-reproducibility-docker-conda-change-with-time" class="slide level2">
 <h2>1 - How the tools that ensure the reproducibility (Docker, Conda) change with time</h2>
-<p><strong>Example 1</strong> - <a href="https://github.com/docker/roadmap/issues/152">Inactive Image Retention Policy (Nov 1, 2020)</a>: DockerHub removing Docker images in free accounts after 6 months of inactivity</p>
-</section>
-<section id="how-the-tools-that-ensure-the-reproducibility-docker-conda-change-with-time-1" class="slide level2">
-<h2>1 - How the tools that ensure the reproducibility (Docker, Conda) change with time</h2>
-<p><strong>Example 1</strong> - <a href="https://github.com/docker/roadmap/issues/152">Inactive Image Retention Policy (Nov 1, 2020)</a></p>
-<p><strong>Solutions?</strong></p>
-<ul>
-<li class="fragment"><p>Using images from popular repositories (rocker - jupyter - debian - ubuntu)</p></li>
-<li class="fragment"><p>Adding instructions in the README about how to build the image from the Dockerfile</p></li>
-</ul>
+<p><strong>Example 1</strong> - <a href="https://github.com/docker/roadmap/issues/152">Inactive Image Retention Policy (Nov 1, 2020)</a>: DockerHub removing Docker images in free accounts after 6</p>
 </section>
 <section id="the-softwarehardware-we-use-change-with-time" class="slide level2">
 <h2>2 - The software/hardware we use change with time</h2>
 <p><strong>Example 2</strong> - Mac M1 - Apple silicon chip (hardware) (Oct 2021)</p>
-<div class="fragment">
-<p><strong>Solutions?</strong></p>
-<ul>
-<li class="fragment">Create your Docker images in both architectures</li>
-</ul>
-</div>
-</section>
-<section id="the-softwarehardware-we-use-change-with-time-1" class="slide level2">
-<h2>2 - The software/hardware we use change with time</h2>
-<p><strong>Example 3</strong> - One of the dependencies is not available in the official repositories / is deprecated (software)</p>
-<p><strong>Solutions?</strong></p>
-<p>It depends on the next list item…</p>
-</section>
-<section id="how-is-your-project-is-software-that-would-need-to-be-maintained" class="slide level2">
-<h2>3 - How is your project? Is software that would need to be maintained?</h2>
-<p><strong>Example 3</strong> - One of the dependencies is not available in the official repositories / is deprecated (software)</p>
-<p><strong>Solutions?</strong></p>
-<ul>
-<li class="fragment"><p>Continuous integration for software that you would like to keep updated</p></li>
-<li class="fragment"><p>Always document versions and packages used, so the user can try to find the package from a different source</p></li>
-<li class="fragment"><p>?</p></li>
-</ul>
-</section>
-<section id="the-time-you-have-available-to-invest-in-the-reproducibility-of-your-project" class="slide level2">
-<h2>4. The time you have available to invest in the reproducibility of your project</h2>
-<ul>
-<li class="fragment">At least always include the output of <code>devtools::sessionInfo()</code> in R of <code>session_info.show()</code> in Python.</li>
-</ul>
-<p>There could be other valid solutions to all these problems!!!</p>
-</section></section>
-<section>
-<section id="choose-the-appropriate-level-or-reproducibility-workflowstooling-based-on-project-complexity-and-desired-shareability" class="title-slide slide level1 center">
-<h1>Choose the appropriate level or reproducibility workflows/tooling based on project complexity and desired shareability</h1>
-
 </section>
 <section id="software-mantainance" class="slide level2">
 <h2>Software mantainance</h2>
@@ -819,24 +776,41 @@ Florencia D’Andrea, Ph.D.
 <img data-src="img/FixingLinks.jpg" width="600" class="r-stretch quarto-figure-center"><div class="footer">
 <p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a></p>
 </div>
-</section>
-<section id="github" class="slide level2">
-<h2>GitHub</h2>
-
-<img data-src="img/successors.png" class="r-stretch"><div class="footer">
-<p>[GitHub Documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories}</p>
-</div>
 </section></section>
-<section>
-<section id="tools-as-git-and-github-not-only-allow-version-controlling-our-files-if-not-facilitates-software-mantainance-and-open-source-collaboration" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration</h1>
+<section id="what-kind-of-practices-andor-tools-we-need-to-apply-for-creating-better-research-software" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>3.</strong> What kind of practices and/or tools we need to apply for creating better research software?</h1>
+<ul>
+<li class="fragment">Capturing computational environments</li>
+<li class="fragment">Version controlling and publishing our code helps software maintenance and promotes open source collaboration</li>
+</ul>
+</section>
 
+<section>
+<section id="what-kind-of-practices-andor-tools-we-need-to-apply-for-creating-better-research-software-1" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>3.</strong> What kind of practices and/or tools we need to apply for creating better research software?</h1>
+<ul>
+<li class="fragment">Despite all these being said, some software could need maintenance. Packages are a good example.</li>
+</ul>
+</section>
+<section id="did-you-ever-consider-that-your-next-scientific-article-can-have-not-only-readers-but-also-users" class="slide level2">
+<h2>Did you ever consider that your next scientific article <strong>can have not only readers but also users</strong>?</h2>
+<p>:::{.style fig.align = ‘center’ #vcenter}</p>
+<ul>
+<li class="fragment"><p><span class="rn" data-rn-type="crossed-off" data-rn-color="purple">Readers</span></p></li>
+<li class="fragment"><p><span class="rn" data-rn-type="circle" data-rn-color="green">Users</span></p></li>
+</ul>
+<p>:::</p>
+</section>
+<section id="ok-but-i-need-a-second-career-to-learn-all-this" class="slide level2">
+<h2>Ok, but I need a second career to learn all this!</h2>
+<div class="footer">
+<p><a href="https://doi.org/10.1371/journal.pcbi.1005510">Wilson <em>et al.</em> (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510</a></p>
+</div>
 </section>
 <section id="there-are-many-communities-that-can-help-to-improve-research-software" class="slide level2">
 <h2>There are many communities that can help to improve research software</h2>
 <ul>
-<li class="fragment">Reprohack</li>
-<li class="fragment">Codecheck</li>
+<li class="fragment">ReproHack</li>
 <li class="fragment">The Turing Way</li>
 <li class="fragment"><code>ROpenSci</code> / <code>pyOpenSci</code></li>
 <li class="fragment">The Carpentries</li>
@@ -849,13 +823,13 @@ Florencia D’Andrea, Ph.D.
 <section id="hackathon" class="slide level2">
 <h2>Hackathon</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:70%;">
 <p><strong>Authors</strong></p>
 <p>Send their papers with <strong>publicly available associated code and data</strong></p>
 <h5 id="participants">Participants</h5>
 <p>Attempt to <strong>reproduce published research</strong> of their choice from a list of proposed papers</p>
 <p>At the end, the participants give feedback to the authors</p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:30%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -868,43 +842,13 @@ Florencia D’Andrea, Ph.D.
 </div>
 </div>
 </section>
-<section id="code-check" class="slide level2">
-<h2>Code Check</h2>
-<h4 id="reproducibility-is-consider-a-proof-of-research-quality">Reproducibility is consider a proof of <strong>Research Quality</strong></h4>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/codecheck.png" width="400"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/codecheck2.png" width="700"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="footer">
-<p><a href="https://codecheck.org.uk/">Codecheck</a></p>
-</div>
-</section>
 <section id="the-turing-way" class="slide level2">
 <h2>The Turing Way</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div id="vcenter" class="column" style="width:50%;">
 <p><strong>Book</strong></p>
 <p><a href="https://the-turing-way.netlify.app/index.html">The Turing Way Handbook (2022)</a></p>
-</div><div class="column" style="width:50%;">
+</div><div id="vcenter" class="column" style="width:50%;">
 <p><img data-src="img/turing.png"></p>
 </div>
 </div>
@@ -937,9 +881,9 @@ Florencia D’Andrea, Ph.D.
 <section id="software-carpentry" class="slide level2">
 <h2>Software Carpentry</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div id="vcenter" class="column" style="width:50%;">
 <p><img data-src="img/thecarpentries.png"></p>
-</div><div class="column" style="width:50%;">
+</div><div id="vcenter" class="column" style="width:50%;">
 <p><strong>Lessons and infrastructure to teach them</strong></p>
 <p><a href="https://software-carpentry.org/">The Carpentry lessons</a> in Unix, python, R and more</p>
 </div>
@@ -949,9 +893,9 @@ Florencia D’Andrea, Ph.D.
 </div>
 </section></section>
 <section>
-<section id="there-are-many-communities-that-can-help-researchers-to-improve-software-developing" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>There are many communities that can help researchers to improve software developing</h1>
-
+<section id="we-have-not-training-in-software-development-where-to-find-resources-to-learn" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>4.</strong> We have not training in software development! Where to find resources to learn?</h1>
+<p>There are many communities that can help researchers to learn how to improve their software</p>
 </section>
 <section id="why-is-there-no-career-for-software-developers-in-academia" class="slide level2">
 <h2>Why is there no career for software developers in academia?</h2>
@@ -960,9 +904,24 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment"><p>The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the <strong>Society of Research Software Engineering</strong></p></li>
 </ul>
 </section>
+<section id="definition-reseach-software-engineer" class="slide level2">
+<h2>{Definition}: reseach software engineer</h2>
+<div class="columns">
+<div id="vcenter" class="column" style="width:70%;">
+<p><strong>What do RSEs do?</strong></p>
+<p>Fundamentally, RSEs build software to support scientific research. They generally don’t have research questions of their own — they develop the computer tools to help other people to do cool things.</p>
+<p><em>“I don’t know very much about these particular research fields, so I work closely with the oncologists or neuroscientists or whomever to develop the software that’s needed.”</em></p>
+</div><div id="vcenter" class="column" style="width:30%;">
+<p><img data-src="img/code.webp"></p>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.nature.com/articles/d41586-022-01516-2">Woolston (2022) Why science needs more research software engineers - Nature career</a></p>
+</div>
+</section>
 <section class="slide level2">
 
-<p></p><div id="tweet-16032"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-16032").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-98494"></div><script>tweet={"url":"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589","author_name":"Society of Research Software Engineering","author_url":"https:\/\/twitter.com\/ResearchSoftEng","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThank you for joining us over the last two days to celebrate the 10 year anniversary of the term Research Software Engineer being coined \uD83E\uDD73 We&#39;ve had a fabulous time seeing all your celebrations and cakes. \u003Cbr\u003E\u003Cbr\u003ELet&#39;s see what the next 10 years hold! \uD83D\uDC40 \uD83E\uDD1E\u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSE10Years?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSE10Years\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/7QvGhXuHlm\"\u003Epic.twitter.com\/7QvGhXuHlm\u003C\/a\u003E\u003C\/p\u003E&mdash; Society of Research Software Engineering (@ResearchSoftEng) \u003Ca href=\"https:\/\/twitter.com\/ResearchSoftEng\/status\/1506314767652163589?ref_src=twsrc%5Etfw\"\u003EMarch 22, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-98494").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section class="slide level2">
 
@@ -971,7 +930,7 @@ Florencia D’Andrea, Ph.D.
 <section id="us-research-software-sustainability-institute" class="title-slide slide level1 center">
 <h1>US Research Software Sustainability Institute</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div id="vcenter" class="column" style="width:50%;">
 <p><em>URSSI’s mission is to improve the recognition , development, and use , of software for a more sustainable research enterprise.</em></p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="img/USRSE.png"></p>
@@ -985,8 +944,8 @@ Florencia D’Andrea, Ph.D.
 
 <h3 id="us-research-software-engineer-association">US Research software engineer association</h3>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p>community-driven effort that brings together people who write and contribute to research software within the US. We aim to build a connective, supportive, and diverse community of individuals from universities, laboratories, knowledge institutes, companies, and other enterprises</p>
+<div id="vcenter" class="column" style="width:50%;">
+<p>Community-driven effort that brings together people who write and contribute to research software within the US.</p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="img/circular_rse_logo.png"></p>
 </div>
@@ -999,7 +958,7 @@ Florencia D’Andrea, Ph.D.
 
 <h3 id="us-research-software-engineer-association-1">US Research software engineer association</h3>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div id="vcenter" class="column" style="width:50%;">
 <p><strong>First conference</strong> October 16-18th, 2023, Chicago, IL</p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="img/rse_us_logo.png"></p>
@@ -1008,11 +967,6 @@ Florencia D’Andrea, Ph.D.
 <div class="footer">
 <p>https://us-rse.org/usrse23/</p>
 </div>
-</section></section>
-<section>
-<section id="the-role-of-research-software-engineer-has-been-created-in-2012-recognize-the-effort-of-software-developers-in-academia" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>The role of research software engineer has been created in 2012 recognize the effort of software developers in academia</h1>
-
 </section>
 <section id="what-is-a-research-software-engineer" class="slide level2">
 <h2>What is a Research software engineer?</h2>
@@ -1042,7 +996,7 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section class="slide level2">
 
-<p></p><div id="tweet-35556"></div><script>tweet={"url":"https:\/\/twitter.com\/IanCosden\/status\/1640791001487888391","author_name":"Ian Cosden","author_url":"https:\/\/twitter.com\/IanCosden","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EI&#39;m excited to announce a new \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E student program: The Princeton Research Software Engineering Summer Fellows! \u003Cbr\u003E\u003Cbr\u003EThis *remote* RSE Fellows Program is a 10-12 week paid fellowship to work directly with a Princeton Research Software Engineer mentor \u003Ca href=\"https:\/\/t.co\/cBaa3vSI7u\"\u003Ehttps:\/\/t.co\/cBaa3vSI7u\u003C\/a\u003E\u003C\/p\u003E&mdash; Ian Cosden (@IanCosden) \u003Ca href=\"https:\/\/twitter.com\/IanCosden\/status\/1640791001487888391?ref_src=twsrc%5Etfw\"\u003EMarch 28, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-35556").innerHTML = tweet["html"];</script><p></p>
+<p></p><div id="tweet-66387"></div><script>tweet={"url":"https:\/\/twitter.com\/IanCosden\/status\/1640791001487888391","author_name":"Ian Cosden","author_url":"https:\/\/twitter.com\/IanCosden","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EI&#39;m excited to announce a new \u003Ca href=\"https:\/\/twitter.com\/hashtag\/RSEng?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#RSEng\u003C\/a\u003E student program: The Princeton Research Software Engineering Summer Fellows! \u003Cbr\u003E\u003Cbr\u003EThis *remote* RSE Fellows Program is a 10-12 week paid fellowship to work directly with a Princeton Research Software Engineer mentor \u003Ca href=\"https:\/\/t.co\/cBaa3vSI7u\"\u003Ehttps:\/\/t.co\/cBaa3vSI7u\u003C\/a\u003E\u003C\/p\u003E&mdash; Ian Cosden (@IanCosden) \u003Ca href=\"https:\/\/twitter.com\/IanCosden\/status\/1640791001487888391?ref_src=twsrc%5Etfw\"\u003EMarch 28, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-66387").innerHTML = tweet["html"];</script><p></p>
 </section>
 <section class="slide level2">
 
@@ -1066,19 +1020,7 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section class="slide level2">
 
-
-<img data-src="img/rse-skills.jpg" class="r-stretch"><div class="footer">
-<p><a href="https://www.turing.ac.uk/research/research-engineering/meet-the-team">The Alan Turing Institute - Meet the team</a></p>
-</div>
-</section></section>
-<section>
-<section id="some-universities-have-created-rse-groups-to-support-reseach-in-their-institutions" class="title-slide slide level1 center" data-background-color="#67032F">
-<h1>Some universities have created RSE groups to support reseach in their institutions</h1>
-
-</section>
-<section class="slide level2">
-
-<h3 id="how-does-the-existing-ecosystem-miss-information-about-software-contributions">How does the existing ecosystem miss information about software contributions?</h3>
+<h3 id="do-you-cite-the-software-you-use">Do you cite the software you use?</h3>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Software in general has not been well-cited (Howison &amp; Bullard, 2016), in part because the scholarly culture has not treated software as something that should be cited, or in some cases, even mentioned. S22</p>
@@ -1090,41 +1032,15 @@ Florencia D’Andrea, Ph.D.
 <p>S22</p>
 </div>
 </section>
-<section id="assessing-software-contribution" class="slide level2">
-<h2>Assessing software contribution</h2>
-<ul>
-<li class="fragment">Aknowledging contribution</li>
-<li class="fragment">Publishing software</li>
-</ul>
-</section>
 <section class="slide level2">
 
 <p><img data-src="img/acknowledge-authors.png"> :::footer <a href="https://the-turing-way.netlify.app/communication/aa.html">The turing way</a> / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807. :::</p>
-</section>
-<section id="rse-survey-2022-credit" class="slide level2">
-<h2>RSE Survey 2022: Credit</h2>
-<ul>
-<li class="fragment">The most common approaches are either to <em>cite a paper about the software</em> or to <em>mention the software by name</em></li>
-<li class="fragment">Unfortunately, this practice leads to fewer trackable citations of the software, making it more difficult to judge its impact.</li>
-</ul>
-
-<img data-src="img/rse_credit.jpg" class="r-stretch quarto-figure-center"><p class="caption">How authors credit software used in their research.</p><div class="footer">
-
-</div>
 </section>
 <section class="slide level2">
 
 <p><img data-src="img/aknowledgement_us.png"> :::footer</p>
 <p><a href="https://softwaresaved.github.io/international-survey-2022/country/united-states/">RSE 2022 survey</a></p>
 <p>:::</p>
-</section>
-<section id="aknowledging-contribution" class="slide level2">
-<h2>Aknowledging contribution</h2>
-<ul>
-<li class="fragment">It can change with the discipline</li>
-<li class="fragment">Plan an authorship strategy early on in a project</li>
-</ul>
-<p>Encourage a culture of ethical and equitable authorship</p>
 </section>
 <section id="recognizing-the-value-of-software-a-software-citation-guide" class="slide level2">
 <h2>Recognizing the value of software: a software citation guide</h2>
@@ -1155,7 +1071,10 @@ Florencia D’Andrea, Ph.D.
 <section id="journal-of-open-source-software" class="slide level2">
 <h2>Journal of Open Source Software</h2>
 
-<img data-src="img/joss.jpg" class="r-stretch"></section>
+<img data-src="img/joss.jpg" class="r-stretch"><div class="footer">
+
+</div>
+</section>
 <section class="slide level2">
 
 
@@ -1171,20 +1090,23 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section class="slide level2">
 
-<h3 id="rse-survey-2022-sources-of-funding">RSE survey 2022: Sources of funding</h3>
-
-<img data-src="img/rse_funding_us.jpg" class="r-stretch"></section></section>
-<section>
-<section id="the-us-rse-association-communicate-all-the-research-software-engineers-in-the-us" class="title-slide slide level1 center">
-<h1>The US-RSE association communicate all the research software engineers in the US</h1>
-
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
-<section id="data-science" class="title-slide slide level1 center">
-<h1>Data Science</h1>
+<section id="research-software-as-a-career-path" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>5.</strong> Research software as a career path</h1>
+<ul>
+<li class="fragment">The role of research software engineer has been created in 2012 recognize the effort of software developers in academia</li>
+<li class="fragment">The US-RSE association communicate all the research software engineers in the US</li>
+<li class="fragment">Some universities have created RSE groups to support research in their institutions</li>
+</ul>
+</section>
+<section id="master-of-data-science-program---ubc" class="slide level2">
+<h2>Master of Data Science program - UBC</h2>
+<p>10 month program - final capstone project with industry partners</p>
+
+<img data-src="img/mds.png" class="r-stretch"></section>
+<section id="data-science" class="slide level2">
+<h2>Data Science</h2>
 <ul>
 <li class="fragment">Statistics</li>
 <li class="fragment">Machine learning</li>
@@ -1193,19 +1115,23 @@ Florencia D’Andrea, Ph.D.
 <li class="fragment">Databases and cloud computing</li>
 </ul>
 </section>
-<section id="some-comments-about-dashboards" class="slide level2">
-<h2>Some comments about dashboards</h2>
-</section>
-<section id="some-comments-about-databases" class="slide level2">
-<h2>Some comments about databases</h2>
-<ul>
-<li class="fragment">Databases can have versions, the same as the software</li>
-<li class="fragment">Databases can have their own DOI and be cited in isolation</li>
-</ul>
-</section></section>
-<section id="are-rse-the-version-of-data-science-for-academia" class="title-slide slide level1 center">
-<h1>Are RSE the version of data science for academia?</h1>
+<section class="slide level2">
 
+<p></p><div id="tweet-58461"></div><script>tweet={"url":"https:\/\/twitter.com\/UBCMDS\/status\/1585318820293804033","author_name":"UBC Master of Data Science","author_url":"https:\/\/twitter.com\/UBCMDS","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThis week’s MDS Vancouver Capstone Project is from \u003Ca href=\"https:\/\/twitter.com\/WorldBank?ref_src=twsrc%5Etfw\"\u003E@worldbank\u003C\/a\u003E. The students worked on a project entitled “How Quickly Can South Asia Transition to a Green Economy?” If you are interested in becoming a MDS capstone partner, learn more here: \u003Ca href=\"https:\/\/t.co\/XqbeeKsmvH\"\u003Ehttps:\/\/t.co\/XqbeeKsmvH\u003C\/a\u003E \u003Ca href=\"https:\/\/twitter.com\/hashtag\/DataScience?src=hash&amp;ref_src=twsrc%5Etfw\"\u003E#DataScience\u003C\/a\u003E \u003Ca href=\"https:\/\/t.co\/ZX3HdAhxvP\"\u003Epic.twitter.com\/ZX3HdAhxvP\u003C\/a\u003E\u003C\/p\u003E&mdash; UBC Master of Data Science (@UBCMDS) \u003Ca href=\"https:\/\/twitter.com\/UBCMDS\/status\/1585318820293804033?ref_src=twsrc%5Etfw\"\u003EOctober 26, 2022\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-58461").innerHTML = tweet["html"];</script><p></p>
+</section>
+<section id="is-rse-for-academia-what-is-data-science-for-industry" class="slide level2">
+<h2>Is RSE for academia what is data science for industry?</h2>
+</section>
+<section class="slide level2">
+
+
+<img data-src="img/rse-skills.jpg" class="r-stretch"><div class="footer">
+<p><a href="https://www.turing.ac.uk/research/research-engineering/meet-the-team">The Alan Turing Institute - Meet the team</a></p>
+</div>
+</section></section>
+<section id="researchers-data-scientists" class="title-slide slide level1 center" data-background-color="#67032F">
+<h1><strong>6.</strong> Researchers = Data Scientists?</h1>
+<p>Data Science and RSE overlaps, there is everything very new to reach conclusions</p>
 </section>
 
 <section>
@@ -1253,56 +1179,25 @@ Florencia D’Andrea, Ph.D.
 </section>
 <section id="are-we-experiencing-a-cultural-change" class="slide level2">
 <h2>¿Are we experiencing a cultural <strong>change</strong>?</h2>
-<blockquote class="twitter-tweet" data-lang="ens">
-<p lang="en" dir="ltr">
-</p><p>The advert asks for: “A commitment to following the best [..] practices in science, such as [..] sharing of computer code and writing reproducible research reports, [..]sharing of data whenever feasible”</p>
-Have you come across job descriptions asking for such a commitment before?
-<p></p>
-— ReproHack(<span class="citation" data-cites="ReproHack">@ReproHack</span>) <a href="https://twitter.com/ReproHack/status/1296061566484385792?s=20">19 August 2020</a>
-</blockquote>
-</section>
-<section id="are-we-experiencing-a-cultural-change-1" class="slide level2">
-<h2>¿Are we experiencing a cultural <strong>change</strong>?</h2>
 
 <img data-src="img/CultureShift.jpg" width="700" class="r-stretch quarto-figure-center"><div class="footer">
 <p><a href="http://doi.org/10.5281/zenodo.3695300">The Turing Way Community, &amp; Scriberia. (2020)</a></p>
 </div>
 </section>
-<section class="slide level2">
-
-<p>From here there are all references. Decide what to keep.</p>
-</section>
-<section id="ana-krystalli---user-2020" class="slide level2">
-<h2>Ana Krystalli - UseR! 2020</h2>
-<p><a href="https://www.youtube.com/watch?v=KHMW8fV2NXo">Video</a></p>
-
-<img data-src="img/anna.png" width="600" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-<div class="footer">
-<p><a href="https://www.nature.com/articles/d41586-023-00528-w">AI writing tools could hand scientists the ‘gift of time’ (2023)</a></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="footer">
-<p><a href="https://www.nature.com/nature-index/news-blog/artificial-intelligence-writing-tools-promise-faster-manuscripts-for-researchers">AI writing tools promise faster manuscripts for researchers (2021)</a></p>
-</div>
-</section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <ul>
-<li class="fragment"><p>Cornell University - <a href="https://data.research.cornell.edu/content/readme">Guide to writing “readme” style metadata</a></p></li>
 <li class="fragment"><p>Hettrick, S., Antonioletti, M., Carr, L., Chue Hong, N., Crouch, S., De Roure, D., … Sufi, S. (2014). UK Research Software Survey 2014 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.14809</p></li>
-<li class="fragment"><p>Jupyter Project, Bussonnier, M., Forde, J., Freeman, J., Granger, B., Head, T., … &amp; Willing, C. (2018, July). <a href="https://pdfs.semanticscholar.org/c043/bef741a9616d1144e0205ac21ceae881485d.pdf?_ga=2.134990321.1289472605.1614439362-796733345.1614439362">Binder 2.0-Reproducible, interactive, sharable environments for science at scale</a>. In Proceedings of the 17th python in science conference (Vol. 113, p.&nbsp;120).</p></li>
+<li class="fragment"><p><a href="https://doi.org/10.1371/journal.pcbi.1005510">Wilson <em>et al.</em> (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510</a></p></li>
+<li class="fragment"><p>Marwick, B., Boettiger, C., &amp; Mullen, L. (2018). <a href="https://doi.org/10.1080/00031305.2017.1375986">Packaging data analytical work reproducibly using R (and friends). The American Statistician 72(1), 80-88.</a></p></li>
+<li class="fragment"><p>The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, … Kirstie Whitaker. (2019, March 25). <a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986</a></p></li>
+<li class="fragment"><p>Victoria Stodden (2014) <a href="https://www.edge.org/response-detail/25340">What scientific idea is ready for retirement? - www.edge.org</a></p></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="references-1" class="slide level2">
+<h2>References</h2>
 <ul>
-<li class="fragment"><p>Marwick, B., Boettiger, C., &amp; Mullen, L. (2018). <a href="https://doi.org/10.1080/00031305.2017.1375986">Packaging data analytical work reproducibly using R (and friends). The American Statistician 72(1), 80-88.</a></p></li>
-<li class="fragment"><p>Prana, G.A.A., Treude, C., Thung, F. et al.&nbsp;(2019) <a href="https://link.springer.com/article/10.1007/s10664-018-9660-3#citeas">Categorizing the Content of GitHub README Files.</a> Empir Software Eng 24, 1296–1327 https://doi.org/10.1007/s10664-018-9660-3</p></li>
-<li class="fragment"><p>The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, … Kirstie Whitaker. (2019, March 25). <a href="https://the-turing-way.netlify.app/">The Turing Way: A Handbook for Reproducible Data Science (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986</a></p></li>
+<li class="fragment"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/">Carver <em>et al.</em> (2022) A survey of the state of the practice for research software in the United States</a></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -1310,9 +1205,6 @@ Have you come across job descriptions asking for such a commitment before?
 <h4 id="other-videos---talks---books---blogs">Other Videos - Talks - Books - Blogs</h4>
 <ul>
 <li class="fragment"><p><a href="https://mine-cetinkaya-rundel.github.io/improve-repro-workflow-reproducibilitea-2020/slides/improve-repro-workflow-reproducibilitea-2020.pdf">Improve your workflow for reproducible science - Mine Çetinkaya-Rundel</a></p></li>
-<li class="fragment"><p><a href="https://rstudio.com/resources/rstudioconf-2019/a-guide-to-modern-reproducible-data-science-with-r-karthik-ram/">How To Make Your Data Analysis Notebooks More Reproducible - Kartik Rham</a></p></li>
-<li class="fragment"><p><a href="https://environments.rstudio.com/">Reproducible Environments - RStudio</a></p></li>
-<li class="fragment"><p><a href="https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/">renv: Project Environments with R - RStudio blog</a></p></li>
 <li class="fragment"><p><a href="https://ropensci.github.io/reproducibility-guide/">ROpenSci - Reproducibility in Science A Guide to enhancing reproducibility in scientific results and writing</a></p></li>
 <li class="fragment"><p><a href="https://annakrystalli.me/talks/r-in-repro-research.html#1">Putting the R into Reproducible Research - Anna Krystalli</a> ]</p></li>
 </ul>
@@ -1329,7 +1221,7 @@ Have you come across job descriptions asking for such a commitment before?
 <div class="columns">
 <div class="column" style="width:50%;">
 <h4 id="dr.-florencia-dandrea">Dr.&nbsp;Florencia D’Andrea</h4>
-<p><strong>Postdoct - Master of Data Science Program - UBC</strong></p>
+<p><strong>Postdoc - Master of Data Science Program - UBC</strong></p>
 <p><a href="http://twitter.com/cantoflor_87"><span class="citation" data-cites="cantoflor_87">@cantoflor_87</span></a><br> <a href="https://florenciadandrea.com">florenciadandrea.com</a></p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
@@ -1347,7 +1239,7 @@ Have you come across job descriptions asking for such a commitment before?
 <li class="fragment"><p><a href="https://github.com/USRSE/usrse.github.io/wiki/Why-a-Research-Software-Engineer-Role">Why a Research Software Engineer role?</a></p></li>
 </ul>
 </section>
-<section id="references-1" class="slide level2">
+<section id="references-2" class="slide level2">
 <h2>References</h2>
 <p>Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016). https://doi.org/10.1038/533452a</p>
 </section>

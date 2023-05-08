@@ -1,7 +1,7 @@
 ---
 title: 'From research software engeneering to data science: how technology will impact the way we research?'
 author: "Florencia D'Andrea, Ph.D."
-institute: "University of British Columbia, Canada"
+institute: "Master of Data Science program, University of British Columbia"
 title-slide-attributes:
   data-background-image: img/first-slide.png
   data-background-size: contain
@@ -27,26 +27,6 @@ library(kableExtra)
 ```
 
 
-
-
-  
-    
-
-
-
-
----
-
-
-## Why do you have to listen the next 50 minutes?
-
-
-- How reproducibility is connected with coding?
-
-- Links to different material, organizations, communities, conferences, articles
-
-
-
 ---
 
 
@@ -57,11 +37,25 @@ I am a link!
 :::
 
 
+
 ---
+        
+**Spoiler alert**: This talk is about my own career path
         
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
+
 ---
+
+
+:::: {.columns}
+::: {.column width="50%"}
+![](img/researchers1.png)
+:::
+::: {.column width="50%"}
+![](img/researchers2.png)
+:::
+::::
 
 
 # Do researchers develop [software]{.rn rn-type=circle rn-color=white}? {background-color="#CDD7D6"}
@@ -88,22 +82,29 @@ I am a link!
 [Yes, they do!]{.rn rn-type=highlight rn-multiline=true}
 
 
+---
 
-# Scientists create software as part of their reasearch {background-color="#67032F"}
+### Talk roadmap 🗺️
 
-::: {.sectionhead}
-1 [2 3 4 5]{style="opacity:0.25"}
-:::
+**1.** Researchers = Software Developers?  
+**2.** Why is important to write "good software" (for research)?  
+**3.** What kind of practices and/or tools we need to apply for creating better research software?
+**4.** We have not training in software development! Where to find resources to learn?  
 
 ---
 
+### Talk roadmap 🗺️
+
+**5.** Where can I find people interested in software research?  
+**6.** Researchers = Data Scientists?  
+**7.** What about the data?
+**Final comments**
 
 
- "As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (...) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while [software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years ]{.rn rn-type=highlight rn-multiline=true} (Foster, 2006)."
 
-:::footer
-[Carver *et al.* (2022) A survey of the state of the practice for research software in the United States](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
-:::
+# **1.** Researchers = Software Developers?  {background-color="#67032F"}
+Scientists create software as part of their research 
+
 
 ---
 
@@ -111,13 +112,13 @@ I am a link!
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 
 ![](img/bettersoftware.jpeg)
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 
 What are the potential consequences of developing bad quality software?
 
@@ -136,16 +137,16 @@ Image extracted from: https://www.software.ac.uk/about
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 
 ![](img/rep-crisis.png)
 
 :::
 
 
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 
-*Code unavailable is one of the reasons why researchers can't reproduce their articles*
+Code unavailable is **one** of the reasons why researchers can't reproduce their articles
 
 :::
 ::::
@@ -186,19 +187,46 @@ https://the-turing-way.netlify.app/reproducible-research/overview/overview-defin
 
 
 :::footer
-Victoria Stodden (2014) https://www.edge.org/response-detail/25340.
+Victoria Stodden (2014) [What scientific idea is ready for retirement? - www.edge.org]( https://www.edge.org/response-detail/25340)
 :::
 
 ---
 
-# The better the software we create, the more likely it is to reproduce research results using it {background-color="#67032F"}
+# **2.** Why is important to write good software (for research)? {background-color="#67032F"}
+The better the software we create, the more likely it is to reproduce research results using it
+ 
+   
+::: {.sectionhead}
+1 [2 3 4 5]{style="opacity:0.25"}
+:::
+
+
+---
+
+
+ "As researchers are under immense pressure to maintain expertise in their research domains, they have little time to stay current with the latest software engineering practices (...) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while [software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years ]{.rn rn-type=highlight rn-multiline=true} (Foster, 2006)."
+
+:::footer
+[Carver *et al.* (2022) A survey of the state of the practice for research software in the United States](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
+:::
+
 
 ---
 
 ## Situation 1
 
-<iframe src="https://giphy.com/embed/61ZECYSs0O0DNDfKS1" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Massivesci-bored-working-typing-61ZECYSs0O0DNDfKS1">via GIPHY</a></p>
+:::: {.columns}
+::: {.column width="40%" #vcenter}
 
+Anne wants to share R code to create some plot with a colleague
+
+:::
+
+::: {.column width="60%"}
+
+![](img/researcher3.png)
+:::
+::::
 
 
 ---
@@ -229,8 +257,6 @@ coffee_data |>
 ## But!
 ### Your collaborator gets an error
 
-
-
 ```r
 Error in pivot_longer(., 
 cols = aroma:moisture,
@@ -238,16 +264,14 @@ names_to = "types_coffe",
 : could not find function "pivot_longer"
 ```
 
-
-
-
 🤔 **What could be going on?**
 
 ---
 
 ## Functions included in a new package version
 
-> `tidyr 0.8.3` does not include `pivot_longer()` and `pivot_wider()` functions added in `tidyr` version `1.0.0`
+> `tidyr` package version `0.8.3` does not include `pivot_longer()` and `pivot_wider()`
+> These functions were added in `tidyr` version `1.0.0`
 
 
 [This means that code that is working in your computer now **may not work** anymore if you upgrade your packages!!! ]{.rn rn-type=box rn-color=purple}
@@ -270,37 +294,7 @@ knitr::include_graphics("img/ErrorManagement.jpg")
 [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)]
 :::
 
----
-
-## Challenge to scientists: does your ten-year-old code still run?
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-![](img/failed-2.webp)
-
-:::
-
-::: {.column width="50%"}
-
-*'Missing documentation and obsolete environments force participants in the Ten Years Reproducibility Challenge to get creative.'*
-
-:::
-
-::::
-
-:::footer
-[Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? - Nature](https://www.nature.com/articles/d41586-020-02462-7)
-:::
-
-
-
----
-
-#### How the computational environment 💻 is captured could change the experience of reproducing the article {background-color="#CDD7D6"}
-
----
+--
 
 ## Computational environment
 
@@ -320,6 +314,47 @@ Characteristics of a computer that can affect the behavior of the work done on i
 
 ---
 
+## The sleight-of-hand trick that can simplify scientific computing
+
+:::: {.columns}
+::: {.column width="50%" #vcenter}
+Computational environments and the tools to manage them can help researchers to deliver code that is reproducible, documented and shareable. 
+:::
+::: {.column width="50%"}
+![](img/enviroment-nature.webp)
+:::
+::::
+
+:::footer
+[Perkel, J. (2023) The sleight-of-hand trick that can simplify scientific computing - Nature Article](https://www.nature.com/articles/d41586-023-01469-0)
+:::
+---
+
+## Challenge to scientists: does your ten-year-old code still run?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](img/failed-2.webp)
+
+:::
+
+::: {.column width="50%"}
+
+'Missing documentation and obsolete environments force participants in the Ten Years Reproducibility Challenge to get creative.'
+
+:::
+
+::::
+
+:::footer
+[Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? -  Nature Article](https://www.nature.com/articles/d41586-020-02462-7)
+:::
+
+
+--
+
 ## How to avoid to have this error?
  
 Minimum: Documentation
@@ -334,13 +369,28 @@ There are different tools to ensure the reproducibility of your project.
 
 - Docker
 - Package managers
+- Create your own package
+- Documenting the OS, packages and versions
 
 ---
 
 ## Situation 2
 
+:::: {.columns}
+::: {.column width="40%" #vcenter}
 
-A new Ph.D. is starting in your lab. What is the best way to save the code he has created with other members of the group?
+Anne has been creating code that is used by other researchers in the lab. What is the best way to share the code with them?
+
+:::
+
+::: {.column width="60%"}
+
+![](img/researcher3.png)
+:::
+::::
+
+
+
 
 
 ---
@@ -354,13 +404,26 @@ Widely used tools for software development
 
 ---
 
-## Why Git and GitHub is the best way to share code?
+## Why Git + GitHub is the best way to share code?
 
-- We can specific names to each code version and go back to particular sections of the code
+- We can specific names to each code version and go back to particular moment of the code
 
-- We can contribute directly to their repository
+- Foster collaboration 
 
-- Track the autorship
+- Makes easier code review
+
+- Makes easier code mantainance
+
+
+---
+
+## Why Git + GitHub is the best way to share code?
+
+- Allows tracking the authorship
+
+- You can turn your project public
+
+- You can have a backup online of your data
 
 
 ---
@@ -368,12 +431,12 @@ Widely used tools for software development
 
 
 ![](img/openresearch.jpg)
-You can decide to work in a private repository, but eventually the code could be share using GitHub when the article is published.
+
+
 
 ---
 
 #### Many research groups have their GitHub organizations online
-Sharing all the code produce as part of their research
 
 ![](img/github-lab.png)
 :::footer
@@ -382,12 +445,21 @@ https://github.com/dib-lab
 
 ---
 
+## GitHub
+
+![](img/successors.png)
+
+:::footer
+[GitHub Documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories)
+:::
+
+---
+
 ## Situation 3
 
 The PhD wants to publish the first article. How to do it in a reproducible way?
 
-- Capture the computational enviroment 
-- Version control Git - GitHub
+
 
 ---
 
@@ -419,80 +491,20 @@ knitr::include_graphics("img/ResearchCompendium.jpg")
 [The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/)
 :::
 
----
-
-## What I find useful to reproduce the article results? 
-
-A clear and detailed description in the `README` of the files/links necessary to run and where they are
-
-
-```{r ej1, echo = FALSE, out.width=800}
-knitr::include_graphics("img/estructura.png")
-```
-
-[README template `rrtools` package](https://github.com/benmarwick/rrtools)
 
 ---
 
-- Documentation
-- Computational Environments
-- Version Control
-
----
-
-## Other practices to create good software
+## Other practices 
 
 - Testing
 - Continuous integration / development (ci - cd)
-
-
-#### Other practices
+- Develop a package
 - Communication with GitHub issues and project boards
 - Code review
 - Basic computational practices: filenames
 - Automation / use of pipelines
 
 
----
-
-<!-- ## Reproducible code for your article -->
-<!-- #### Research Compendium  -->
-
-<!-- :::: {.columns} -->
-
-<!-- ::: {.column width="50%"} -->
-<!-- ```{r rc4, echo = FALSE, out.width=450, fig.align='center'} -->
-<!-- knitr::include_graphics("img/compendio1.png") -->
-<!-- ``` -->
-<!-- ::: -->
-
-
-<!-- ::: {.column width="50%"} -->
-
-<!-- [`rrtools`](https://github.com/benmarwick/rrtools) provides instructions, templates and functions to make a basic compendium suitable for writing **reproducible research with R **. -->
-
-<!--  Anna Krystalli's [`rrtools` Tutorial](https://annakrystalli.me/rrresearch/10_compendium.html)  -->
-
-<!-- ::: -->
-
-<!-- ::: footer -->
-<!-- https://doi.org/10.1080/00031305.2017.1375986 -->
-<!-- ::: -->
-
-
-
-# Increase the code reproducibility could be achieved applying specific practices and tools {background-color="#67032F"}
-
----
-
-## Did you ever consider that your next scientific article **can have not only readers but also users**?
-
-
-:::{.style fig.align = 'center'}
-- [Readers]{.rn rn-type=crossed-off rn-color=purple}
-
-- [Users]{.rn rn-type=circle rn-color=green}
-:::
 
 ---
 
@@ -507,30 +519,16 @@ knitr::include_graphics("img/links.png")
 ---
 
 ## Some factors affecting **Reproducibility**
-1. The tools that ensure the reproducibility (Docker, Conda) could change with time
-2. The software/hardware we use change with time
-3. Should your software need to be maintained? Dependencies can change with
-4. The time you have available to invest in the reproducibility of your project
+- The tools that ensure the reproducibility (Docker, Conda) could change with time
+- The software/hardware we use change with time
+- The time you have available to invest in the reproducibility of your project
 
 
 ---
 
 ## 1 - How the tools that ensure the reproducibility (Docker, Conda) change with time
 
-**Example 1** - [Inactive Image Retention Policy (Nov 1, 2020)](https://github.com/docker/roadmap/issues/152): DockerHub removing Docker images in free accounts after 6 months of inactivity 
-
----
-
-## 1 - How the tools that ensure the reproducibility (Docker, Conda) change with time
-
-**Example 1** - [Inactive Image Retention Policy (Nov 1, 2020)](https://github.com/docker/roadmap/issues/152)
-
-**Solutions?**
-
-- Using images from popular repositories (rocker - jupyter - debian - ubuntu)
-
-- Adding instructions in the README about how to build the image from the Dockerfile
-
+**Example 1** - [Inactive Image Retention Policy (Nov 1, 2020)](https://github.com/docker/roadmap/issues/152): DockerHub removing Docker images in free accounts after 6 
 
 ---
 
@@ -538,49 +536,6 @@ knitr::include_graphics("img/links.png")
 
 **Example 2** - Mac M1 - Apple silicon chip (hardware) (Oct 2021)
 
-. . . 
-
-**Solutions?**
-
-- Create your Docker images in both architectures
-
----
-
-## 2 - The software/hardware we use change with time
-
-**Example 3** - One of the dependencies is not available in the official repositories / is deprecated (software)
-
-
-**Solutions?**
-
-It depends on the next list item...
-
----
-
-## 3 - How is your project? Is software that would need to be maintained?
-
-**Example 3** - One of the dependencies is not available in the official repositories / is deprecated (software)
-
-
-**Solutions?**
-
-- Continuous integration for software that you would like to keep updated 
-
-- Always document versions and packages used, so the user can try to find the package from a different source
-
-- ?
-
----
-
-## 4. The time you have available to invest in the reproducibility of your project
-
-- At least always include the output of `devtools::sessionInfo()` in R of `session_info.show()` in Python.
-
-
-There could be other valid solutions to all these problems!!!
-
-
-# Choose the appropriate level or reproducibility workflows/tooling based on project complexity and desired shareability
 
 ---
 
@@ -597,17 +552,37 @@ knitr::include_graphics("img/FixingLinks.jpg")
 [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
 :::
 
+
+# **3.** What kind of practices and/or tools we need to apply for creating better research software? {background-color="#67032F"}
+- Capturing computational environments
+- Version controlling and publishing our code helps software maintenance and promotes open source collaboration 
+
+
+# **3.** What kind of practices and/or tools we need to apply for creating better research software? {background-color="#67032F"}
+- Despite all these being said, some software could need maintenance. Packages are a good example.
+
 ---
 
-## GitHub
+## Did you ever consider that your next scientific article **can have not only readers but also users**?
 
-![](img/successors.png)
 
-:::footer
-[GitHub Documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories}
+:::{.style fig.align = 'center' #vcenter}
+
+- [Readers]{.rn rn-type=crossed-off rn-color=purple}
+
+- [Users]{.rn rn-type=circle rn-color=green}
+
 :::
 
-# Tools as Git and GitHub not only allow version controlling our files, if not facilitates software mantainance and open source collaboration {background-color="#67032F"}
+
+---
+
+## Ok, but I need a second career to learn all this!
+
+
+:::footer
+[Wilson *et al.* (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)
+:::
 
 
 ---
@@ -615,8 +590,7 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 ## There are many communities that can help to improve research software
 
-- Reprohack
-- Codecheck
+- ReproHack
 - The Turing Way
 - `ROpenSci` / `pyOpenSci`
 - The Carpentries
@@ -633,7 +607,7 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 :::: {.columns}
 
-:::{.column width="50%"}
+:::{.column width="70%"}
 **Authors** 
 
 
@@ -650,7 +624,7 @@ At the end, the participants give feedback to the authors
 
 :::
 
-:::{.column width="50%"}
+:::{.column width="30%"}
 ```{r circulo2, echo = FALSE, out.width=300, fig.align = "center"}
 knitr::include_graphics("img/circulo.png")
 ```
@@ -658,49 +632,20 @@ knitr::include_graphics("img/circulo.png")
 ::::
 
 
-
-
-
----
-
-## Code Check
-#### Reproducibility is consider a proof of **Research Quality**
-
-:::: {.columns}
-
-:::{.column width="50%"}
-```{r cd, echo=FALSE, out.width=400, fig.align='center'}
-knitr::include_graphics("img/codecheck.png")
-```
-:::
-
-:::{.column width="50%"}
-```{r cd2, echo=FALSE, out.width=700, fig.align='center'}
-knitr::include_graphics("img/codecheck2.png")
-```
-:::
-::::
- 
-
-
-:::footer
-[Codecheck](https://codecheck.org.uk/)
-:::
-
 ---
 
 ## The Turing Way
 
 ::::{.columns}
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 **Book**
 
 [The Turing Way Handbook (2022)](https://the-turing-way.netlify.app/index.html)
 
 :::
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 
 ![](img/turing.png)
 :::
@@ -743,12 +688,12 @@ knitr::include_graphics("img/codecheck2.png")
 
 ::::{.columns}
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 
 ![](img/thecarpentries.png)
 :::
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 
 **Lessons and infrastructure to teach them**
 
@@ -764,8 +709,8 @@ knitr::include_graphics("img/codecheck2.png")
 
 
 
-
-# There are many communities that can help researchers to improve software developing  {background-color="#67032F"}
+# **4.** We have not training in software development! Where to find resources to learn?   {background-color="#67032F"}
+There are many communities that can help researchers to learn how to improve their software
 
 ---
 
@@ -774,6 +719,29 @@ knitr::include_graphics("img/codecheck2.png")
 - In 2012, the Software Sustainability Institute (SSI) organized the [Collaborations Workshop](http://software.ac.uk/cw12) that addressed this question.
 
 - The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the **Society of Research Software Engineering**
+
+
+---
+
+## {Definition}: reseach software engineer
+
+:::: {.columns}
+::: {.column width="70%" #vcenter}
+**What do RSEs do?**
+
+Fundamentally, RSEs build software to support scientific research. They generally don’t have research questions of their own — they develop the computer tools to help other people to do cool things.
+
+*"I don’t know very much about these particular research fields, so I work closely with the oncologists or neuroscientists or whomever to develop the software that’s needed."*
+:::
+::: {.column width="30%" #vcenter}
+![](img/code.webp)
+:::
+::::
+
+:::footer
+[Woolston (2022) Why science needs more research software engineers - Nature career](https://www.nature.com/articles/d41586-022-01516-2)
+:::
+
 
 ---
 
@@ -786,7 +754,7 @@ knitr::include_graphics("img/codecheck2.png")
 
 ::::{.columns}
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 
 *URSSI's mission is to improve the recognition , development, and use , of software for a more sustainable research enterprise.*
 
@@ -807,8 +775,8 @@ knitr::include_graphics("img/codecheck2.png")
 
 ::::{.columns}
 
-:::{.column width="50%"}
-community-driven effort that brings together people who write and contribute to research software within the US. We aim to build a connective, supportive, and diverse community of individuals from universities, laboratories, knowledge institutes, companies, and other enterprises
+:::{.column width="50%" #vcenter}
+Community-driven effort that brings together people who write and contribute to research software within the US. 
 :::
 
 :::{.column width="50%"}
@@ -826,7 +794,7 @@ community-driven effort that brings together people who write and contribute to 
 
 ::::{.columns}
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 **First conference**
 October 16-18th, 2023, Chicago, IL
 :::
@@ -840,9 +808,6 @@ October 16-18th, 2023, Chicago, IL
 https://us-rse.org/usrse23/
 :::
 
-
-
-# The role of research software engineer has been created in 2012 recognize the effort of software developers in academia {background-color="#67032F"}
 
 ---
 
@@ -893,6 +858,7 @@ https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-a
 
 
 
+
 ---
 
 #### In which discipline is your highest academic qualification? (one choice list)
@@ -925,21 +891,10 @@ https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-a
 
 :::
 
----
-
-![](img/rse-skills.jpg)
-
-:::footer
-[The Alan Turing Institute -  Meet the team](https://www.turing.ac.uk/research/research-engineering/meet-the-team)
-:::
-
-
-
-# Some universities have created RSE groups to support reseach in their institutions{background-color="#67032F"}
 
 ---
 
-### How does the existing ecosystem miss information about software contributions?
+### Do you cite the software you use?
 
 ::::{.columns}
 
@@ -962,31 +917,11 @@ Software in general has not been well-cited (Howison & Bullard, 2016), in part b
 
 ---
 
-## Assessing software contribution
-
-- Aknowledging contribution 
-- Publishing software
-
----
-
 ![](img/acknowledge-authors.png)
 :::footer
 [The turing way](https://the-turing-way.netlify.app/communication/aa.html) / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.
 :::
 
----
-
-## RSE Survey 2022: Credit
-
-- The most common approaches are either to *cite a paper about the software* or to *mention the software by name*
-- Unfortunately, this practice leads to fewer trackable citations of the software, making it more difficult to judge its impact.
-
-![How authors credit software used in their research.](img/rse_credit.jpg)
-
-
-:::footer
-
-:::
 
 ---
 
@@ -996,15 +931,6 @@ Software in general has not been well-cited (Howison & Bullard, 2016), in part b
 [RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
 
 :::
-
----
-
-## Aknowledging contribution 
-
-- It can change with the discipline
-- Plan an authorship strategy early on in a project
-
-Encourage a culture of ethical and equitable authorship
 
 ---
 
@@ -1054,7 +980,9 @@ Data, dashboards for communication, software... are all valuable research produc
 
 ![](img/joss.jpg)
 
+:::footer
 
+:::
 
 ---
 
@@ -1074,30 +1002,27 @@ https://arxiv.org/abs/1903.00732
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/
 :::
 
+---
 
+
+# **5.** Research software as a career path  {background-color="#67032F"}
+- The role of research software engineer has been created in 2012 recognize the effort of software developers in academia 
+- The US-RSE association communicate all the research software engineers in the US
+- Some universities have created RSE groups to support research in their institutions
 
 
 
 ---
 
-### RSE survey 2022: Sources of funding
+## Master of Data Science program - UBC
 
-![](img/rse_funding_us.jpg)
+10 month program - final capstone project with industry partners
 
-
-
-
-
-# The US-RSE association communicate all the research software engineers in the US
-
-
-
-
-
+![](img/mds.png)
 ---
 
 
-# Data Science
+## Data Science
 
 - Statistics
 - Machine learning
@@ -1108,17 +1033,27 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/
 
 ---
 
-## Some comments about dashboards
-
+{{< tweet UBCMDS 1585318820293804033 >}}
 
 ---
 
-## Some comments about databases
+## Is RSE for academia what is data science for industry?
 
-- Databases can have versions, the same as the software
-- Databases can have their own DOI and be cited in isolation
+---
 
-# Are RSE the version of data science for academia?
+
+![](img/rse-skills.jpg)
+
+:::footer
+[The Alan Turing Institute -  Meet the team](https://www.turing.ac.uk/research/research-engineering/meet-the-team)
+:::
+
+
+
+# **6.** Researchers = Data Scientists? {background-color="#67032F"} 
+Data Science and RSE overlaps, there is everything very new to reach conclusions 
+
+
 
 # Summary
 
@@ -1169,16 +1104,6 @@ knitr::include_graphics("img/researchtools.jpg")
 [The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/) | [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)]
 :::
 
----
-
-## ¿Are we experiencing a cultural **change**?
-
-
-<blockquote class="twitter-tweet" data-lang="ens"><p lang="en" dir="ltr">The advert asks for: 
-"A commitment to following the best [..] practices in science, such as [..] sharing of computer code and writing reproducible research reports, [..]sharing of data whenever feasible"
-
-Have you come across job descriptions asking for such a commitment before?</p>&mdash; ReproHack(@ReproHack) <a href="https://twitter.com/ReproHack/status/1296061566484385792?s=20">19 August 2020</a></blockquote>
-
 
 ---
 
@@ -1195,70 +1120,31 @@ knitr::include_graphics("img/CultureShift.jpg")
 :::
 
 
----
-
-From here there are all references. Decide what to keep.
-
-
----
-
-## Ana Krystalli - UseR! 2020
-
-[Video](https://www.youtube.com/watch?v=KHMW8fV2NXo)
-
-```{r rh, echo = FALSE, out.width=600, fig.align='center'}
-knitr::include_graphics("img/anna.png")
-```
-
-
----
-
-
-::: footer
-[AI writing tools could hand scientists the ‘gift of time’ (2023)](https://www.nature.com/articles/d41586-023-00528-w)
-:::
-
-
----
-
-
-
-::: footer
-[AI writing tools promise faster manuscripts for researchers (2021)](https://www.nature.com/nature-index/news-blog/artificial-intelligence-writing-tools-promise-faster-manuscripts-for-researchers)
-:::
 
 ---
 
 ## References
 
-* Cornell University - [Guide to writing "readme" style metadata](https://data.research.cornell.edu/content/readme) 
-
 * Hettrick, S., Antonioletti, M., Carr, L., Chue Hong, N., Crouch, S., De Roure, D., … Sufi, S. (2014). UK Research Software Survey 2014 [Data set]. Zenodo. http://doi.org/10.5281/zenodo.14809
 
-* Jupyter Project, Bussonnier, M., Forde, J., Freeman, J., Granger, B., Head, T., ... & Willing, C. (2018, July). [Binder 2.0-Reproducible, interactive, sharable environments for science at scale](https://pdfs.semanticscholar.org/c043/bef741a9616d1144e0205ac21ceae881485d.pdf?_ga=2.134990321.1289472605.1614439362-796733345.1614439362). In Proceedings of the 17th python in science conference (Vol. 113, p. 120).
-
-
----
-
+* [Wilson *et al.* (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)
 
 * Marwick, B., Boettiger, C., & Mullen, L. (2018). [Packaging data analytical work reproducibly using R (and friends). The American Statistician 72(1), 80-88.](https://doi.org/10.1080/00031305.2017.1375986)
 
-* Prana, G.A.A., Treude, C., Thung, F. et al. (2019) [Categorizing the Content of GitHub README Files.](https://link.springer.com/article/10.1007/s10664-018-9660-3#citeas) Empir Software Eng 24, 1296–1327 https://doi.org/10.1007/s10664-018-9660-3
-
 * The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, … Kirstie Whitaker. (2019, March 25). [The Turing Way: A Handbook for Reproducible Data Science (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986](https://the-turing-way.netlify.app/)
 
+* Victoria Stodden (2014) [What scientific idea is ready for retirement? - www.edge.org]( https://www.edge.org/response-detail/25340)
 
+---
+
+## References
+
+* [Carver *et al.* (2022) A survey of the state of the practice for research software in the United States](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
 ---
 
 #### Other Videos - Talks - Books - Blogs
 
 * [Improve your workflow for reproducible science - Mine Çetinkaya-Rundel](https://mine-cetinkaya-rundel.github.io/improve-repro-workflow-reproducibilitea-2020/slides/improve-repro-workflow-reproducibilitea-2020.pdf)
-
-* [How To Make Your Data Analysis Notebooks More Reproducible - Kartik Rham](https://rstudio.com/resources/rstudioconf-2019/a-guide-to-modern-reproducible-data-science-with-r-karthik-ram/) 
-
-* [Reproducible Environments - RStudio](https://environments.rstudio.com/)
-
-* [renv: Project Environments with R - RStudio blog](https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r/)
 
 * [ROpenSci - Reproducibility in Science A Guide to enhancing reproducibility in scientific results and writing](https://ropensci.github.io/reproducibility-guide/)
 
@@ -1281,7 +1167,7 @@ knitr::include_graphics("img/anna.png")
 
 :::{.column width="50%"}
 #### Dr. Florencia D'Andrea 
-**Postdoct - Master of Data Science Program - UBC**
+**Postdoc - Master of Data Science Program - UBC**
 
 
  [@cantoflor_87](http://twitter.com/cantoflor_87)<br>
