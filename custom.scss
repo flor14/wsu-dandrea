@@ -61,8 +61,24 @@ $presentation-heading-color: #DF928E !default;
   vertical-align: middle !important;
 }
 
-.purple {
-   vertical-align: middle;
-   background-color: #67032F;
+.small-text {
+  font-size: 25px;
 }
 
+.big-text {
+  font-size: 90px;
+}
+
+#title-slide {
+  text-align: left;
+
+  .quarto-title-authors {
+    justify-content: left;
+  
+    .quarto-title-author { 
+      padding-left: 350px;
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+}

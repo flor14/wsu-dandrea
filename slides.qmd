@@ -1,7 +1,9 @@
 ---
-title: 'From research software engeneering to data science: how technology will impact the way we research?'
-author: "Florencia D'Andrea, Ph.D."
-institute: "Master of Data Science program, University of British Columbia"
+title: 'From research software engineering to data science: how technology will impact the way we research'
+author: 
+  - name: "Florencia D'Andrea, Ph.D."
+    affiliation: "Postdoctoral fellow at the Master of Data Science program"
+institute: "University of British Columbia"
 title-slide-attributes:
   data-background-image: img/first-slide.png
   data-background-size: contain
@@ -16,7 +18,6 @@ format:
     scrollable: true
     theme: custom.scss
     slide-number: true
-    show-slide-number: print
     chalkboard: true
 ---
 
@@ -27,32 +28,44 @@ library(kableExtra)
 ```
 
 
----
+
+#### Slide's link:
+[https://www.flor14.github.io/wsu-dandrea/slides.html](https://flor14.github.io/wsu-dandrea/slides.html#/title-slide)
+  
+    
+      
+        
+          
+::: {.small-text}
+**Title slide illustration**: The Turing Way Community, & Scriberia. (2020, March 3). Illustrations from the Turing Way book dashes. Zenodo. http://doi.org/10.5281/zenodo.3695300
+
+  
+    
+      
+        
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
 
-**Slides:** [www.flor14.github.io/wsu-dandrea/slides.html](www.flor14.github.io/wsu-dandrea/slides.html)
-
-:::footer
-I am a link!
 :::
 
 
 
----
-        
-**Spoiler alert**: This talk is about my own career path
-        
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+:::footer
+Click here! I can be a link!
+:::
+
 
 
 ---
 
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
+lab
 ![](img/researchers1.png)
 :::
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
+field work
 ![](img/researchers2.png)
 :::
 ::::
@@ -64,17 +77,20 @@ I am a link!
 
 ---
 
-## {Definition}: Research software
+::: {.big-text}
+*research software* 
+:::
+   
+
+Software that is used to generate, process or analyse results that you intend to appear in a publication
 
 
-- Software that is used to generate, process or analyse results that you intend to appear in a publication 
-
-- Research software can be anything [from a few lines of code written by yourself, to a professionally developed software package]{.rn rn-type=highlight rn-multiline=true}
+Research software can be anything [from a few lines of code written by yourself, to a professionally developed software package]{.rn rn-type=highlight rn-multiline=true}
 
 
 
 :::footer
-[Hettrick *et al.* (2014)](https://doi.org/10.5281/zenodo.608046)
+[Hettrick *et al.* (2014) UK Research Software Survey 2014. Zenodo](https://doi.org/10.5281/zenodo.608046)
 :::
 
 
@@ -84,41 +100,62 @@ I am a link!
 
 ---
 
-### Talk roadmap 🗺️
+## {background-image='img/back-question.png' background-size="1000px"}
 
-**1.** Researchers = Software Developers?  
-**2.** Why is important to write "good software" (for research)?  
+::: {.fragment fragment-index=1}
+**1.** Are Researchers Software Developers?  
+:::
+
+::: {.fragment fragment-index=2}  
+**2.** Why is it important to write "good software" in research? 
+:::
+
+::: {.fragment fragment-index=3}  
 **3.** What kind of practices and/or tools we need to apply for creating better research software?
-**4.** We have not training in software development! Where to find resources to learn?  
+:::
+
+::: {.fragment fragment-index=4}  
+**4.** We don't have training in software development! Where to find resources to learn?  
+:::
 
 ---
 
-### Talk roadmap 🗺️
+## {background-image='img/back-question.png' background-size="1000px"}
 
-**5.** Where can I find people interested in software research?  
-**6.** Researchers = Data Scientists?  
+::: {.fragment fragment-index=1}
+**5.** Where can I find experts or other researchers interested in software?  
+:::
+
+::: {.fragment fragment-index=2}  
+**6.** Are researchers data scientists?  
+:::
+
+::: {.fragment fragment-index=3} 
 **7.** What about the data?
+:::
+
+::: {.fragment fragment-index=4}
 **Final comments**
+:::
 
 
-
-# **1.** Researchers = Software Developers?  {background-color="#67032F"}
-Scientists create software as part of their research 
+# **1.** Are Researchers Software Developers? {background-color="#67032F"}
+Scientists can create software as part of their research 
 
 
 ---
 
-## The quality of software can affect research
+### Software quality can affect research results
 
 :::: {.columns}
 
-::: {.column width="50%" #vcenter}
+::: {.column width="60%" #vcenter}
 
-![](img/bettersoftware.jpeg)
+![](img/bettersoftware.png)
 
 :::
 
-::: {.column width="50%" #vcenter}
+::: {.column width="40%" #vcenter}
 
 What are the potential consequences of developing bad quality software?
 
@@ -127,7 +164,7 @@ What are the potential consequences of developing bad quality software?
 ::::
 
 :::footer
-Image extracted from: https://www.software.ac.uk/about
+Logo: [https://www.software.ac.uk/about](https://www.software.ac.uk/about)
 :::
 
 
@@ -169,37 +206,39 @@ https://the-turing-way.netlify.app/reproducible-research/overview/overview-defin
 
 ---
 
-![](img/reproducible-definition-grid.svg)
+ A result is reproducible when the *same* analysis steps performed on the *same* dataset consistently produces the *same* answer
+ 
+![](img/reproducible-definition-grid.png){fig-align='center'}
 
 ::: footer
-https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html
+The Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.
 :::
 
 
 
 ---
 
-### `Reproducibility` types
+### Reproducibility types
 
+:::: {.columns}
+::: {.column width="50%" #vcenter}
 - **Empirical** 
 - **Statistical** 
-- [**Computational**: When detailed information is provided about code, software, hardware and implementation details.]{.rn rn-type=highlight rn-multiline=true}
+- [**Computational**]{.rn rn-type=highlight rn-multiline=true}
+:::
+
+::: {.column width="50%" #vcenter}
+
+When detailed information is provided about code, software, hardware and implementation details. 
+
+:::
+::::
+
 
 
 :::footer
 Victoria Stodden (2014) [What scientific idea is ready for retirement? - www.edge.org]( https://www.edge.org/response-detail/25340)
 :::
-
----
-
-# **2.** Why is important to write good software (for research)? {background-color="#67032F"}
-The better the software we create, the more likely it is to reproduce research results using it
- 
-   
-::: {.sectionhead}
-1 [2 3 4 5]{style="opacity:0.25"}
-:::
-
 
 ---
 
@@ -211,18 +250,31 @@ The better the software we create, the more likely it is to reproduce research r
 :::
 
 
+# **2.** Why is important to write good software (for research)? {background-color="#67032F"}
+The more detailed information is provided about the software we create, the more likely it is to reproduce research results using it
+ 
+   
+::: {.sectionhead}
+1 [2 3 4 5]{style="opacity:0.25"}
+:::
+
+
+
+
 ---
 
-## Situation 1
+## Let's see an example
+
 
 :::: {.columns}
 ::: {.column width="40%" #vcenter}
+**Situation 1**
 
-Anne wants to share R code to create some plot with a colleague
+Anne wants to share R code with a colleague
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="60%" #vcenter}
 
 ![](img/researcher3.png)
 :::
@@ -365,7 +417,7 @@ Minimum: Documentation
 
 #### Tools for reproducibility
 
-There are different tools to ensure the reproducibility of your project.
+We can use different tools to ensure the reproducibility of a project such as:
 
 - Docker
 - Package managers
@@ -457,8 +509,8 @@ https://github.com/dib-lab
 
 ## Situation 3
 
-The PhD wants to publish the first article. How to do it in a reproducible way?
-
+A PhD wants to publish the first article. How can she do it in a reproducible way?
+Is hte same to publish an article than other code?
 
 
 ---
@@ -926,7 +978,7 @@ Software in general has not been well-cited (Howison & Bullard, 2016), in part b
 ---
 
 ![](img/aknowledgement_us.png)
-:::footer
+::: footer
 
 [RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
 
@@ -974,7 +1026,7 @@ Data, dashboards for communication, software... are all valuable research produc
 [The turing way](https://the-turing-way.netlify.app/communication/aa.html) / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.
 :::
 
----
+---igh
 
 ## Journal of Open Source Software
 
@@ -1118,6 +1170,17 @@ knitr::include_graphics("img/CultureShift.jpg")
 :::footer
 [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
 :::
+
+
+---
+
+## summary
+
+- There as an increasing demand for coding skills in academia
+
+- There are communities and associations that are trying to provide support to the ongoing demand
+
+- "New" technical career paths emerged in universities in relation to this need
 
 
 
