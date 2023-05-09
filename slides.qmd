@@ -29,23 +29,17 @@ library(kableExtra)
 
 
 
-#### Slide's link:
+#### Slides
 [https://www.flor14.github.io/wsu-dandrea/slides.html](https://flor14.github.io/wsu-dandrea/slides.html#/title-slide)
   
-    
-      
-        
-          
-::: {.small-text}
-**Title slide illustration**: The Turing Way Community, & Scriberia. (2020, March 3). Illustrations from the Turing Way book dashes. Zenodo. http://doi.org/10.5281/zenodo.3695300
+ 
+<br>  
+<br>  
 
-  
-    
-      
-        
+::: {.small-text}
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
-
+**Title slide illustration**: The Turing Way Community, & Scriberia. (2020, March 3). Illustrations from the Turing Way book dashes. Zenodo. http://doi.org/10.5281/zenodo.3695300
 :::
 
 
@@ -65,7 +59,7 @@ Click here! I can be a link!
 :::{.column width="40%" #vcenter}
 
 
-```{r foto, echo = FALSE, out.width=300, fig.align='center'}
+```{r foto, echo = FALSE, out.width=250, fig.align='center'}
 knitr::include_graphics("https://res.cloudinary.com/flor/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1683580772/IMG_20220607_130734112_mu4fpd.jpg")
 ```
 
@@ -106,9 +100,12 @@ field work
 ::::
 
 
-# Do researchers develop [software]{.rn rn-type=circle rn-color=white}? {background-color="#CDD7D6"}
+# Do researchers develop [software]{.rn rn-type=circle rn-color=white}? {background-color="#E5E4E2"}
 
 
+:::footer
+Press R
+:::
 
 ---
 
@@ -125,13 +122,17 @@ Research software can be anything [from a few lines of code written by yourself,
 
 
 :::footer
-[Hettrick *et al.* (2014) UK Research Software Survey 2014. Zenodo](https://doi.org/10.5281/zenodo.608046)
+Press R
+ - [Hettrick *et al.* (2014) UK Research Software Survey 2014. Zenodo](https://doi.org/10.5281/zenodo.608046)
 :::
 
 
-# Do researchers develop [software]{.rn rn-type=circle rn-color=white}? {background-color="#CDD7D6"}
+# Do researchers develop [software]{.rn rn-type=circle rn-color=white}? {background-color="#E5E4E2"}
 [Yes, they do!]{.rn rn-type=highlight rn-multiline=true}
 
+:::footer
+Press R
+:::
 
 ---
 
@@ -157,12 +158,12 @@ Research software can be anything [from a few lines of code written by yourself,
 ## {background-image='img/back-question.png' background-size="1000px"}
 
 ::: {.fragment fragment-index=1}  
-**4.** We don't have training in software development!  
+**4.** We don't have training !  
 Where to find resources to learn?  
 :::
 
 ::: {.fragment fragment-index=2}
-**5.** Where can I find experts or other researchers interested in software?  
+**5.** Where can I find other researchers interested in software?  
 :::
 
 ::: {.fragment fragment-index=3}  
@@ -283,7 +284,8 @@ Code unavailable is **one** of the reasons why researchers can't reproduce their
 
 
 :::footer
-Victoria Stodden (2014) [What scientific idea is ready for retirement? - www.edge.org]( https://www.edge.org/response-detail/25340)
+Press R
+ - [Victoria Stodden (2014) What scientific idea is ready for retirement? - www.edge.org]( https://www.edge.org/response-detail/25340)
 :::
 
 ---
@@ -296,7 +298,7 @@ Victoria Stodden (2014) [What scientific idea is ready for retirement? - www.edg
       
 When detailed information is provided about code, software, hardware and implementation details. 
 
-![](img/computer.png){.style #vcenter}
+![](img/computer.png){fig-align="center"}
 
 :::footer
 Victoria Stodden (2014) [What scientific idea is ready for retirement? - www.edge.org]( https://www.edge.org/response-detail/25340)
@@ -411,7 +413,7 @@ Characteristics of a computer that can affect the behavior of the work done on i
 
 Important to capture them to avoid:
 
-* Problems when sharing your code
+* [Problems when sharing your code]{.rn}
 
 * That you code breaks with time
 
@@ -420,7 +422,7 @@ knitr::include_graphics("img/ErrorManagement.jpg")
 ```
 
 :::footer
-[The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)]
+Press R - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)]
 :::
 
 
@@ -460,6 +462,8 @@ Julia wants to run the code 10 years later
 :::
 ::::
 
+
+
 ---
 
 ## Challenge to scientists: does your ten-year-old code still run?
@@ -484,8 +488,26 @@ Julia wants to run the code 10 years later
 [Perkel, J. (2020) Challenge to scientists: does your ten-year-old code still run? -  Nature Article](https://www.nature.com/articles/d41586-020-02462-7)
 :::
 
+---
 
---
+## Computational environments
+
+Important to capture them to avoid:
+
+* Problems when sharing your code
+
+* [That you code breaks with time]{.rn}
+
+```{r error2, echo = FALSE, out.width=600, fig.align='center'}
+knitr::include_graphics("img/ErrorManagement.jpg")
+```
+
+:::footer
+Press R - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
+:::
+
+
+---
 
 ## How to avoid getting this error?
 
@@ -509,7 +531,7 @@ We can use different tools to ensure the reproducibility of a project such as:
 
 
 
-# Capturing the computational environment is needed to ensure code reproducibility {background-color="#CDD7D6"}
+# Capturing the computational environment is needed to ensure code reproducibility {background-color="#E5E4E2"}
 
 ---
 
@@ -518,7 +540,7 @@ We can use different tools to ensure the reproducibility of a project such as:
 :::: {.columns}
 ::: {.column width="60%" #vcenter}
 
-Julia developed software and wants to share it with other researchers in the lab. **What is the best way to share the code with them?**
+Julia is writing code for an article. **What is the best way to share the code with other colleagues?**
 
 :::
 
@@ -527,9 +549,6 @@ Julia developed software and wants to share it with other researchers in the lab
 ![](img/researcher3.png)
 :::
 ::::
-
-
-
 
 
 ---
@@ -541,14 +560,14 @@ Julia developed software and wants to share it with other researchers in the lab
 **Git**
   
 A version control system
-![](img/git-logo.png)
+![](img/git-logo.png){width=250}
 :::
 ::: {.column width="50%" #vcenter}
 
 **GitHub**
   
 Repository hosting service
-![](img/github-logo.png)
+![](img/github-logo.png){width=300}
 :::
 ::::
 
@@ -574,12 +593,18 @@ knitr::include_graphics("img/vc-final-comic.png")
 
 ## Why Git + GitHub is the best way to share code?
 
-- We can assign names to each **code version** and go back to particular moment of the code
+:::: {.columns}
+::: {.column width="40%" #vcenter}
+![](img/project-history.svg)
+:::
+::: {.column width="60%" #vcenter}
+- It's possible to assign names to each **code version** and revisit specific points in its history. 
 
-- You have a **backup** online in GitHub
+- Your code is **backed up online** on GitHub.
 
-- Allows tracking the **authorship**
-
+- It is easy to track the **authorship** of each change made 
+:::
+::::
 
 :::footer
 [Example repository](https://github.com/tidyverse/tidyr)
@@ -590,10 +615,10 @@ knitr::include_graphics("img/vc-final-comic.png")
 ## Why Git + GitHub is the best way to share code?
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 ![](img/pullrequest.jpg)
 :::
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 - You can share your code as an **open source project**
 
 - Foster **collaboration** 
@@ -607,19 +632,19 @@ knitr::include_graphics("img/vc-final-comic.png")
 
 
 :::footer
-https://github.com/flor14/wsu-dandrea/issues/1
+[The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300) - [Example 2](https://github.com/flor14/wsu-dandrea/issues/1)
 :::
 
 ---
 
 
 
-![](img/openresearch.png)
+![](img/openresearch.png){fig-align="center"}
 
 
 
 ::: footer
-[How to Run Your Open Source Software Project - The Turing Way Handbook](https://the-turing-way.netlify.app/reproducible-research/open/open-source.html#how-to-run-your-open-source-software-project)
+[How to Run Your Open Source Software Project - The Turing Way Handbook](https://the-turing-way.netlify.app/reproducible-research/open/open-source.html#how-to-run-your-open-source-software-project) - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
 :::
 ---
 
@@ -630,19 +655,10 @@ https://github.com/flor14/wsu-dandrea/issues/1
 https://github.com/dib-lab
 :::
 
----
-
-## GitHub
-
-![](img/successors.png)
-
-:::footer
-[GitHub Documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/maintaining-ownership-continuity-of-your-personal-accounts-repositories)
-:::
 
 
 
-# Git + GitHub are useful tools not only to version control files, if not also to foster collaboration and publish our code {background-color="#CDD7D6"}
+# Git + GitHub provide much more than just version control. They can also be used to foster collaboration and publish code. {background-color="#E5E4E2"}
 
 
 ---
@@ -652,7 +668,7 @@ https://github.com/dib-lab
 
 :::: {.columns}
 ::: {.column width="60%" #vcenter}
-A Ph.D. wants to publish the first article. **How can she do it in a reproducible way?**
+Julia wants to publish her first article. **How can she do it in a reproducible way?**
 
 :::
 ::: {.column width="40%" #vcenter}
@@ -662,22 +678,22 @@ A Ph.D. wants to publish the first article. **How can she do it in a reproducibl
 
 ---
 
-## Research Compendium
+## Research Compendia
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="50%" #vcenter}
 
 1. **Organize files** according to a prevailing convention.
 
-2. Provide **separation between data, methods and results** expressing unambiguously the relationship between the three.
+2. Provide **separation between data, methods and results** expressing the relationship between the three.
 
 3. Specify the **environment** 
 
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%" #vcenter}
 
 ```{r rc3, echo = FALSE, out.width = 400}
 knitr::include_graphics("img/ResearchCompendium.jpg")
@@ -687,14 +703,16 @@ knitr::include_graphics("img/ResearchCompendium.jpg")
 ::::
 
 :::footer
-[The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/)
+[`rrtools` package](https://github.com/benmarwick/rrtools) - [Research Compendia - The Turing Way: A Handbook for Reproducible Data Science (2019)](https://the-turing-way.netlify.app/reproducible-research/compendia.html?highlight=research%20compendium)
 :::
 
 ---
 
 ## Documentation
 Did you ever consider that your next scientific article **can have not only readers but also users**?
-  
+
+
+<br>
      
 
 :::{.text-c}
@@ -705,9 +723,11 @@ Did you ever consider that your next scientific article **can have not only read
 
 :::
 
+:::footer
+Press R
+:::
 
-
-# Computational reproducibility is also related to the project organization and documentation {background-color="#CDD7D6"}
+# Project organization and documentation are also relevant to achieving computational reproducibility. {background-color="#E5E4E2"}
 
 ---
 
@@ -768,7 +788,7 @@ Docker issues
 
 ## Software mantainance
 
-* Should our code have **maintainers**?
+Should our code have **maintainers**?
 
 ```{r FixingLinks, echo = FALSE, fig.align='center', out.width=600}
 knitr::include_graphics("img/FixingLinks.jpg")
@@ -780,8 +800,8 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 
 # What kind of practices and/or tools we need to apply for creating better research software? {background-color="#67032F"}
-- Capturing computational environments
-- Version controlling and publishing our promotes open source collaboration 
+- Capturing computational environments.
+- Version controlling and publishing our code. 
 
 ::: {.sectionhead}
 [1 2]{style="opacity:0.25"} 3 [4 5 6]{style="opacity:0.25"}
@@ -789,7 +809,7 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 # What kind of practices and/or tools we need to apply for creating better research software? {background-color="#67032F"}
 - Document the code for your users.
-- Software could need maintenance. Packages are a good example.
+- Software could need maintenance. 
 
 ::: {.sectionhead}
 [1 2]{style="opacity:0.25"} 3 [4 5 6]{style="opacity:0.25"}
@@ -799,7 +819,7 @@ knitr::include_graphics("img/FixingLinks.jpg")
 
 ### Ok, but I need a second career to learn all this!
 
-![](https://media.giphy.com/media/26BGIqWh2R1fi6JDa/giphy.gif)
+![](https://media.giphy.com/media/26BGIqWh2R1fi6JDa/giphy.gif){fig-align="center"}
 
 :::footer
 [Wilson *et al.* (2017) Good enough practices in scientific computing. PLOS Computational Biology 13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)
@@ -810,7 +830,7 @@ knitr::include_graphics("img/FixingLinks.jpg")
  "As researchers are under [immense pressure to maintain expertise in their research domains]{.rn rn-type=underline rn-color=orange}, they have little time to stay current with the latest software engineering practices (...) The lack of career incentives has occurred partially because the academic environment and culture have developed over hundreds of years, while [software has only recently become important, in some fields over the last 60+ years, but in many others, just in the last 20 or fewer years ]{.rn rn-type=highlight rn-multiline=true} (Foster, 2006)."
 
 :::footer
-[Carver *et al.* (2022) A survey of the state of the practice for research software in the United States](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
+Press R - [Carver *et al.* (2022) A survey of the state of the practice for research software in the United States](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9138129/)
 :::
 
 
@@ -832,13 +852,13 @@ knitr::include_graphics("img/FixingLinks.jpg")
 :::: {.columns}
 
 :::{.column width="70%"}
-**Authors**: Send their papers with **publicly available associated code and data**
+**Authors**: Send their papers with *publicly available associated code and data*
 
 
-**Participants**: Attempt to **reproduce published research** of their choice from a list of proposed papers
+**Participants**: Attempt to *reproduce published research* of their choice from a list of proposed papers
 
 
-At the end, the participants give **feedback** to the authors 
+At the end, the participants give *feedback* to the authors 
 
 
 :::
@@ -856,13 +876,13 @@ knitr::include_graphics("img/reprohack.png")
 
 ---
 
-## The Turing Way
+## 2. The Turing Way project
 
 ::::{.columns}
 
-:::{.column width="70%" #vcenter}
+:::{.column width="60%" #vcenter}
 
-The Turing Way project involve and support a diverse community of contributors to make data science accessible, comprehensible and effective for everyone.
+The TWP involve and support a diverse community of contributors to make data science accessible, comprehensible and effective for everyone.
 
 **Book**
 
@@ -870,24 +890,24 @@ The Turing Way project involve and support a diverse community of contributors t
 
 :::
 
-:::{.column width="30%" #vcenter}
+:::{.column width="40%" #vcenter}
 
-![](img/turing.png)
+![](img/road-to-reproducibility.svg)
 :::
 ::::
 
 
 ---
 
-## ROpenSci / pyOpenSci
+## 3. ROpenSci / pyOpenSci
 
 ::::{.columns}
 
 :::{.column width="70%"}
 **Scientific package review process**
   
-- [pyopensci](https://www.pyopensci.org/about-peer-review/)
-- [ropensci](https://ropensci.org/software-review/)
+- [pyopensci webpage](https://www.pyopensci.org/about-peer-review/)
+- [ropensci webpage](https://ropensci.org/software-review/)
   - [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/preface.html)
 
 :::
@@ -930,7 +950,7 @@ The Turing Way project involve and support a diverse community of contributors t
 
 
 
-#  We don't have training! Where to find resources to learn?   {background-color="#67032F"}
+#  We don't have training! Where to find resources to learn? {background-color="#67032F"}
 There are many communities that can help researchers to learn how to improve their software
   
 ::: {.sectionhead}
@@ -943,7 +963,7 @@ There are many communities that can help researchers to learn how to improve the
 
 - In 2012, the Software Sustainability Institute (SSI) organized the [Collaborations Workshop](http://software.ac.uk/cw12) that addressed this question.
 
-- The work of the participants and of the SSI’s policy team led to the foundation of the UK RSE association and later to the **Society of Research Software Engineering**
+- Foundation of the UK RSE association, and later to the **Society of Research Software Engineering**
 
 ---
 
@@ -961,7 +981,7 @@ There are many communities that can help researchers to learn how to improve the
 ::: {.column width="70%" #vcenter}
 **What do RSEs do?**
 
-Fundamentally, RSEs build software to support scientific research. They generally don’t have research questions of their own — they develop the computer tools to help other people to do cool things.
+Fundamentally, RSEs build software to support scientific research. [They generally don’t have research questions of their own]{.rn}. They develop the computer tools to help other people to do cool things.
 
 
 :::
@@ -971,21 +991,20 @@ Fundamentally, RSEs build software to support scientific research. They generall
 ::::
 
 :::footer
-[Woolston (2022) Why science needs more research software engineers - Nature career](https://www.nature.com/articles/d41586-022-01516-2)
+Press R - Image and text from [Woolston (2022) Why science needs more research software engineers - Nature career](https://www.nature.com/articles/d41586-022-01516-2)
 :::
 
 
 ---
 
-## What is a Research software engineer?
 
 Research Software Engineers includes researchers who spend a significant amount of time programming, full-time software engineers writing code to solve research problems, and those somewhere in-between.
 
 
-![](img/rse-us.png)
+![](img/rse-us.png){fig-align="center"}
 
 ::: footer
-https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-and-service-in-three-dimensions-of-research-software-engineering/
+Source: [Daniel Katz blogpost](https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-and-service-in-three-dimensions-of-research-software-engineering/)
 :::
 
 
@@ -1003,7 +1022,7 @@ https://danielskatzblog.wordpress.com/2019/07/12/super-rses-combining-research-a
 US RSSI mission is to improve the recognition, development, and use , of software for a more sustainable research enterprise.
 
 :::
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 ![](img/USRSE.png)
 :::
 ::::
@@ -1023,7 +1042,7 @@ US RSSI mission is to improve the recognition, development, and use , of softwar
 Community-driven effort that brings together people who write and contribute to research software within the US. 
 :::
 
-:::{.column width="50%"}
+:::{.column width="50%"  #vcenter}
 ![](img/circular_rse_logo.png)
 :::
 ::::
@@ -1038,7 +1057,7 @@ Community-driven effort that brings together people who write and contribute to 
 
 ::::{.columns}
 
-:::{.column width="50%" #vcenter}
+:::{.column width="60%" #vcenter}
 - **First US conference**. 
 [US-RSE Conference 2023: Software Enabled Discovery and Beyond](https://us-rse.org/usrse23/). 
 October 16-18th, 2023, Chicago, IL   
@@ -1048,20 +1067,18 @@ October 16-18th, 2023, Chicago, IL
 September 5-7th, 2023, UK 
 :::
 
-:::{.column width="50%"}
+:::{.column width="40%"}
 ![](img/rse_us_logo.png)
 :::
 ::::
 
-:::footer
-https://us-rse.org/usrse23/
-:::
+
 
 
 
 #  Where can I find experts or other researchers interested in software?  {background-color="#67032F"}
-- The role of RSE has been created to recognize the effort of software developers in academia 
-- The US-RSE association communicate all the research software engineers in the US
+- The RSE role has been created to recognize the effort of software developers in academia 
+- The US-RSE association connects all the RSEs in the US
 
 ::: {.sectionhead}
 [1 2 3 4]{style="opacity:0.25"} 5 [6]{style="opacity:0.25"}
@@ -1074,10 +1091,9 @@ https://us-rse.org/usrse23/
 ## RSE International Survey 2022
 
 
-The Research Software Engineering (RSE) International Survey is a survey conducted by the UK Software Sustainability Institute since 2016 and now comprises 8 countries and covers all aspects of the practice of research software engineering.
-
-
-**US: 161 participants**
+- Conducted by the UK Software Sustainability Institute **since 2016** 
+- The survey covers all aspects of the practice of **research software engineering**.
+- RSE survey 2022 -> **US: 161 participants**
 
 :::footer
 
@@ -1090,7 +1106,8 @@ The Research Software Engineering (RSE) International Survey is a survey conduct
 
 ##### What is the highest level of education you have attained? (one choice list)
 
-![](img/level-ed.png)
+![](img/level-ed.png){fig-align="center"}
+
 :::footer
 
 [RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
@@ -1101,7 +1118,7 @@ The Research Software Engineering (RSE) International Survey is a survey conduct
 
 ##### How did you learn the skills you need to become an Research Software Engineer / Research Software Developer? (free text)
 
-![](img/learning-skills.png)
+![](img/learning-skills.png){fig-align="center"}
 
 :::footer
 
@@ -1121,7 +1138,8 @@ The Research Software Engineering (RSE) International Survey is a survey conduct
 
 #### In which discipline is your highest academic qualification? (one choice list)
 
-![](img/field-ed.png)
+![](img/field-ed.png){fig-align="center"}
+
 :::footer
 
 [RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
@@ -1133,7 +1151,8 @@ The Research Software Engineering (RSE) International Survey is a survey conduct
 
 #### What training programs are you involved with? (free text)
 
-![](img/training.png)
+![](img/training.png){fig-align="center"}
+
 :::footer
 
 [RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
@@ -1168,7 +1187,8 @@ Software in general has not been well-cited (...), in part because the scholarly
 
 ---
 
-![](img/acknowledge-authors.png)
+![](img/acknowledge-authors.png){width=80% fig-align="center"}
+
 :::footer
 [The turing way](https://the-turing-way.netlify.app/communication/aa.html) / he Turing Way project illustration by Scriberia. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.
 :::
@@ -1176,22 +1196,14 @@ Software in general has not been well-cited (...), in part because the scholarly
 
 ---
 
-### In general, when your software contributes to a paper, are you acknowledged in that paper? (one choice)
+#### In general, when your software contributes to a paper, are you acknowledged in that paper? (one choice)
 
-![](img/aknowledgement_us.png)
+![](img/aknowledgement_us.png){fig-align="center"}
+  
 ::: footer
 
 [RSE 2022 survey](https://softwaresaved.github.io/international-survey-2022/country/united-states/)
 
-:::
-
----
-
-## Recognizing the value of software
-
-
-::: footer
-[Katz *et al.* (2020) Recognizing the value of software: a software citation guide](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7805487/)
 :::
 
 
@@ -1199,11 +1211,9 @@ Software in general has not been well-cited (...), in part because the scholarly
 
 ## Publishing different article types
 
-Data, dashboards for communication, software... are all valuable research products
-
 :::: {.columns}
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 
 - Data Papers
 
@@ -1217,7 +1227,7 @@ Data, dashboards for communication, software... are all valuable research produc
 
 :::
 
-:::{.column width="50%"}
+:::{.column width="50%" #vcenter}
 
 ![](img/publishing-diff-articles.png)
 :::
@@ -1255,43 +1265,47 @@ The Journal of Open Source Software is a **developer friendly**, open access jou
 [Katz, D. S. (2019). Research software development & management in universities: case studies from Manchester's RSDS group, Illinois' NCSA, and Notre Dame's CRC. In 2019 IEEE/ACM 14th International Workshop on Software Engineering for Science (SE4Science) (pp. 17-24). IEEE.](https://arxiv.org/abs/1903.00732)
 :::
 
----
-
-
-# Career paths  {background-color="#67032F"}
-- Some universities have created RSE groups to support research in their institutions
-::: {.sectionhead}
-[1 2 3 4]{style="opacity:0.25"} 5 [6]{style="opacity:0.25"}
-:::
 
 
 ---
 
 ## Master of Data Science program - UBC
 
+:::: {.columns}
+::: {.column width="50%" #vcenter}
 10 month program - final capstone project with industry partners
+:::
+::: {.column width="50%" #vcenter}
 
 ![](img/mds.png)
+:::
+::::
+
+
+
+
 ---
 
 
 ## Data Science
 
+
 - Statistics
 - Machine learning
+- Programming
 - Software development / reproducibility
 - Data visualization
 - Databases and cloud computing
 
+:::footer
+
+:::
 
 ---
 
 {{< tweet UBCMDS 1585318820293804033 >}}
 
 --- 
-
-## Is RSE for academia what is data science for industry?
-
 
 
 ![](img/rse-skills.jpg)
@@ -1301,9 +1315,25 @@ The Journal of Open Source Software is a **developer friendly**, open access jou
 :::
 
 
+# Career paths  {background-color="#67032F"}
+- RSEs are mostly self-taugh
+- Software is often under-cited or overlooked in academic publications
+
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6
+:::
+
+# Career paths  {background-color="#67032F"}
+- Some universities have created RSE groups to support research in their institutions
+- What new roles will appear in the future?
+
+::: {.sectionhead}
+[1 2 3 4 5]{style="opacity:0.25"} 6
+:::
+
 ---
 
-## Final comments
+## Final comments {background-color= #DF928E}
 
 - There as an increasing demand for coding skills in academia
 
@@ -1311,8 +1341,14 @@ The Journal of Open Source Software is a **developer friendly**, open access jou
 
 - "New" technical career paths emerged in relation to this need
 
+
+
 ---
 
-## Thank you!
+![](img/thanks.png){width=50% fig-align="center"}
+
+::: {.text-c}
 Questions?
+:::
+
 
