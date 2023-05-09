@@ -391,11 +391,14 @@ Code that is running in your computer now [**may not work** anymore if you upgra
 
 ---
 
-## Computational environment
 
-#### 💻
 
-Characteristics of a computer that can affect the behavior of the work done on it, such as:
+::: {.big-text}
+*Computational environment*
+:::
+
+
+Characteristics of a 💻 that can affect the behavior of the work done on it, such as:
 
 * your **operating system**
 
