@@ -906,15 +906,15 @@ Image: [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/ze
 
 ---
 
-## 3. ROpenSci / pyOpenSci
+## 3. rOpenSci / pyOpenSci
 
 ::::{.columns}
 
 :::{.column width="70%"}
 **Scientific package review process**
   
-- [pyopensci webpage](https://www.pyopensci.org/about-peer-review/)
-- [ropensci webpage](https://ropensci.org/software-review/)
+- [PyOpenSci webpage](https://www.pyopensci.org/about-peer-review/)
+- [rOpenSci webpage](https://ropensci.org/software-review/)
   - [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/preface.html)
 
 :::
