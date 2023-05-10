@@ -899,6 +899,10 @@ The TWP involve and support a diverse community of contributors to make data sci
 :::
 ::::
 
+:::footer
+Image: [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300) 
+:::
+
 
 ---
 
