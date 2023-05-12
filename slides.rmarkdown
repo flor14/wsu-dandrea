@@ -29,6 +29,7 @@ library(kableExtra)
 
 
 
+
 #### Slides
 [https://www.flor14.github.io/wsu-dandrea/slides.html](https://flor14.github.io/wsu-dandrea/slides.html#/title-slide)
   
@@ -59,9 +60,11 @@ Click here! I can be a link!
 :::{.column width="40%" #vcenter}
 
 
+
 ```{r foto, echo = FALSE, out.width=250, fig.align='center'}
 knitr::include_graphics("https://res.cloudinary.com/flor/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1683580772/IMG_20220607_130734112_mu4fpd.jpg")
 ```
+
 
 
 
@@ -339,6 +342,7 @@ Julia wants to share R code with her supervisor
 #### Plot's code
 Julia is running this code on her computer  ✅
 
+
 ```{r plot}
 #| echo: true
 #| code-fold: true
@@ -358,6 +362,7 @@ coffee_data |>
   geom_smooth(method= "gam", span=0.3, color='purple') +
   facet_wrap(~caracteristicas_cafe, scale="free_y")
 ```
+
 
 
 ---
@@ -420,9 +425,11 @@ Important to capture them to avoid:
 
 * That you code breaks with time
 
+
 ```{r error, echo = FALSE, out.width=600, fig.align='center'}
 knitr::include_graphics("img/ErrorManagement.jpg")
 ```
+
 
 :::footer
 Press R - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)]
@@ -501,9 +508,11 @@ Important to capture them to avoid:
 
 * [That you code breaks with time]{.rn}
 
+
 ```{r error2, echo = FALSE, out.width=600, fig.align='center'}
 knitr::include_graphics("img/ErrorManagement.jpg")
 ```
+
 
 :::footer
 Press R - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
@@ -517,9 +526,11 @@ Press R - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281
 Minimum: Documentation
 
 
+
 ```{r session, echo=TRUE}
 sessionInfo()
 ```
+
 
 
 
@@ -581,9 +592,11 @@ Repository hosting service
 ---
 
 
+
 ```{r comic, echo = FALSE, out.width=500, fig.align='center'}
 knitr::include_graphics("img/vc-final-comic.png")
 ```
+
 
 
 ::: footer
@@ -649,6 +662,7 @@ knitr::include_graphics("img/vc-final-comic.png")
 ::: footer
 [How to Run Your Open Source Software Project - The Turing Way Handbook](https://the-turing-way.netlify.app/reproducible-research/open/open-source.html#how-to-run-your-open-source-software-project) - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
 :::
+
 ---
 
 #### Many research groups have their GitHub organizations online
@@ -665,6 +679,7 @@ https://github.com/dib-lab
 
 
 ---
+
 
 ## Situation 3
 
@@ -698,9 +713,11 @@ Julia wants to publish her first article. **How can she do it in a reproducible 
 
 ::: {.column width="40%" #vcenter}
 
+
 ```{r rc3, echo = FALSE, out.width = 400}
 knitr::include_graphics("img/ResearchCompendium.jpg")
 ```
+
 
 :::
 ::::
@@ -751,9 +768,11 @@ Press R
 #### What happens when the technology fails?
 
 
+
 ```{r notfound, echo = FALSE, out.width=600, fig.align='center'}
 knitr::include_graphics("img/links.png")
 ```
+
 
 ---
 
@@ -793,9 +812,11 @@ Docker issues
 
 Should our code have **maintainers**?
 
+
 ```{r FixingLinks, echo = FALSE, fig.align='center', out.width=600}
 knitr::include_graphics("img/FixingLinks.jpg")
 ```
+
 
 :::footer
 [Maintainers and Reviewers on GitHub](https://the-turing-way.netlify.app/collaboration/maintain-review.html) - [The Turing Way Community, & Scriberia. (2020)](http://doi.org/10.5281/zenodo.3695300)
@@ -867,9 +888,11 @@ At the end, the participants give *feedback* to the authors
 :::
 
 :::{.column width="30%"}
+
 ```{r circulo2, echo = FALSE, out.width=300, fig.align = "center"}
 knitr::include_graphics("img/reprohack.png")
 ```
+
 :::
 ::::
 
@@ -976,7 +999,10 @@ There are many communities that can help researchers to learn how to improve the
 
 
 
+
 {{< tweet ResearchSoftEng 1506314767652163589 >}}
+
+
 
 ---
 
@@ -1136,7 +1162,10 @@ September 5-7th, 2023, UK
 ---
 
 
+
 {{< tweet IanCosden 1640791001487888391 >}}
+
+
 
 
 
@@ -1310,7 +1339,10 @@ The Journal of Open Source Software is a **developer friendly**, open access jou
 
 ---
 
+
 {{< tweet UBCMDS 1585318820293804033 >}}
+
+
 
 --- 
 
@@ -1357,5 +1389,6 @@ The Journal of Open Source Software is a **developer friendly**, open access jou
 ::: {.text-c}
 Questions?
 :::
+
 
 
