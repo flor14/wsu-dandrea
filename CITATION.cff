@@ -1,11 +1,11 @@
 cff-version: 1.1.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Florencia
-    given-names: D'Andrea
+  - family-names: "Florencia"
+    given-names: "D'Andrea"
     orcid: https://orcid.org/0000-0002-0041-097X
-title: From research software engineering to data science: how technology will impact the way we research
+title: "From research software engineering to data science: how technology will impact the way we research"
 version: 2023-05-09
 doi: 10.5281/zenodo.7930244 
 date-released: 2023-05-12
-url: https://flor14.github.io/wsu-dandrea/slides.html#/title-slide
+url: "https://flor14.github.io/wsu-dandrea/slides.html#/title-slide"
