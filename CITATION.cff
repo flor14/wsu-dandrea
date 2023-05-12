@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Florencia
+    given-names: D'Andrea
+    orcid: https://orcid.org/0000-0002-0041-097X
+title: flor14/wsu-dandrea: V2023-05-09
+version: 2023-05-09
+date-released: 2023-05-12
